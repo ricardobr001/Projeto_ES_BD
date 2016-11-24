@@ -2,7 +2,8 @@
 Projeto feito em PHP para gerenciar o cadastro e funcionários de um aeroporto
 
 #Desenvolvido por:
-##isabela
+[@isasalmeron](https://github.com/isasalmeron)
+
 [@lucianesl](https://github.com/lucianesl)
 
 [@Panque](https://github.com/Panque)
