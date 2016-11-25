@@ -4,6 +4,7 @@
 <head>
 
     <meta charset="utf-8">
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
     <meta name="description" content="">
@@ -12,10 +13,10 @@
     <title>Alterar Status</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href="../css/simple-sidebar.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,18 +35,42 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="index.html">
+                    <a href="../index.html">
                         Projeto
                     </a>
                 </li>
                 <li>
-                    <a href="cadastro.php">Cadastrar</a>
+                  <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Cadastrar <i class="fa fa-fw fa-caret-down"></i></a>
+                     <ul id="demo" class="collapse">
+                         <li>
+                             <a href="cadastrar_contratado.php">Funcionario Contratado</a>
+                         </li>
+                         <li>
+                             <a href="cadastrar_terceirizado.php">Funcionario Terceirizado</a>
+                         </li>
+                     </ul>
                 </li>
                 <li>
-                    <a href="alterar_dados.php">Alterar Dados</a>
+                  <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Alterar Dados <i class="fa fa-fw fa-caret-down"></i></a>
+                     <ul id="demo" class="collapse">
+                         <li>
+                             <a href="alterar_dados_contratado.php">Funcionario Contratado</a>
+                         </li>
+                         <li>
+                             <a href="alterar_dados_terceirizado.php">Funcionario Terceirizado</a>
+                         </li>
+                     </ul>
                 </li>
                 <li>
-                    <a href="alterar_status.php">Alterar Status</a>
+                  <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Alterar Dados <i class="fa fa-fw fa-caret-down"></i></a>
+                     <ul id="demo" class="collapse">
+                         <li>
+                             <a href="alterar_status_contratado.php">Funcionario Contratado</a>
+                         </li>
+                         <li>
+                             <a href="alterar_status_terceirizado.php">Funcionario Terceirizado</a>
+                         </li>
+                     </ul>
                 </li>
                 <li>
                     <a href="buscar.php">Buscar</a>
@@ -90,10 +115,10 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="../js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 
     <!-- Menu Toggle Script -->
     <script>
