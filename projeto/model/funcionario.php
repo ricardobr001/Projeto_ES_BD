@@ -2,18 +2,18 @@
   require_once dirname(__FILE__) . '/../conexao/Connection.php';
 
   class Funcionario{
-    protected $codigoDoFuncionario;
-    protected $nome;
-    protected $CPF;
-    protected $dataNascimento;
-    protected $telefone;
-    protected $funcao;
-    protected $salario;
-    protected $estado;
-    protected $motivo;
-    protected $periodo;
-    protected $terminal;
-    protected $endereco;
+    private $codigoDoFuncionario;
+    private $nome;
+    private $CPF;
+    private $dataNascimento;
+    private $telefone;
+    private $funcao;
+    private $salario;
+    private $estado;
+    private $motivo;
+    private $periodo;
+    private $terminal;
+    private $endereco;
 
     public function __construct($codigo, $nome, $CPF, $dataNascimento, $telefone, $funcao, $salario, $estado, $motivo, $periodo, Terminal $terminal, Endereco $endereco){
       $this->codigoDoFuncionario = $codigo;
