@@ -40,8 +40,8 @@
                     </a>
                 </li>
                 <li>
-                  <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Cadastrar <i class="fa fa-fw fa-caret-down"></i></a>
-                     <ul id="demo" class="collapse">
+                  <a href="javascript:;" data-toggle="collapse" data-target="#cadastro"><i class="fa fa-fw fa-arrows-v"></i> Cadastrar <i class="fa fa-fw fa-caret-down"></i></a>
+                     <ul id="cadastro" class="collapse">
                          <li>
                              <a href="cadastrar_contratado.php">Funcionario Contratado</a>
                          </li>
@@ -51,8 +51,8 @@
                      </ul>
                 </li>
                 <li>
-                  <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Alterar Dados <i class="fa fa-fw fa-caret-down"></i></a>
-                     <ul id="demo" class="collapse">
+                  <a href="javascript:;" data-toggle="collapse" data-target="#alterar_dados"><i class="fa fa-fw fa-arrows-v"></i> Alterar Dados <i class="fa fa-fw fa-caret-down"></i></a>
+                     <ul id="alterar_dados" class="collapse">
                          <li>
                              <a href="alterar_dados_contratado.php">Funcionario Contratado</a>
                          </li>
@@ -62,8 +62,8 @@
                      </ul>
                 </li>
                 <li>
-                  <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Alterar Dados <i class="fa fa-fw fa-caret-down"></i></a>
-                     <ul id="demo" class="collapse">
+                  <a href="javascript:;" data-toggle="collapse" data-target="#alterar_status"><i class="fa fa-fw fa-arrows-v"></i> Alterar Status <i class="fa fa-fw fa-caret-down"></i></a>
+                     <ul id="alterar_status" class="collapse">
                          <li>
                              <a href="alterar_status_contratado.php">Funcionario Contratado</a>
                          </li>
@@ -98,20 +98,25 @@
                     <div class="col-lg-12">
                         <h1>Campos que podem ser alterados</h1>
                         <form>
-                          <p><font color="RED">*</font>Código do funcionário que será alterado: <input placeholder="562262"></p>
-                          <p>Nome: <input type="text" name="nome" placeholder="Ricardo Mendes Leal Junior"></p>
-                          <p>CPF: <input type="number" name="CPF" maxlength="11" placeholder="42964904863"></p>
-                          <p>Data de Nascimento: <input type="date" name="dataNascimento"></p>
-                          <p>Telefone: <input type="text" name="telefone" placeholder="(16)99760-6009"></p>
-                          <p>Salário: <input type="number" name="salario" min="0" placeholder="2000.00"></p>
-                          <p>Cidade: <input type="text" name="cidade" placeholder="Araraquara"></p>
-                          <p>Rua: <input type="text" name="rua" placeholder="Av. Professor Eugênio Francisco Malaman"></p>
-                          <p>Número: <input type="number" name="numero" min="0" placeholder="346"> Complemento: <input type="number" min="0" name="complemento" placeholder="103"></p>
-                          <p>Terminal: <input type="text" name="" placeholder="Limpeza"></p>
-                          <p>Função:</p>
-                          <input type="radio" name="status" value="COMUM"> COMUM<br>
-                          <input type="radio" name="status" value="GERENTE"> GERENTE<br>
-                          <input type="radio" name="status" value="TERCEIRIZADO"> TERCEIRIZADO<br>
+                          <p><font color="RED">*</font>Código do Funcionário: <input placeholder="562262" type="text" id="codigo" name="codigo" value=""></p>
+                          <p>Nome: <input type="text" id="nome" name="nome" value="" placeholder="Ricardo Mendes Leal Junior"></p>
+                          <p>CPF: <input type="text" id="CPF" name="CPF" value="" size="14" maxlength="14" placeholder="429.649.048-63"></p>
+                          <p>Data de Nascimento: <input type="text" id="dataNascimento" name="dataNascimento" size="10" maxlength="10" placeholder="dd/mm/aaaa"></p>
+                          <p>Telefone: <input type="text" id="telefone" name="telefone" value="" size="13" maxlength="13" placeholder="(16)3216-9874"></p>
+                          <p>Salário: <input type="number" id="salario" name="salario" value="" min="1" placeholder="2000.00"></p>
+                          <p>Cidade: <input type="text" id="cidade" name="cidade" value="" placeholder="Araraquara"></p>
+                          <p>Rua: <input type="text" id="rua" name="rua" value="" placeholder="Av. Professor Eugênio Francisco Malaman"></p>
+                          <p>Bairro: <input type="text" id="bairro" name="bairro" value="" placeholder="Vila José Bonifácio"></p>
+                          <p>CEP: <input type="text" id="CEP" name="CEP" value="" size="9" maxlength="9" placeholder="14802-080"></p>
+                          <p>Número: <input type="number" id="numero" name="numero" value="" min="0" placeholder="346"> Complemento: <input type="number" id="complemento" name="complemento" min="0" placeholder="103"></p>
+                          <p>Terminal: <input type="text" id="terminal" name="terminal" value="" size="1" maxlength="1" placeholder="A"></p>
+                          <p>Setor: <input type="text" id="funcao" name="funcao" value="" placeholder="Limpeza"></p>
+                          <p>Data de Entrada: <input type="text" id="dataEntrada" name="dataEntrada" size="10" maxlength="10" placeholder="dd/mm/aaaa"></p>
+                          <p>Quantidade de horas semanais: <input type="number" id="qtddHorasTrabalhadas" name="qtddHorasTrabalhadas" value="" min="1" placeholder="40"></p>
+                          <p>Setor: <input type="text" id="funcao" name="funcao" value="" placeholder="Limpeza"></p>
+                          <p>Cargo:</p>
+                          <input type="radio" id="funcao" name="funcao" value="COMUM"> COMUM<br>
+                          <input type="radio" id="funcao" name="funcao" value="GERENTE"> GERENTE<br>
                           <P>O campo que possui <font color="RED">*</font> é obrigatório.</P>
                           <input type="submit" value="Submit">
                           <br />
