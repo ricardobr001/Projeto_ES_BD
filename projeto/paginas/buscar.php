@@ -40,7 +40,7 @@
                     </a>
                 </li>
                 <li>
-                  <a href="javascript:;" data-toggle="collapse" data-target="#cadastro"><i class="fa fa-fw fa-arrows-v"></i> Cadastrar <i class="fa fa-fw fa-caret-down"></i></a>
+                  <a href="javascript:;" data-toggle="collapse" data-target="#cadastro"><i class="fa fa-fw fa-arrows-v"></i> Cadastrar Funcionário<i class="fa fa-fw fa-caret-down"></i></a>
                      <ul id="cadastro" class="collapse">
                          <li>
                              <a href="cadastrar_contratado.php">Funcionario Contratado</a>
@@ -49,6 +49,9 @@
                              <a href="cadastrar_terceirizado.php">Funcionario Terceirizado</a>
                          </li>
                      </ul>
+                </li>
+                <li>
+                    <a href="cadastrar_empresa.php">Cadastrar Empresa</a>
                 </li>
                 <li>
                   <a href="javascript:;" data-toggle="collapse" data-target="#alterar_dados"><i class="fa fa-fw fa-arrows-v"></i> Alterar Dados <i class="fa fa-fw fa-caret-down"></i></a>
