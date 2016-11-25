@@ -31,8 +31,6 @@
     //Getters e Setters
     public function setDataEntrada($dataEntrada){
         $this->dataEntrada = $dataEntrada;
-
-        return $this;
     }
 
     public function getDataEntrada(){
@@ -41,8 +39,6 @@
 
     public function setCargo($cargo){
         $this->cargo = $cargo;
-
-        return $this;
     }
 
     public function getCargo(){
@@ -51,8 +47,6 @@
 
     public function setQtddHorasTrabalhadas($qtddHorasTrabalhadas){
         $this->qtddHorasTrabalhadas = $qtddHorasTrabalhadas;
-
-        return $this;
     }
 
     public function getQtddHorasTrabalhadas(){
@@ -61,8 +55,6 @@
 
     public function setDataSaida($dataSaida){
         $this->dataSaida = $dataSaida;
-
-        return $this;
     }
 
     public function getDataSaida(){
@@ -71,8 +63,6 @@
 
     public function setSalario($salario){
         $this->salario = $salario;
-
-        return $this;
     }
 
     public function getSalario(){
