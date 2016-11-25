@@ -77,7 +77,7 @@
         $msg = 'Problemas na conexão';
       }
       else{
-        mysqli_query($conn, /*INSTRUÇÃO MYSQL PARA INSERIR OS DADOS NO BANCO*/);
+      /*mysqli_query($conn, /*INSTRUÇÃO MYSQL PARA INSERIR OS DADOS NO BANCO);*/
         Connection::close($conn);
         $msg = 'Funcionário cadastrado com sucesso!';
       }
