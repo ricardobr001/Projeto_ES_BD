@@ -100,10 +100,11 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1>Relatório por faixa salarial</h1>
-                        <p><font color="RED">*</font>Salário minímo: <input placeholder="0.00"></p>
-                        <p><font color="RED">*</font>Salário máximo: <input placeholder="10000.00"></p>
+                        <p><font color="RED">*</font>Salário minímo: <input type="number" id="min" name="min" value="" placeholder="0.00"></p>
+                        <p><font color="RED">*</font>Salário máximo: <input type="number" id="max" name="max" value="" placeholder="10000.00"></p>
                         <P>O campo que possui <font color="RED">*</font> é obrigatório.</P>
                         <input type="submit" value="Submit">
+                        <br />
                         <br />
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
                     </div>

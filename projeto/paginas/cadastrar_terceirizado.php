@@ -101,19 +101,19 @@
                     <div class="col-lg-12">
                         <h1>Insira os dados</h1>
                           <form name="cadastro" action="" method="post" onsubmit="return false">
-                            <p><font color="RED">*</font>Código do Funcionário: <input placeholder="562262" type="text" id="codigo" name="codigo" value=""></p>
-                            <p><font color="RED">*</font>Nome: <input type="text" id="nome" name="nome" value="" placeholder="Ricardo Mendes Leal Junior"></p>
-                            <p><font color="RED">*</font>CPF: <input type="text" id="CPF" name="CPF" value="" size="14" maxlength="14" placeholder="429.649.048-63"></p>
-                            <p><font color="RED">*</font>Data de Nascimento: <input type="text" id="dataNascimento" name="dataNascimento" size="10" maxlength="10" placeholder="dd/mm/aaaa"></p>
-                            <p><font color="RED">*</font>Telefone: <input type="text" id="telefone" name="telefone" value="" size="13" maxlength="13" placeholder="(16)3216-9874"></p>
-                            <p><font color="RED">*</font>Cidade: <input type="text" id="cidade" name="cidade" value="" placeholder="Araraquara"></p>
-                            <p><font color="RED">*</font>Rua: <input type="text" id="rua" name="rua" value="" placeholder="Av. Professor Eugênio Francisco Malaman"></p>
-                            <p><font color="RED">*</font>Bairro: <input type="text" id="bairro" name="bairro" value="" placeholder="Vila José Bonifácio"></p>
-                            <p><font color="RED">*</font>CEP: <input type="text" id="CEP" name="CEP" value="" size="9" maxlength="9" placeholder="14802-080"></p>
+                            <p><font color="RED">*</font>Código do Funcionário: <input placeholder="562262" pattern="[0-9]+" type="text" id="codigo" name="codigo" value=""></p>
+                            <p><font color="RED">*</font>Nome: <input pattern="[a-zA-Z ]+" type="text" id="nome" name="nome" value="" placeholder="Ricardo Mendes Leal Junior"></p>
+                            <p><font color="RED">*</font>CPF: <input pattern="[0-9.-]+" type="text" id="CPF" name="CPF" value="" size="14" maxlength="14" placeholder="429.649.048-63"></p>
+                            <p><font color="RED">*</font>Data de Nascimento: <input pattern="[0-9/]+" type="text" id="dataNascimento" name="dataNascimento" size="10" maxlength="10" placeholder="dd/mm/aaaa"></p>
+                            <p><font color="RED">*</font>Telefone: <input pattern="[0-9()-]+" type="text" id="telefone" name="telefone" value="" size="13" maxlength="13" placeholder="(16)3216-9874"></p>
+                            <p><font color="RED">*</font>Cidade: <input pattern="[a-zA-Z]+" type="text" id="cidade" name="cidade" value="" placeholder="Araraquara"></p>
+                            <p><font color="RED">*</font>Rua: <input pattern="[a-zA-Z.]+" type="text" id="rua" name="rua" value="" placeholder="Av. Professor Eugênio Francisco Malaman"></p>
+                            <p><font color="RED">*</font>Bairro: <input pattern="[a-zA-Z.]+" type="text" id="bairro" name="bairro" value="" placeholder="Vila José Bonifácio"></p>
+                            <p><font color="RED">*</font>CEP: <input pattern="[0-9-]+" type="text" id="CEP" name="CEP" value="" size="9" maxlength="9" placeholder="14802-080"></p>
                             <p><font color="RED">*</font>Número: <input type="number" id="numero" name="numero" value="" min="0" placeholder="346"> Complemento: <input type="number" id="complemento" name="complemento" min="0" placeholder="103"></p>
-                            <p><font color="RED">*</font>Terminal: <input type="text" id="terminal" name="terminal" value="" size="1" maxlength="1" placeholder="A"></p>
-                            <p><font color="RED">*</font>Setor: <input type="text" id="funcao" name="funcao" value="" placeholder="Limpeza"></p>
-                            <P>O campo que possui <font color="RED">*</font> é obrigatório.</P>
+                            <p><font color="RED">*</font>Terminal: <input pattern="[a-zA-Z0-9]+" type="text" id="terminal" name="terminal" value="" size="1" maxlength="1" placeholder="A"></p>
+                            <p><font color="RED">*</font>Setor: <input pattern="[a-zA-Z]+" type="text" id="setor" name="setor" value="" placeholder="Limpeza"></p>
+                            <p>O campo que possui <font color="RED">*</font> é obrigatório.</p>
                             <input type="submit" value="Enviar">
                             <br />
                             <br />

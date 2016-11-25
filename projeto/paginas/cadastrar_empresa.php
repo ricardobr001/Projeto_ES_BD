@@ -100,9 +100,9 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1>Cadastrar Empresa</h1>
-                        <p><font color="RED">*</font>CNPJ: <input placeholder="562262"></p>
-                        <p><font color="RED">*</font>Nome Fantasia: <input placeholder="Coca-Cola"></p>
-                        <p><font color="RED">*</font>Razão Social: <input placeholder="Coca-Cola Indústrias LTDA"></p>
+                        <p><font color="RED">*</font>CNPJ: <input pattern="[0-9/-]+" type="text" id="CNPJ" name="CNPJ" size="18" maxlength="18" value="" placeholder="62.075.633/0001-16"></p>
+                        <p><font color="RED">*</font>Nome Fantasia: <input type="text" id="nomeFantasia" name="nomeFantasia" value="" placeholder="Coca-Cola"></p>
+                        <p><font color="RED">*</font>Razão Social: <input type="text" id="razaoSocial" name="razaoSocial" value="" placeholder="Coca-Cola Indústrias LTDA"></p>
                         <p>O campo que possui <font color="RED">*</font> é obrigatório.</p>
                         <input type="submit" value="Enviar">
                         <br />

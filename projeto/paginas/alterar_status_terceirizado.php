@@ -100,12 +100,13 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1>Alterar Status</h1>
-                        <p><font color="RED">*</font>Código do Funcionário que será alterado: <input placeholder="562262"></p>
+                        <p><font color="RED">*</font>Código do Funcionário que será alterado: <input placeholder="562262" pattern="[0-9]+" type="text" id="codigo" name="codigo" value=""></p>
                         <p><font color="RED">*</font>Status:</p>
                         <input type="radio" name="status" value="ATIVO"> ATIVO<br>
                         <input type="radio" name="status" value="INATIVO"> INATIVO<br>
                         <P>O campo que possui <font color="RED">*</font> é obrigatório.</P>
                         <input type="submit" value="Submit">
+                        <br />
                         <br />
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
                     </div>

@@ -100,11 +100,9 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1>Relatório por função</h1>
-                        <p>Função:</p>
-                        <input type="radio" name="status" value="COMUM"> COMUM<br>
-                        <input type="radio" name="status" value="GERENTE"> GERENTE<br>
-                        <input type="radio" name="status" value="TERCEIRIZADO"> TERCEIRIZADO<br>
+                        <p>Setor: <input pattern="[a-zA-Z]+" type="text" id="setor" name="setor" value="" placeholder="Limpeza"></p>
                         <input type="submit" value="Submit">
+                        <br />
                         <br />
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
                     </div>
