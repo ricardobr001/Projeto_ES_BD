@@ -7,125 +7,219 @@
     private $CPF;
     private $dataNascimento;
     private $telefone;
-    private $funcao;
-    private $salario;
     private $estado;
     private $motivo;
     private $periodo;
+    private $setor;
     private $terminal;
     private $endereco;
 
-    public function __construct($codigo, $nome, $CPF, $dataNascimento, $telefone, $funcao, $salario, $estado, $motivo, $periodo, Terminal $terminal, Endereco $endereco){
+    //Construtor da classe
+    public function __construc($codigo, $nome, $CPF, $dataNascimento, $telefone, $estado, $motivo, $periodo, $setor, $terminal, $cidade, $rua, $bairro, $CEP, $numero, $complemento){
       $this->codigoDoFuncionario = $codigo;
       $this->nome = $nome;
-      $this->CPF = $dataNascimento = $dataNascimento;
+      $this->CPF = $CPF;
+      $this->dataNascimento = $dataNascimento;
       $this->telefone = $telefone;
-      $this->funcao = $funcao;
-      $this->salario = $salario;
       $this->estado = $estado;
       $this->motivo = $motivo;
       $this->periodo = $periodo;
-      $this->terminal = $terminal;
-      $this->endereco = $endereco;
+      $this->setor = $setor;
+      $this->terminal = new Terminal($terminal);
+      $this->endereco = new Endereco($cidade, $rua, $bairro, $CEP, $numero, $complemento);
     }
 
+    //Getters
     public function getCodigoDoFuncionario(){
-      return $this->codigoDoFuncionario;
+        return $this->codigoDoFuncionario;
     }
 
     public function getNome(){
-      return $this->nome;
+        return $this->nome;
     }
 
     public function getCPF(){
-      return $this->dataNascimento;
+        return $this->CPF;
+    }
+
+    public function getDataNascimento(){
+        return $this->dataNascimento;
     }
 
     public function getTelefone(){
-      return $this->telefone;
-    }
-
-    public function getFuncao(){
-      return $this->funcao;
-    }
-
-    public function getSalario(){
-      return $this->salario;
+        return $this->telefone;
     }
 
     public function getEstado(){
-      return $this->estado;
+        return $this->estado;
     }
 
     public function getMotivo(){
-      return $this->motivo;
+        return $this->motivo;
     }
 
     public function getPeriodo(){
-      return $this->periodo;
+        return $this->periodo;
     }
 
-    public function getEndereco(){
-      $this->endereco.getCidade();
-      $this->endereco.getRua();
-      $this->endereco.getBairro();
-      $this->endereco.getCEP();
-      $this->endereco.getNumero();
-      $this->endereco.getComplemento();
+    public function getSetor(){
+        return $this->setor;
     }
 
     public function getTerminal(){
-      $this->terminal.getCodigoTerminal();
-      $this->terminal.getNome();
-      $this->terminal.getLocalizacao();
+        return $this->terminal;
     }
 
-    public function setCodigoDoFuncionario($valor){
-      $this->codigoDoFuncionario = $valor;
+    public function getEndereco(){
+        return $this->endereco;
     }
 
-    public function setNome($valor){
-      $this->nome = $valor;
+    //Setters
+    public function setCodigoDoFuncionario($codigoDoFuncionario){
+        $this->codigoDoFuncionario = $codigoDoFuncionario;
     }
 
-    public function setCPF($valor){
-      $this->dataNascimento = $valor;;
+    public function setNome($nome){
+        $this->nome = $nome;
     }
 
-    public function setTelefone($valor){
-      $this->telefone = $valor;
+    public function setCPF($CPF){
+        $this->CPF = $CPF;
     }
 
-    public function setFuncao($valor){
-      $this->funcao = $valor;
+    public function setDataNascimento($dataNascimento){
+        $this->dataNascimento = $dataNascimento;
     }
 
-    public function setSalario($valor){
-      $this->salario = $valor;
+    public function setTelefone($telefone){
+        $this->telefone = $telefone;
     }
 
-    public function setEstado($valor){
-      $this->estado = $valor;
+    public function setEstado($estado){
+        $this->estado = $estado;
     }
 
-    public function setMotivo($valor){
-      $this->motivo = $valor;
+    public function setMotivo($motivo){
+        $this->motivo = $motivo;
     }
 
-    public function setPeriodo($valor){
-      $this->periodo = $valor;
+    public function setPeriodo($periodo){
+        $this->periodo = $periodo;
     }
 
-    public function setEndereco(Endereco $valor){
-      $this->endereco = $valor;
+    public function setSetor($setor){
+        $this->setor = $setor;
     }
 
-    public function setTerminal(Terminal $valor){
-      $this->terminal = $valor;
+    public function setTerminal(Terminal $terminal){
+        $this->terminal = $terminal;
     }
 
+    public function setEndereco(Endereco $endereco){
+        $this->endereco = $endereco;
+    }
+
+    //Salvando os dados da classe no banco
     public function cadastrar(){
+      $conn = Connection::open();
+
+      if(!conn){
+        $msg = 'Problemas na conexão';
+      }
+      else{
+        mysqli_query($conn, /*INSTRUÇÃO MYSQL PARA INSERIR OS DADOS NO BANCO*/);
+        Connection::close($conn);
+        $msg = 'Funcionário cadastrado com sucesso!';
+      }
+
+      return $msg;
+    }
+
+    //Buscando uma informação no banco
+    public function buscar($codigoDoFuncionario){
+      $conn = Connection::open();
+
+      if(!conn){
+        $msg = 'Problemas na conexão';
+      }
+      else{
+        /*IMPLEMENTAR A RECUPERAÇÃO OS DADOS NO BANCO*/
+
+      }
 
     }
-  }
+
+    //Alterando os dados de um funcionário no banco
+    public function alterarDados(){
+      $conn = Connection::open();
+
+      if(!conn){
+        $msg = 'Problemas na conexão';
+      }
+      else{
+      mysqli_query($conn, /*INSTRUÇÃO MYSQL PARA ALTERAR OS DADOS NO BANCO*/);
+        Connection::close($conn);
+        $msg = 'Dados alterados com sucesso!';
+      }
+
+      return $msg;
+    }
+
+    //Alterando o status de um funcionário no banco
+    public function alterarStatus(){
+      $conn = Connection::open();
+
+      if(!conn){
+        $msg = 'Problemas na conexão';
+      }
+      else{
+      mysqli_query($conn, /*INSTRUÇÃO MYSQL PARA ALTERAR O STATUS NO BANCO*/);
+        Connection::close($conn);
+        $msg = 'Status alterado com Sucesso!';
+      }
+
+      return $msg;
+    }
+
+    //Gerando o relatório
+    public function gerarRelatorioPorFuncao($setor){
+      $conn = Connection::open();
+
+      if(!conn){
+        $msg = 'Problemas na conexão';
+      }
+      else{
+      /*IMPLEMENTAR A RECUPERAÇÃO OS DADOS NO BANCO E GERAR O RELATÓRIO*/
+
+      }
+
+    }
+
+    public function gerarRelatorioPorTerminal($terminal){
+      $conn = Connection::open();
+
+      if(!conn){
+        $msg = 'Problemas na conexão';
+      }
+      else{
+      /*IMPLEMENTAR A RECUPERAÇÃO OS DADOS NO BANCO E GERAR O RELATÓRIO*/
+
+      }
+
+
+    }
+
+    public function gerarRelatorioPorFaixaSalarial($min, $max){
+      $conn = Connection::open();
+
+      if(!conn){
+        $msg = 'Problemas na conexão';
+      }
+      else{
+      /*IMPLEMENTAR A RECUPERAÇÃO OS DADOS NO BANCO E GERAR O RELATÓRIO*/
+
+      }
+    }
+
+}
 ?>

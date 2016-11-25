@@ -18,9 +18,12 @@
   $bairro = $_POST["bairro"];
   $CEP = $_POST["CEP"];
   $numero = $_POST["numero"];
+  $complemento = $_POST["complemento"];
   $terminal = $_POST["terminal"];
   $setor = $_POST["setor"];
   $dataEntrada = $_POST["dataEntrada"];
   $horas = $_POST["qtddHorasTrabalhadas"];
   $cargo = $_POST["cargo"];
+
+  $funcionario = new
 ?>
