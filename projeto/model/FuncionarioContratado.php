@@ -1,5 +1,6 @@
 <?php
-  require_once dirname(__FILE__) . '/../conexao/Connection.php';
+  //require_once '../conexao/Connection.php';
+  require_once "Funcionario.php";
 
   class FuncionarioContratado extends Funcionario{
     private $dataEntrada;
@@ -107,7 +108,7 @@
         $msg = 'Problemas na conexão';
       }
       else{
-      mysqli_query($conn, /*INSTRUÇÃO MYSQL PARA ALTERAR OS DADOS NO BANCO*/);
+      //mysqli_query($conn, /*INSTRUÇÃO MYSQL PARA ALTERAR OS DADOS NO BANCO*/);
         Connection::close($conn);
         $msg = 'Dados alterados com sucesso!';
       }
@@ -123,7 +124,7 @@
         $msg = 'Problemas na conexão';
       }
       else{
-      mysqli_query($conn, /*INSTRUÇÃO MYSQL PARA ALTERAR O STATUS NO BANCO*/);
+      //mysqli_query($conn, /*INSTRUÇÃO MYSQL PARA ALTERAR O STATUS NO BANCO*/);
         Connection::close($conn);
         $msg = 'Status alterado com Sucesso!';
       }

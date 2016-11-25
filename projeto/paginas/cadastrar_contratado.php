@@ -28,6 +28,28 @@
 </head>
 
 <body>
+  <script>
+$(document).ready(function() {
+  $('#limpar').click(function () {
+      $('#msg').html("Mensagem");
+  }
+
+              );
+
+  $('form').submit(function(){
+ var dados= $(this).serialize();
+  $.ajax({
+  type: "POST",
+  url: '../control/contratadoController.php',
+  data: dados ,
+  success: function(data, textStatus, jqXHR)  {
+                 $('#msg').html(data);
+              }
+});
+});
+});
+
+     </script>
 
     <div id="wrapper">
 
@@ -121,7 +143,12 @@
                             <input type="radio" id="cargo" name="cargo" value="COMUM"> COMUM<br>
                             <input type="radio" id="cargo" name="cargo" value="GERENTE"> GERENTE<br>
                             <P>O campo que possui <font color="RED">*</font> é obrigatório.</P>
-                            <input type="submit" name="submit" value="Enviar">
+                            <input type="submit" name="submit" value="Enviar"/>
+                              <input type="reset" id="limpar" name="limpar" value="Novo"/>
+                            <br />
+                            <br />
+                            <h1 id="msg">
+                            </h1>
                             <br />
                             <br />
                           </form>
@@ -138,28 +165,6 @@
     <!-- jQuery -->
     <script src="../js/jquery.js"></script>
 
-    <script>
-$(document).ready(function() {
-    $('#limpar').click(function () {
-        $('#msg').html("Mensagem");
-    }
-
-                );
-
-    $('form').submit(function(){
-   var dados= $(this).serialize();
-    $.ajax({
-    type: "POST",
-    url: 'control/contratadoController.php',
-    data: dados ,
-    success: function(data, textStatus, jqXHR)  {
-                   $('#msg').html(data);
-                }
-});
-});
-});
-
-       </script>
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
 
