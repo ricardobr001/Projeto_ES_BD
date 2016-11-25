@@ -107,6 +107,7 @@
                             <p><font color="RED">*</font>Data de Nascimento: <input pattern="[0-9/]+" type="text" id="dataNascimento" name="dataNascimento" size="10" maxlength="10" placeholder="dd/mm/aaaa"></p>
                             <p><font color="RED">*</font>Telefone: <input pattern="[0-9()-]+" type="text" id="telefone" name="telefone" value="" size="13" maxlength="13" placeholder="(16)3216-9874"></p>
                             <p><font color="RED">*</font>Salário: <input type="number" id="salario" name="salario" value="" min="1" placeholder="2000.00"></p>
+                            <p><font color="RED">*</font>Período: <input pattern="[a-zA-Z]+" type="text" id="periodo" name="periodo" value="" placeholder="Manhã"></p>
                             <p><font color="RED">*</font>Cidade: <input pattern="[a-zA-Z]+" type="text" id="cidade" name="cidade" value="" placeholder="Araraquara"></p>
                             <p><font color="RED">*</font>Rua: <input pattern="[a-zA-Z.]+" type="text" id="rua" name="rua" value="" placeholder="Av. Professor Eugênio Francisco Malaman"></p>
                             <p><font color="RED">*</font>Bairro: <input pattern="[a-zA-Z.]+" type="text" id="bairro" name="bairro" value="" placeholder="Vila José Bonifácio"></p>
