@@ -113,6 +113,7 @@
                             <p><font color="RED">*</font>Número: <input type="number" id="numero" name="numero" value="" min="0" placeholder="346"> Complemento: <input type="number" id="complemento" name="complemento" min="0" placeholder="103"></p>
                             <p><font color="RED">*</font>Terminal: <input pattern="[a-zA-Z0-9]+" type="text" id="terminal" name="terminal" value="" size="1" maxlength="1" placeholder="A"></p>
                             <p><font color="RED">*</font>Setor: <input pattern="[a-zA-Z]+" type="text" id="setor" name="setor" value="" placeholder="Limpeza"></p>
+                            <p><font color="RED">*</font>CNPJ: <input pattern="[0-9/-]+" type="text" id="CNPJ" name="CNPJ" size="18" maxlength="18" value="" placeholder="62.075.633/0001-16"></p>
                             <p>O campo que possui <font color="RED">*</font> é obrigatório.</p>
                             <input type="submit" value="Enviar">
                             <br />
