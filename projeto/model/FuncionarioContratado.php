@@ -74,11 +74,11 @@
     public function cadastrar(){
       $conn = Connection::open();
 
-      if(!conn){
+      if(!$conn){
         $msg = 'Problemas na conexão';
       }
       else{
-      /*mysqli_query($conn, /*INSTRUÇÃO MYSQL PARA INSERIR OS DADOS NO BANCO);*/
+        mysqli_query($conn, "INSERT INTO `funcionario`(`codigo_funcionario`, `nome`, `cpf`, `data_nascimento`, `telefone`, `estado`, `motivo`, `periodo`, `cidade`, `rua`, `bairro`, `numero`, `complemento`, `cep`, `cnpj_empresa`) VALUES ('".$this->codigoDoFuncionario."', '".$this->nome."', '".$this->CPF."', '".$this->dataNascimento."', '".$this->telefone."', '".$this->estado."', '".$this->motivo."', '".$this->periodo."', '".$this->endereco->getCidade()."', '".$this->endereco->getRua()."', '".$this->endereco->getBairro()."', '".$this->endereco->getNumero()."', '".$this->endereco->getComplemento."', '".$this->endereco->getCEP()."', '')");
         Connection::close($conn);
         $msg = 'Funcionário cadastrado com sucesso!';
       }
@@ -90,7 +90,7 @@
     public function buscar($codigoDoFuncionario){
       $conn = Connection::open();
 
-      if(!conn){
+      if(!$conn){
         $msg = 'Problemas na conexão';
       }
       else{
@@ -104,7 +104,7 @@
     public function alterarDados(){
       $conn = Connection::open();
 
-      if(!conn){
+      if(!$conn){
         $msg = 'Problemas na conexão';
       }
       else{
@@ -120,7 +120,7 @@
     public function alterarStatus(){
       $conn = Connection::open();
 
-      if(!conn){
+      if(!$conn){
         $msg = 'Problemas na conexão';
       }
       else{
@@ -136,7 +136,7 @@
     public function gerarRelatorioPorFuncao($setor){
       $conn = Connection::open();
 
-      if(!conn){
+      if(!$conn){
         $msg = 'Problemas na conexão';
       }
       else{
@@ -149,7 +149,7 @@
     public function gerarRelatorioPorTerminal($terminal){
       $conn = Connection::open();
 
-      if(!conn){
+      if(!$conn){
         $msg = 'Problemas na conexão';
       }
       else{
@@ -163,7 +163,7 @@
     public function gerarRelatorioPorFaixaSalarial($min, $max){
       $conn = Connection::open();
 
-      if(!conn){
+      if(!$conn){
         $msg = 'Problemas na conexão';
       }
       else{
