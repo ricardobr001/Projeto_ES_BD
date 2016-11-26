@@ -11,17 +11,7 @@
 
     //Construtor da classe
     public function __construc($codigo, $nome, $CPF, $dataNascimento, $telefone, $estado, $motivo, $periodo, $setor, $terminal, $cidade, $rua, $bairro, $CEP, $numero, $complemento, $dataEntrada, $cargo, $qtddHorasTrabalhadas, $dataSaida, $salario){
-      $this->codigoDoFuncionario = $codigo;
-      $this->nome = $nome;
-      $this->CPF = $CPF;
-      $this->dataNascimento = $dataNascimento;
-      $this->telefone = $telefone;
-      $this->estado = $estado;
-      $this->motivo = $motivo;
-      $this->periodo = $periodo;
-      $this->setor = $setor;
-      $this->terminal = new Terminal($terminal);
-      $this->endereco = new Endereco($cidade, $rua, $bairro, $CEP, $numero, $complemento);
+      parent::Funcionario($codigo, $nome, $CPF, $dataNascimento, $telefone, $estado, $motivo, $periodo, $setor, $terminal, $cidade, $rua, $bairro, $CEP, $numero, $complemento);
       $this->dataEntrada = $dataEntrada;
       $this->cargo = $cargo;
       $this->qtddHorasTrabalhadas = $qtddHorasTrabalhadas;
