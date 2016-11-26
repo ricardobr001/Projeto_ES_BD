@@ -8,7 +8,7 @@
     private $complemento;
 
     //Construtor da classe
-    public function __construc($cidade, $rua, $bairro, $CEP, $numero, $complemento){
+    public function __construct($cidade, $rua, $bairro, $CEP, $numero, $complemento){
       $this->cidade = $cidade;
       $this->rua = $rua;
       $this->bairro = $bairro;
@@ -18,12 +18,12 @@
     }
 
     //Getters e Setters
-    public function setCidade($endereco){
-        $this->endereco = $endereco;
+    public function setCidade($cidade){
+        $this->cidade = $cidade;
     }
 
     public function getCidade(){
-        return $this->endereco;
+        return $this->cidade;
     }
 
     public function setRua($rua){

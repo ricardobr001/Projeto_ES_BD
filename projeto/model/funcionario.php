@@ -15,7 +15,7 @@
     private $endereco;
 
     //Construtor da classe
-    public function __construc($codigo, $nome, $CPF, $dataNascimento, $telefone, $estado, $motivo, $periodo, $setor, $terminal, $cidade, $rua, $bairro, $CEP, $numero, $complemento){
+    public function __construct($codigo, $nome, $CPF, $dataNascimento, $telefone, $estado, $motivo, $periodo, $setor, $terminal, $cidade, $rua, $bairro, $CEP, $numero, $complemento){
       $this->codigoDoFuncionario = $codigo;
       $this->nome = $nome;
       $this->CPF = $CPF;
@@ -28,6 +28,10 @@
       $this->terminal = new Terminal($terminal);
       $this->endereco = new Endereco($cidade, $rua, $bairro, $CEP, $numero, $complemento);
     }
+
+    /*public function getCidade(){
+      return $this->getEndereco()->getCidade();
+    }*/
 
     //Getters
     public function getCodigoDoFuncionario(){
@@ -66,13 +70,13 @@
         return $this->setor;
     }
 
-    /*public function getTerminal(){
+    public function getTerminal(){
         return $this->terminal;
     }
 
     public function getEndereco(){
         return $this->endereco;
-    }*/
+    }
 
     //Setters
     public function setCodigoDoFuncionario($codigoDoFuncionario){
@@ -111,13 +115,13 @@
         $this->setor = $setor;
     }
 
-    /*public function setTerminal(Terminal $terminal){
+    public function setTerminal(Terminal $terminal){
         $this->terminal = $terminal;
     }
 
     public function setEndereco(Endereco $endereco){
         $this->endereco = $endereco;
-    }*/
+    }
 
     //Salvando os dados da classe no banco
     public function cadastrar(){

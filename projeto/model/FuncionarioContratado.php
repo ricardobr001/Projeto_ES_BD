@@ -10,7 +10,7 @@
     private $salario;
 
     //Construtor da classe
-    public function __construc($codigo, $nome, $CPF, $dataNascimento, $telefone, $estado, $motivo, $periodo, $setor, $terminal, $cidade, $rua, $bairro, $CEP, $numero, $complemento, $dataEntrada, $cargo, $qtddHorasTrabalhadas, $dataSaida, $salario){
+    public function __construct($codigo, $nome, $CPF, $dataNascimento, $telefone, $estado, $motivo, $periodo, $setor, $terminal, $cidade, $rua, $bairro, $CEP, $numero, $complemento, $dataEntrada, $cargo, $qtddHorasTrabalhadas, $dataSaida, $salario){
       //parent::Funcionario($codigo, $nome, $CPF, $dataNascimento, $telefone, $estado, $motivo, $periodo, $setor, $terminal, $cidade, $rua, $bairro, $CEP, $numero, $complemento);
       //Atributos da classe mãe
       $this->codigoDoFuncionario = $codigo;
@@ -81,7 +81,7 @@
         $msg = 'Problemas na conexão';
       }
       else{
-        mysqli_query($conn, "INSERT INTO funcionario(
+        if(!mysqli_query($conn, "INSERT INTO funcionario(
           codigo_funcionario,
           nome,
           cpf,
@@ -113,7 +113,8 @@
           '".$this->endereco->getComplemento()."',
           '".$this->endereco->getCEP()."',
           ''
-        );");
+        );"))
+          die(mysqli_error());
         Connection::close($conn);
         $msg = 'Funcionário cadastrado com sucesso!';
       }
