@@ -28,6 +28,28 @@
 </head>
 
 <body>
+  <script>
+$(document).ready(function() {
+  $('#limpar').click(function () {
+      $('#msg').html("Mensagem");
+  }
+
+              );
+
+  $('form').submit(function(){
+ var dados= $(this).serialize();
+  $.ajax({
+  type: "POST",
+  url: '../control/contratadoController.php',
+  data: dados ,
+  success: function(data, textStatus, jqXHR)  {
+                 $('#msg').html(data);
+              }
+});
+});
+});
+
+     </script>
 
     <div id="wrapper">
 
@@ -113,16 +135,19 @@
                             <input type="radio" id="periodo" name="periodo" value="NOITE"> NOITE<br>
                             <input type="radio" id="periodo" name="periodo" value="MADRUGADA"> MADRUGADA<br>
                             <br />
-                            <p><font color="RED">*</font>Telefone: <input pattern="[0-9()-]+" type="text" id="telefone" name="telefone" value="" size="13" maxlength="13" placeholder="(16)3216-9874"></p>
-                            <p><font color="RED">*</font>Cidade: <input pattern="[a-zA-Z]+" type="text" id="cidade" name="cidade" value="" placeholder="Araraquara"></p>
-                            <p><font color="RED">*</font>Rua: <input pattern="[a-zA-Z.]+" type="text" id="rua" name="rua" value="" placeholder="Av. Professor Eugênio Francisco Malaman"></p>
-                            <p><font color="RED">*</font>Bairro: <input pattern="[a-zA-Z.]+" type="text" id="bairro" name="bairro" value="" placeholder="Vila José Bonifácio"></p>
+                            <p><font color="RED">*</font>Cidade: <input type="text" id="cidade" name="cidade" value="" placeholder="Araraquara"></p>
+                            <p><font color="RED">*</font>Rua: <input type="text" id="rua" name="rua" value="" placeholder="Av. Professor Eugênio Francisco Malaman"></p>
+                            <p><font color="RED">*</font>Bairro: <input type="text" id="bairro" name="bairro" value="" placeholder="Vila José Bonifácio"></p>
                             <p><font color="RED">*</font>CEP: <input pattern="[0-9-]+" type="text" id="CEP" name="CEP" value="" size="9" maxlength="9" placeholder="14802-080"></p>
                             <p><font color="RED">*</font>Número: <input type="number" id="numero" name="numero" value="" min="0" placeholder="346"> Complemento: <input type="number" id="complemento" name="complemento" min="0" placeholder="103"></p>
                             <p><font color="RED">*</font>Terminal: <input pattern="[a-zA-Z0-9]+" type="text" id="terminal" name="terminal" value="" size="1" maxlength="1" placeholder="A"></p>
                             <p><font color="RED">*</font>Setor: <input pattern="[a-zA-Z]+" type="text" id="setor" name="setor" value="" placeholder="Limpeza"></p>
-                            <p><font color="RED">*</font>CNPJ: <input pattern="[0-9/-]+" type="text" id="CNPJ" name="CNPJ" size="18" maxlength="18" value="" placeholder="62.075.633/0001-16"></p>
-                            <input type="submit" value="Enviar">
+                            <p><font color="RED">*</font>CNPJ: <input pattern="[0-9/-.]+" type="text" id="CNPJ" name="CNPJ" size="18" maxlength="18" value="" placeholder="62.075.633/0001-16"></p>
+                            <input type="submit" name="submit" value="Enviar"/>
+                              <input type="reset" id="limpar" name="limpar" value="Novo"/>
+                            <br />
+                            <br />
+                            <h1 id="msg"></h1>
                             <br />
                             <br />
                           </form>
