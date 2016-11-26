@@ -56,7 +56,7 @@
           '".$this->razaoSocial."'
         )");
         Connection::close($conn);
-        $msg = 'Funcionário cadastrado com sucesso!';
+        $msg = 'Empresa cadastrada com sucesso!';
       }
 
       return $msg;
