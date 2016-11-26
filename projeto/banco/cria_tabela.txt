@@ -14,6 +14,8 @@ CREATE TABLE funcionario(
     motivo					text DEFAULT '',
 		cargo						varchar(13) NOT NULL,
     periodo					varchar(10)	NOT NULL,
+		terminal				varchar(1) NOT NULL,
+		setor						varchar(20) NOT NULL,
     cidade					varchar(100) NOT NULL,
    	rua						varchar(200) NOT NULL,
     bairro					varchar(50)	NOT NULL,
