@@ -66,13 +66,13 @@
         return $this->setor;
     }
 
-    public function getTerminal(){
+    /*public function getTerminal(){
         return $this->terminal;
     }
 
     public function getEndereco(){
         return $this->endereco;
-    }
+    }*/
 
     //Setters
     public function setCodigoDoFuncionario($codigoDoFuncionario){
@@ -111,13 +111,13 @@
         $this->setor = $setor;
     }
 
-    public function setTerminal(Terminal $terminal){
+    /*public function setTerminal(Terminal $terminal){
         $this->terminal = $terminal;
     }
 
     public function setEndereco(Endereco $endereco){
         $this->endereco = $endereco;
-    }
+    }*/
 
     //Salvando os dados da classe no banco
     public function cadastrar(){

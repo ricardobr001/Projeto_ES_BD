@@ -18,11 +18,11 @@
     }
 
     //Getters e Setters
-    public function setEndereco($endereco){
+    public function setCidade($endereco){
         $this->endereco = $endereco;
     }
 
-    public function getEndereco(){
+    public function getCidade(){
         return $this->endereco;
     }
 

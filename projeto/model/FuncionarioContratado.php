@@ -11,7 +11,20 @@
 
     //Construtor da classe
     public function __construc($codigo, $nome, $CPF, $dataNascimento, $telefone, $estado, $motivo, $periodo, $setor, $terminal, $cidade, $rua, $bairro, $CEP, $numero, $complemento, $dataEntrada, $cargo, $qtddHorasTrabalhadas, $dataSaida, $salario){
-      parent::Funcionario($codigo, $nome, $CPF, $dataNascimento, $telefone, $estado, $motivo, $periodo, $setor, $terminal, $cidade, $rua, $bairro, $CEP, $numero, $complemento);
+      //parent::Funcionario($codigo, $nome, $CPF, $dataNascimento, $telefone, $estado, $motivo, $periodo, $setor, $terminal, $cidade, $rua, $bairro, $CEP, $numero, $complemento);
+      //Atributos da classe mãe
+      $this->codigoDoFuncionario = $codigo;
+      $this->nome = $nome;
+      $this->CPF = $CPF;
+      $this->dataNascimento = $dataNascimento;
+      $this->telefone = $telefone;
+      $this->estado = $estado;
+      $this->motivo = $motivo;
+      $this->periodo = $periodo;
+      $this->setor = $setor;
+      $this->terminal = new Terminal($terminal);
+      $this->endereco = new Endereco($cidade, $rua, $bairro, $CEP, $numero, $complemento);
+      //Atributos da classe filha
       $this->dataEntrada = $dataEntrada;
       $this->cargo = $cargo;
       $this->qtddHorasTrabalhadas = $qtddHorasTrabalhadas;
@@ -68,7 +81,39 @@
         $msg = 'Problemas na conexão';
       }
       else{
-        mysqli_query($conn, "INSERT INTO `funcionario`(`codigo_funcionario`, `nome`, `cpf`, `data_nascimento`, `telefone`, `estado`, `motivo`, `periodo`, `cidade`, `rua`, `bairro`, `numero`, `complemento`, `cep`, `cnpj_empresa`) VALUES ('".$this->codigoDoFuncionario."', '".$this->nome."', '".$this->CPF."', '".$this->dataNascimento."', '".$this->telefone."', '".$this->estado."', '".$this->motivo."', '".$this->periodo."', '".$this->endereco->getCidade()."', '".$this->endereco->getRua()."', '".$this->endereco->getBairro()."', '".$this->endereco->getNumero()."', '".$this->endereco->getComplemento."', '".$this->endereco->getCEP()."', '')");
+        mysqli_query($conn, "INSERT INTO funcionario(
+          codigo_funcionario,
+          nome,
+          cpf,
+          data_nascimento,
+          telefone,
+          estado,
+          motivo,
+          periodo,
+          cidade,
+          rua,
+          bairro,
+          numero,
+          complemento,
+          cep,
+          cnpj_empresa
+        ) VALUES (
+          '".$this->getCodigoDoFuncionario()."',
+          '".$this->getNome()."',
+          '".$this->getCPF()."',
+          '".$this->getDataNascimento()."',
+          '".$this->getTelefone()."',
+          '".$this->getEstado()."',
+          '".$this->getMotivo()."',
+          '".$this->getPeriodo()."',
+          '".$this->endereco->getCidade()."',
+          '".$this->endereco->getRua()."',
+          '".$this->endereco->getBairro()."',
+          '".$this->endereco->getNumero()."',
+          '".$this->endereco->getComplemento()."',
+          '".$this->endereco->getCEP()."',
+          ''
+        );");
         Connection::close($conn);
         $msg = 'Funcionário cadastrado com sucesso!';
       }
