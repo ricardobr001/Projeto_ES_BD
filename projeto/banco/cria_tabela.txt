@@ -1,0 +1,24 @@
+CREATE TABLE empresa(
+	cnpj				varchar(18) PRIMARY KEY,
+    nome_fantasia		varchar(30) NOT NULL,
+    razao_social		varchar(50) NOT NULL
+);
+
+CREATE TABLE funcionario(
+    codigo_funcionario		int PRIMARY KEY,
+    nome					varchar(100) NOT NULL,
+    cpf						varchar(14) NOT NULL,
+    data_nascimento			varchar(10) NOT NULL,
+    telefone				varchar(13) NOT NULL,
+    estado					varchar(7) NOT NULL,
+    motivo					text DEFAULT '',
+    periodo					varchar(10)	NOT NULL,
+    cidade					varchar(100) NOT NULL,
+   	rua						varchar(200) NOT NULL,
+    bairro					varchar(50)	NOT NULL,
+    numero					int NOT NULL,
+    complemento				int DEFAULT NULL,
+    cep						varchar(9) NOT NULL,
+    cnpj_empresa			varchar(18) DEFAULT NULL,
+    FOREIGN KEY (cnpj_empresa) REFERENCES empresa(cnpj)
+);
