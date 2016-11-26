@@ -147,8 +147,7 @@ $(document).ready(function() {
                               <input type="reset" id="limpar" name="limpar" value="Novo"/>
                             <br />
                             <br />
-                            <h1 id="msg">
-                            </h1>
+                            <h1 id="msg"></h1>
                             <br />
                             <br />
                           </form>
