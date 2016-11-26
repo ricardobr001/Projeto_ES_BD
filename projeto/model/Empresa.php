@@ -1,11 +1,13 @@
 <?php
+  require_once '../conexao/Conexao.php';
+
   class Empresa{
     private $CNPJ;
     private $nomeFantasia;
     private $razaoSocial;
 
     //Construtor da classe
-    public function __construc($CNPJ, $nomeFantasia, $razaoSocial){
+    public function __construct($CNPJ, $nomeFantasia, $razaoSocial){
       $this->CNPJ = $CNPJ;
       $this->nomeFantasia = $nomeFantasia;
       $this->razaoSocial = $razaoSocial;
@@ -40,11 +42,19 @@
     public function cadastrar(){
       $conn = Connection::open();
 
-      if(!conn){
+      if(!$conn){
         $msg = 'Problemas na conexão';
       }
       else{
-        mysqli_query($conn, /*INSTRUÇÃO MYSQL PARA INSERIR OS DADOS NO BANCO*/);
+        mysqli_query($conn, "INSERT INTO empresa(
+          cnpj,
+          nome_fantasia,
+          razao_social
+        ) VALUES (
+          '".$this->CNPJ."',
+          '".$this->nomeFantasia."',
+          '".$this->razaoSocial."'
+        )");
         Connection::close($conn);
         $msg = 'Funcionário cadastrado com sucesso!';
       }

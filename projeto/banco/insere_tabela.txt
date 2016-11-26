@@ -1,1 +1,45 @@
-INSERT INTO `funcionario`(`codigo_funcionario`, `nome`, `cpf`, `data_nascimento`, `telefone`, `estado`, `motivo`, `periodo`, `cidade`, `rua`, `bairro`, `numero`, `complemento`, `cep`, `cnpj_empresa`) VALUES ('".$this->codigoDoFuncionario."', '".$this->nome."', '".$this->CPF."', '".$this->dataNascimento."', '".$this->telefone."', '".$this->estado."', '".$this->motivo."', '".$this->periodo."', '".$this->endereco->getCidade()."', '".$this->endereco->getRua()."', '".$this->endereco->getBairro()."', '".$this->endereco->getNumero()."', '".$this->endereco->getComplemento."', '".$this->endereco->getCEP()."', '')"
+/*Inserção na tabela de funcionario*/
+INSERT INTO funcionario(
+  codigo_funcionario,
+  nome,
+  cpf,
+  data_nascimento,
+  telefone,
+  estado,
+  motivo,
+  periodo,
+  cidade,
+  rua,
+  bairro,
+  numero,
+  complemento,
+  cep,
+  cnpj_empresa
+) VALUES (
+  '".$this->codigoDoFuncionario."',
+  '".$this->nome."',
+  '".$this->CPF."',
+  '".$this->dataNascimento."',
+  '".$this->telefone."',
+  '".$this->estado."',
+  '".$this->motivo."',
+  '".$this->periodo."',
+  '".$this->endereco->getCidade()."',
+  '".$this->endereco->getRua()."',
+  '".$this->endereco->getBairro()."',
+  '".$this->endereco->getNumero()."',
+  '".$this->endereco->getComplemento."',
+  '".$this->endereco->getCEP()."',
+  ''
+)
+
+/*Inserção na tabela empresa*/
+INSERT INTO empresa(
+  cnpj,
+  nome_fantasia,
+  razao_social
+) VALUES (
+  '".$this->CNPJ."',
+  '".$this->nomeFantasia."',
+  '".$this->razaoSocial."'
+)
