@@ -5,7 +5,7 @@
     private $localizacao;
 
     //Contrutor da classe
-    public function __construc($terminal){
+    public function __construct($terminal){
       $this->nome = $terminal;
       $this->codigo = 1;            //Como cadastros de terminal não é o escopo do nosso grupo, simularemos os dados para o nosso projeto
       $this->localizacao = 'oeste';

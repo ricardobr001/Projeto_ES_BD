@@ -5,7 +5,7 @@
     //Atributos herdados da classe funcionário!!
 
     //Construtor da classe
-    public function __construc($codigo, $nome, $CPF, $dataNascimento, $telefone, $estado, $motivo, $periodo, $setor, $terminal, $cidade, $rua, $bairro, $CEP, $numero, $complemento){
+    public function __construct($codigo, $nome, $CPF, $dataNascimento, $telefone, $estado, $motivo, $periodo, $setor, $terminal, $cidade, $rua, $bairro, $CEP, $numero, $complemento){
       $this->codigoDoFuncionario = $codigo;
       $this->nome = $nome;
       $this->CPF = $CPF;
