@@ -12,6 +12,7 @@ CREATE TABLE funcionario(
     telefone				varchar(13) NOT NULL,
     estado					varchar(7) NOT NULL,
     motivo					text DEFAULT '',
+		cargo						varchar(13) NOT NULL,
     periodo					varchar(10)	NOT NULL,
     cidade					varchar(100) NOT NULL,
    	rua						varchar(200) NOT NULL,
