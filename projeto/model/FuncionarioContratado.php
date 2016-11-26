@@ -114,7 +114,7 @@
           '".$this->endereco->getCEP()."',
           ''
         );"))
-          die(mysqli_error());
+           die(mysqli_error($conn));
         Connection::close($conn);
         $msg = 'Funcionário cadastrado com sucesso!';
       }
