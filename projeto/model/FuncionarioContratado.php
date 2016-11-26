@@ -98,21 +98,21 @@
           cep,
           cnpj_empresa
         ) VALUES (
-          '".$this->getCodigoDoFuncionario()."',
-          '".$this->getNome()."',
-          '".$this->getCPF()."',
-          '".$this->getDataNascimento()."',
-          '".$this->getTelefone()."',
-          '".$this->getEstado()."',
-          '".$this->getMotivo()."',
-          '".$this->getPeriodo()."',
+          '".$this->codigoDoFuncionario."',
+          '".$this->nome."',
+          '".$this->CPF."',
+          '".$this->dataNascimento."',
+          '".$this->telefone."',
+          '".$this->estado."',
+          '".$this->motivo."',
+          '".$this->periodo."',
           '".$this->endereco->getCidade()."',
           '".$this->endereco->getRua()."',
           '".$this->endereco->getBairro()."',
           '".$this->endereco->getNumero()."',
           '".$this->endereco->getComplemento()."',
           '".$this->endereco->getCEP()."',
-          ''
+          '00.000.000/0000-00'
         );"))
            die(mysqli_error($conn));
         Connection::close($conn);
