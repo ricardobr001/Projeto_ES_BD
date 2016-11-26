@@ -23,7 +23,7 @@
   $CNPJ = $_POST["CNPJ"];
 
   //Todo funcionário novo cadastrado possui estado ATIVO e não possui um motivo de desligamento
-  $funcionario = new FuncionarioContratado($codigo, $nome, $CPF, $dataNascimento, $telefone, 'ATIVO', '', $periodo, $setor, $terminal, $cidade, $rua, $bairro, $CEP, $numero, $complemento);
+  $funcionario = new FuncionarioTerceirizado($codigo, $nome, $CPF, $dataNascimento, $telefone, 'ATIVO', '', $periodo, $setor, $terminal, $cidade, $rua, $bairro, $CEP, $numero, $complemento);
   $msg = $funcionario->cadastrar($CNPJ);
 
   echo $msg;

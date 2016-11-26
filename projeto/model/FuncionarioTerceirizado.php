@@ -1,5 +1,6 @@
 <?php
-  require_once dirname(__FILE__) . '/../conexao/Connection.php';
+  require_once '../conexao/Conexao.php';
+  require_once "Funcionario.php";
 
   class FuncionarioTerceirizado extends Funcionario{
     //Atributos herdados da classe funcionário!!
@@ -23,7 +24,7 @@
     public function cadastrar($CNPJ){
       $conn = Connection::open();
 
-      if(!conn){
+      if(!$conn){
         $msg = 'Problemas na conexão';
       }
       else{

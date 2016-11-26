@@ -40,7 +40,7 @@ $(document).ready(function() {
  var dados= $(this).serialize();
   $.ajax({
   type: "POST",
-  url: '../control/contratadoController.php',
+  url: '../control/terceirizadoController.php',
   data: dados ,
   success: function(data, textStatus, jqXHR)  {
                  $('#msg').html(data);
@@ -129,6 +129,7 @@ $(document).ready(function() {
                             <p><font color="RED">*</font>Nome: <input pattern="[a-zA-Z ]+" type="text" id="nome" name="nome" value="" placeholder="Ricardo Mendes Leal Junior"></p>
                             <p><font color="RED">*</font>CPF: <input pattern="[0-9.-]+" type="text" id="CPF" name="CPF" value="" size="14" maxlength="14" placeholder="429.649.048-63"></p>
                             <p><font color="RED">*</font>Data de Nascimento: <input pattern="[0-9/]+" type="text" id="dataNascimento" name="dataNascimento" size="10" maxlength="10" placeholder="dd/mm/aaaa"></p>
+                            <p><font color="RED">*</font>Telefone: <input pattern="[0-9()-]+" type="text" id="telefone" name="telefone" value="" size="13" maxlength="13" placeholder="(16)3216-9874"></p>
                             <p><font color="RED">*</font>Período:</p>
                             <input type="radio" id="periodo" name="periodo" value="MANHA"> MANHA<br>
                             <input type="radio" id="periodo" name="periodo" value="TARDE"> TARDE<br>
