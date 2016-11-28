@@ -1,6 +1,6 @@
 <?php
-  require_once '../conexao/Conexao.php';
-  require_once "Funcionario.php";
+  require_once '../conexao/conexao.php';
+  require_once "funcionario.php";
 
   class FuncionarioContratado extends Funcionario{
     private $dataEntrada;

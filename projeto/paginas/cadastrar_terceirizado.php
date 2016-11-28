@@ -136,7 +136,7 @@ $(document).ready(function() {
                             <input type="radio" id="periodo" name="periodo" value="TARDE"> TARDE<br>
                             <input type="radio" id="periodo" name="periodo" value="NOITE"> NOITE<br>
                             <input type="radio" id="periodo" name="periodo" value="MADRUGADA"> MADRUGADA<br>
-                            <br />
+                            <br/>
                             <p><font color="RED">*</font>Cidade: <input type="text" id="cidade" name="cidade" value="" placeholder="Araraquara"></p>
                             <p><font color="RED">*</font>Rua: <input type="text" id="rua" name="rua" value="" placeholder="Av. Professor Eugênio Francisco Malaman"></p>
                             <p><font color="RED">*</font>Bairro: <input type="text" id="bairro" name="bairro" value="" placeholder="Vila José Bonifácio"></p>
