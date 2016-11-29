@@ -122,6 +122,7 @@ $(document).ready(function() {
                 <div class="row">
                     <div class="col-lg-12">
                         <h1>Insira os dados</h1>
+<<<<<<< HEAD
                           <form name="cadastro" action="" method="post" onsubmit="return false;">
                             <p>Todos os campos são de preenchimento obrigatório</p>
                             <p>Não inserir caracteres acentuados</p>
@@ -133,6 +134,19 @@ $(document).ready(function() {
                             <p>Telefone: <input pattern="[0-9()-]+" type="text" id="telefone" name="telefone" value="" size="13" maxlength="13" placeholder="(16)3216-9874"></p>
                             <p>Salário: <input type="number" id="salario" name="salario" value="" min="1" placeholder="2000.00"></p>
                             <p>Período:</p>
+=======
+                        <p class="small">Os campos que possuem <font color="RED">*</font> são obrigatórios.</p>
+                        <p class="small">Não inserir caracteres acentuados</p>
+                        <br>
+                        <form name="cadastro" action="" method="post" onsubmit="return false;">                 
+                            <p><font color="RED">*</font>Código do Funcionário: <input placeholder="562262" pattern="[0-9]+" type="text" id="codigo" name="codigo" value=""></p>
+                            <p><font color="RED">*</font>Nome: <input pattern="[a-zA-Z ]+" type="text" id="nome" name="nome" value="" placeholder="Ricardo Mendes Leal Junior"></p>
+                            <p><font color="RED">*</font>CPF: <input pattern="[0-9.-]+" type="text" id="CPF" name="CPF" value="" size="14" maxlength="14" placeholder="429.649.048-63"></p>
+                            <p><font color="RED">*</font>Data de Nascimento: <input pattern="[0-9/]+" type="text" id="dataNascimento" name="dataNascimento" size="10" maxlength="10" placeholder="dd/mm/aaaa"></p>
+                            <p><font color="RED">*</font>Telefone: <input pattern="[0-9()-]+" type="text" id="telefone" name="telefone" value="" size="13" maxlength="13" placeholder="(16)3216-9874"></p>
+                            <p><font color="RED">*</font>Salário: <input type="number" id="salario" name="salario" value="" min="1" placeholder="2000.00"></p>
+                            <p><font color="RED">*</font>Período:</p>
+>>>>>>> origin/master
                             <input type="radio" id="periodo" name="periodo" value="MANHA"> MANHA<br>
                             <input type="radio" id="periodo" name="periodo" value="TARDE"> TARDE<br>
                             <input type="radio" id="periodo" name="periodo" value="NOITE"> NOITE<br>
