@@ -14,7 +14,7 @@
     private $terminal;
     private $endereco;
 
-    //Construtor da classe
+    //Construtor da classe, ja setando todos os valor para os atributos
     public function __construct($codigo, $nome, $CPF, $dataNascimento, $telefone, $estado, $motivo, $periodo, $setor, $terminal, $cidade, $rua, $bairro, $CEP, $numero, $complemento){
       $this->codigoDoFuncionario = $codigo;
       $this->nome = $nome;
@@ -28,10 +28,6 @@
       $this->terminal = new Terminal($terminal);
       $this->endereco = new Endereco($cidade, $rua, $bairro, $CEP, $numero, $complemento);
     }
-
-    /*public function getCidade(){
-      return $this->getEndereco()->getCidade();
-    }*/
 
     //Getters
     public function getCodigoDoFuncionario(){
@@ -143,7 +139,7 @@
     public function buscar($codigoDoFuncionario){
       $conn = Connection::open();
 
-      if(!conn){
+      if(!$conn){
         $msg = 'Problemas na conexão';
       }
       else{
@@ -157,7 +153,7 @@
     public function alterarDados(){
       $conn = Connection::open();
 
-      if(!conn){
+      if(!$conn){
         $msg = 'Problemas na conexão';
       }
       else{
@@ -173,11 +169,17 @@
     public function alterarStatus(){
       $conn = Connection::open();
 
-      if(!conn){
+      if(!$conn){
         $msg = 'Problemas na conexão';
       }
       else{
-      //mysqli_query($conn, /*INSTRUÇÃO MYSQL PARA ALTERAR O STATUS NO BANCO*/);
+        if(!mysqli_query($conn, "UPDATE funcionario
+          SET motivo = '".$this->motivo."',
+          estado = '".$this->estado."'
+          WHERE codigo_funcionario = '".$this->codigoDoFuncionario."';")){
+          die(mysqli_error($conn));
+          $msg = 'Funcionário não cadastrado!';
+        }
         Connection::close($conn);
         $msg = 'Status alterado com Sucesso!';
       }
@@ -189,7 +191,7 @@
     public function gerarRelatorioPorFuncao($setor){
       $conn = Connection::open();
 
-      if(!conn){
+      if(!$conn){
         $msg = 'Problemas na conexão';
       }
       else{
@@ -202,7 +204,7 @@
     public function gerarRelatorioPorTerminal($terminal){
       $conn = Connection::open();
 
-      if(!conn){
+      if(!$conn){
         $msg = 'Problemas na conexão';
       }
       else{
@@ -216,7 +218,7 @@
     public function gerarRelatorioPorFaixaSalarial($min, $max){
       $conn = Connection::open();
 
-      if(!conn){
+      if(!$conn){
         $msg = 'Problemas na conexão';
       }
       else{

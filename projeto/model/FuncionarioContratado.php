@@ -179,22 +179,6 @@
       return $msg;
     }
 
-    //Alterando o status de um funcionário no banco
-    public function alterarStatus(){
-      $conn = Connection::open();
-
-      if(!$conn){
-        $msg = 'Problemas na conexão';
-      }
-      else{
-      //mysqli_query($conn, /*INSTRUÇÃO MYSQL PARA ALTERAR O STATUS NO BANCO*/);
-        Connection::close($conn);
-        $msg = 'Status alterado com Sucesso!';
-      }
-
-      return $msg;
-    }
-
     //Gerando o relatório
     public function gerarRelatorioPorFuncao($setor){
       $conn = Connection::open();
