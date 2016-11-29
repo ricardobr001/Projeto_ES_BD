@@ -1,0 +1,18 @@
+/*Alterando dados da tabela funcionario*/
+UPDATE funcionario
+SET nome = '".$this->nome."',
+cpf = '".$this->CPF."',
+data_nascimento = '".$this->dataNascimento."',
+telefone = '".$this->telefone."',
+estado = '".$this->salario."',
+cargo = '".$this->cargo."',
+periodo = '".$this->periodo."',
+terminal = '".$this->terminal->getNome()."',
+setor = '".$this->setor."',
+cidade = '".$this->endereco->getCidade()."',
+rua = '".$this->endereco->getRua()."',
+bairro = '".$this->endereco->getBairro()."',
+numero = '".$this->endereco->getNumero()."',
+complemento = '".$this->endereco->getComplemento()."',
+cep = '".$this->endereco->getCEP()."'
+WHERE codigo_funcionario = '".$this->codigoDoFuncionario."'
