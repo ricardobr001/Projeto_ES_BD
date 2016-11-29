@@ -28,6 +28,28 @@
 </head>
 
 <body>
+  <script>
+$(document).ready(function() {
+  $('#limpar').click(function () {
+      $('#msg').html("Mensagem");
+  }
+
+              );
+
+  $('form').submit(function(){
+ var dados= $(this).serialize();
+  $.ajax({
+  type: "POST",
+  url: '../control/terceirizadoController.php',
+  data: dados ,
+  success: function(data, textStatus, jqXHR)  {
+                 $('#msg').html(data);
+              }
+});
+});
+});
+
+     </script>
 
     <div id="wrapper">
 
@@ -65,15 +87,7 @@
                      </ul>
                 </li>
                 <li>
-                  <a href="javascript:;" data-toggle="collapse" data-target="#alterar_status"><i class="fa fa-fw fa-arrows-v"></i> Alterar Status <i class="fa fa-fw fa-caret-down"></i></a>
-                     <ul id="alterar_status" class="collapse">
-                         <li>
-                             <a href="alterar_status_contratado.php">Funcionario Contratado</a>
-                         </li>
-                         <li>
-                             <a href="alterar_status_terceirizado.php">Funcionario Terceirizado</a>
-                         </li>
-                     </ul>
+                  <a href="alterar_status.php">Alterar Status</a>
                 </li>
                 <li>
                     <a href="buscar.php">Buscar</a>
@@ -116,7 +130,7 @@
                           <p>Número: <input type="number" id="numero" name="numero" value="" min="0" placeholder="346"> Complemento: <input type="number" id="complemento" name="complemento" min="0" placeholder="103"></p>
                           <p>Terminal: <input pattern="[a-zA-Z0-9]+" type="text" id="terminal" name="terminal" value="" size="1" maxlength="1" placeholder="A"></p>
                           <p>Setor: <input pattern="[a-zA-Z]+" type="text" id="setor" name="setor" value="" placeholder="Limpeza"></p>
-                          <p><font color="RED">*</font>CNPJ: <input pattern="[0-9/-.]+" type="text" id="CNPJ" name="CNPJ" size="18" maxlength="18" value="" placeholder="62.075.633/0001-16"></p>
+                          <p>CNPJ: <input pattern="[0-9/-.]+" type="text" id="CNPJ" name="CNPJ" size="18" maxlength="18" value="" placeholder="62.075.633/0001-16"></p>
 
                           <input type="submit" value="Submit">
                           <br />

@@ -87,15 +87,7 @@
                      </ul>
                 </li>
                 <li>
-                  <a href="javascript:;" data-toggle="collapse" data-target="#alterar_status"><i class="fa fa-fw fa-arrows-v"></i> Alterar Status <i class="fa fa-fw fa-caret-down"></i></a>
-                     <ul id="alterar_status" class="collapse">
-                         <li>
-                             <a href="alterar_status_contratado.php">Funcionario Contratado</a>
-                         </li>
-                         <li>
-                             <a href="alterar_status_terceirizado.php">Funcionario Terceirizado</a>
-                         </li>
-                     </ul>
+                  <a href="alterar_status.php">Alterar Status</a>
                 </li>
                 <li>
                     <a href="buscar.php">Buscar</a>
