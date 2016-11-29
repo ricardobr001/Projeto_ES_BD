@@ -136,8 +136,9 @@
         $msg = 'Problemas na conexão';
       }
       else{
-        /*IMPLEMENTAR A RECUPERAÇÃO OS DADOS NO BANCO*/
-
+        //if(!mysqli_query($conn, "SELECT * FROM funcionario WHERE codigo_funcionario = '".$this->codigoDoFuncionario."'");))
+           //die(mysqli_error($conn));
+           echo mysqli_query($conn, "SELECT * FROM funcionario WHERE codigo_funcionario = '".$this->codigoDoFuncionario."'");
       }
 
     }
@@ -150,7 +151,27 @@
         $msg = 'Problemas na conexão';
       }
       else{
-      //mysqli_query($conn, /*INSTRUÇÃO MYSQL PARA ALTERAR OS DADOS NO BANCO*/);
+        if(!mysqli_query($conn, "UPDATE funcionario
+          SET nome = '".$this->nome."',
+          cpf = '".$this->CPF."',
+          data_nascimento = '".$this->dataNascimento."',
+          telefone = '".$this->telefone."',
+          estado = '".$this->salario."',
+          cargo = '".$this->cargo."',
+          periodo = '".$this->periodo."',
+          terminal = '".$this->terminal->getNome()."',
+          setor = '".$this->setor."',
+          cidade = '".$this->endereco->getCidade()."',
+          rua = '".$this->endereco->getRua()."',
+          bairro = '".$this->endereco->getBairro()."',
+          numero = '".$this->endereco->getNumero()."',
+          complemento = '".$this->endereco->getComplemento()."',
+          cep = '".$this->endereco->getCEP()."'
+          WHERE codigo_funcionario = '".$this->codigoDoFuncionario."';")){
+          die(mysqli_error($conn));
+          $msg = 'Funcionário não cadastrado!';
+        }
+
         Connection::close($conn);
         $msg = 'Dados alterados com sucesso!';
       }

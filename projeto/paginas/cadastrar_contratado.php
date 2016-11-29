@@ -123,30 +123,31 @@ $(document).ready(function() {
                     <div class="col-lg-12">
                         <h1>Insira os dados</h1>
                           <form name="cadastro" action="" method="post" onsubmit="return false;">
-                            <p>O campo que possui <font color="RED">*</font> é obrigatório.</p>
+                            <p>Todos os campos são de preenchimento obrigatório</p>
                             <p>Não inserir caracteres acentuados</p>
-                            <p><font color="RED">*</font>Código do Funcionário: <input placeholder="562262" pattern="[0-9]+" type="text" id="codigo" name="codigo" value=""></p>
-                            <p><font color="RED">*</font>Nome: <input pattern="[a-zA-Z ]+" type="text" id="nome" name="nome" value="" placeholder="Ricardo Mendes Leal Junior"></p>
-                            <p><font color="RED">*</font>CPF: <input pattern="[0-9.-]+" type="text" id="CPF" name="CPF" value="" size="14" maxlength="14" placeholder="429.649.048-63"></p>
-                            <p><font color="RED">*</font>Data de Nascimento: <input pattern="[0-9/]+" type="text" id="dataNascimento" name="dataNascimento" size="10" maxlength="10" placeholder="dd/mm/aaaa"></p>
-                            <p><font color="RED">*</font>Telefone: <input pattern="[0-9()-]+" type="text" id="telefone" name="telefone" value="" size="13" maxlength="13" placeholder="(16)3216-9874"></p>
-                            <p><font color="RED">*</font>Salário: <input type="number" id="salario" name="salario" value="" min="1" placeholder="2000.00"></p>
-                            <p><font color="RED">*</font>Período:</p>
+                            <input id="pagina" name="pagina" value="cadastrar" style="display:none">
+                            <p>Código do Funcionário: <input placeholder="562262" pattern="[0-9]+" type="text" id="codigo" name="codigo" value=""></p>
+                            <p>Nome: <input pattern="[a-zA-Z ]+" type="text" id="nome" name="nome" value="" placeholder="Ricardo Mendes Leal Junior"></p>
+                            <p>CPF: <input pattern="[0-9.-]+" type="text" id="CPF" name="CPF" value="" size="14" maxlength="14" placeholder="429.649.048-63"></p>
+                            <p>Data de Nascimento: <input pattern="[0-9/]+" type="text" id="dataNascimento" name="dataNascimento" size="10" maxlength="10" placeholder="dd/mm/aaaa"></p>
+                            <p>Telefone: <input pattern="[0-9()-]+" type="text" id="telefone" name="telefone" value="" size="13" maxlength="13" placeholder="(16)3216-9874"></p>
+                            <p>Salário: <input type="number" id="salario" name="salario" value="" min="1" placeholder="2000.00"></p>
+                            <p>Período:</p>
                             <input type="radio" id="periodo" name="periodo" value="MANHA"> MANHA<br>
                             <input type="radio" id="periodo" name="periodo" value="TARDE"> TARDE<br>
                             <input type="radio" id="periodo" name="periodo" value="NOITE"> NOITE<br>
                             <input type="radio" id="periodo" name="periodo" value="MADRUGADA"> MADRUGADA<br>
                             <br />
-                            <p><font color="RED">*</font>Cidade: <input type="text" id="cidade" name="cidade" value="" placeholder="Araraquara"></p>
-                            <p><font color="RED">*</font>Rua: <input type="text" id="rua" name="rua" value="" placeholder="Av. Professor Eugênio Francisco Malaman"></p>
-                            <p><font color="RED">*</font>Bairro: <input type="text" id="bairro" name="bairro" value="" placeholder="Vila José Bonifácio"></p>
-                            <p><font color="RED">*</font>CEP: <input pattern="[0-9-]+" type="text" id="CEP" name="CEP" value="" size="9" maxlength="9" placeholder="14802-080"></p>
-                            <p><font color="RED">*</font>Número: <input type="number" id="numero" name="numero" value="" min="0" placeholder="346"> Complemento: <input type="number" id="complemento" name="complemento" min="0" placeholder="103"></p>
-                            <p><font color="RED">*</font>Terminal: <input pattern="[a-zA-Z0-9]+" type="text" id="terminal" name="terminal" value="" size="1" maxlength="1" placeholder="A"></p>
-                            <p><font color="RED">*</font>Setor: <input type="text" id="setor" name="setor" value="" placeholder="Limpeza"></p>
-                            <p><font color="RED">*</font>Data de Entrada: <input pattern="[0-9/]+" type="text" id="dataEntrada" name="dataEntrada" size="10" maxlength="10" placeholder="dd/mm/aaaa"></p>
-                            <p><font color="RED">*</font>Quantidade de horas semanais: <input type="number" id="qtddHorasTrabalhadas" name="qtddHorasTrabalhadas" value="" min="1" placeholder="40"></p>
-                            <p><font color="RED">*</font>Cargo:</p>
+                            <p>Cidade: <input type="text" id="cidade" name="cidade" value="" placeholder="Araraquara"></p>
+                            <p>Rua: <input type="text" id="rua" name="rua" value="" placeholder="Av. Professor Eugenio Francisco Malaman"></p>
+                            <p>Bairro: <input type="text" id="bairro" name="bairro" value="" placeholder="Vila Jose Bonifacio"></p>
+                            <p>CEP: <input pattern="[0-9-]+" type="text" id="CEP" name="CEP" value="" size="9" maxlength="9" placeholder="14802-080"></p>
+                            <p>Número: <input type="number" id="numero" name="numero" value="" min="0" placeholder="346"> Complemento: <input type="number" id="complemento" name="complemento" min="0" placeholder="103"></p>
+                            <p>Terminal: <input pattern="[a-zA-Z0-9]+" type="text" id="terminal" name="terminal" value="" size="1" maxlength="1" placeholder="A"></p>
+                            <p>Setor: <input type="text" id="setor" name="setor" value="" placeholder="Limpeza"></p>
+                            <p>Data de Entrada: <input pattern="[0-9/]+" type="text" id="dataEntrada" name="dataEntrada" size="10" maxlength="10" placeholder="dd/mm/aaaa"></p>
+                            <p>Quantidade de horas semanais: <input type="number" id="qtddHorasTrabalhadas" name="qtddHorasTrabalhadas" value="" min="1" placeholder="40"></p>
+                            <p>Cargo:</p>
                             <input type="radio" id="cargo" name="cargo" value="COMUM"> COMUM<br>
                             <input type="radio" id="cargo" name="cargo" value="GERENTE"> GERENTE<br>
                             <input type="submit" name="submit" value="Enviar"/>
