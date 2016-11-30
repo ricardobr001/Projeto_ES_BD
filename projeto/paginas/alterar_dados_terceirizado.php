@@ -58,7 +58,7 @@ $(document).ready(function() {
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="../index.html">
-                        Gerência de funcionários
+                        Gerência de funcionárioss
                     </a>
                 </li>
                 <li>
