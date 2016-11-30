@@ -1,5 +1,5 @@
 <?php
-  require_once '../conexao/Conexao.php';
+  require_once '../conexao/conexao.php';
 
   class Empresa{
     private $CNPJ;
@@ -43,7 +43,7 @@
       $conn = Connection::open();
 
       if(!$conn){
-        $msg = 'Problemas na conexão';
+        $msg = '<div class="alert alert-danger" role="alert">Problemas na conexão</div>';
       }
       else{
         mysqli_query($conn, "INSERT INTO empresa(
@@ -56,7 +56,7 @@
           '".$this->razaoSocial."'
         )");
         Connection::close($conn);
-        $msg = 'Empresa cadastrada com sucesso!';
+        $msg = '<div class="alert alert-success" role="alert">Empresa cadastrada com sucesso!</div>';
       }
 
       return $msg;
