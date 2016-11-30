@@ -59,7 +59,7 @@
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="../index.html">
-                        Projeto
+                       Gerência de funcionários
                     </a>
                 </li>
                 <li>
