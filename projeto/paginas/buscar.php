@@ -170,201 +170,37 @@
 							<h1 id="msg" class="col-sm-12"></h1>
 						</form>
 
-						<!--<form name="buscaNome" action="" method="post" onsubmit="return false;">
-							<input id="pagina" name="pagina" value="buscarNome" style="display:none">
-
-							<div class="form-group">
-								<label for="nome" class="control-label">Por nome:</label>
-								<div class="input-group">
-									<input
-										class="form-control"
-										pattern="[0-9.-]+"
-										type="text"
-										id="nome"
-										name="nome"
-									>
-									<span class="input-group-btn">
-										<button
-											type="submit"
-											value="Submit"
-											class="btn btn-default"
-											type="button"
-											aria-hidden="true"
-										>
-											<span class="glyphicon glyphicon-search"></span>
-										</button>
-									</span>
-								</div>
+						<div class="container col-sm-12">
+							<table class="table table-hover table-striped">
+								<thead>
+								<tr>
+									<th>Firstname</th>
+									<th>Lastname</th>
+									<th>Email</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td>John</td>
+									<td>Doe</td>
+									<td>john@example.com</td>
+									<td>
+										<button class="btn">alterar</button>
+									</td>
+								</tr>
+								<tr>
+									<td>Mary</td>
+									<td>Moe</td>
+									<td>mary@example.com</td>
+								</tr>
+								<tr>
+									<td>July</td>
+									<td>Dooley</td>
+									<td>july@example.com</td>
+								</tr>
+								</tbody>
+							</table>
 							</div>
-						</form>
-
-						<form name="buscaCargo" action="" method="post" onsubmit="return false;">
-							<input id="pagina" name="pagina" value="buscarCargo" style="display:none">
-
-							<div class="form-group">
-								<label for="cargo" class="control-label">Por cargo:</label>
-								<div class="input-group">
-									<input
-										class="form-control"
-										pattern="[0-9.-]+"
-										type="text"
-										id="cargo"
-										name="cargo"
-									>
-									<span class="input-group-btn">
-										<button
-											type="submit"
-											value="Submit"
-											class="btn btn-default"
-											type="button"
-											aria-hidden="true"
-										>
-											<span class="glyphicon glyphicon-search"></span>
-										</button>
-									</span>
-								</div>
-							</div>
-						</form>
-
-						<form name="buscaTerminal" action="" method="post" onsubmit="return false;">
-							<input id="pagina" name="pagina" value="buscarCargo" style="display:none">
-
-							<div class="form-group">
-								<label for="terminal" class="control-label">Por terminal:</label>
-								<div class="input-group">
-									<input
-										class="form-control"
-										pattern="[0-9.-]+"
-										type="text"
-										id="terminal"
-										name="terminal"
-									>
-									<span class="input-group-btn">
-										<button
-											type="submit"
-											value="Submit"
-											class="btn btn-default"
-											type="button"
-											aria-hidden="true"
-										>
-											<span class="glyphicon glyphicon-search"></span>
-										</button>
-									</span>
-								</div>
-							</div>
-						</form>
-
-						<form name="buscaCidade" action="" method="post" onsubmit="return false;">
-							<input id="pagina" name="pagina" value="buscarCidade" style="display:none">
-
-							<div class="form-group">
-								<label for="cidade" class="control-label">Por cidade:</label>
-								<div class="input-group">
-									<input
-										class="form-control"
-										pattern="[0-9.-]+"
-										type="text"
-										id="cidade"
-										name="cidade"
-									>
-									<span class="input-group-btn">
-										<button
-											type="submit"
-											value="Submit"
-											class="btn btn-default"
-											type="button"
-											aria-hidden="true"
-										>
-											<span class="glyphicon glyphicon-search"></span>
-										</button>
-									</span>
-								</div>
-							</div>
-						</form>
-
-						<form name="buscaSalario" action="" method="post" onsubmit="return false;">
-							<input id="pagina" name="pagina" value="buscarSalario" style="display:none">
-
-							<div class="form-group">
-								<label for="salario" class="control-label">Por faixa salarial (Funcionários ativos):</label>
-								<div class="input-group">
-									<input
-										class="form-control"
-										pattern="[0-9.-]+"
-										type="text"
-										id="salario"
-										name="salario"
-									>
-									<span class="input-group-btn">
-										<button
-											type="submit"
-											value="Submit"
-											class="btn btn-default"
-											type="button"
-											aria-hidden="true"
-										>
-											<span class="glyphicon glyphicon-search"></span>
-										</button>
-									</span>
-								</div>
-							</div>
-						</form>
-
-						<form name="buscaFuncao" action="" method="post" onsubmit="return false;">
-							<input id="pagina" name="pagina" value="buscarFuncao" style="display:none">
-
-							<div class="form-group">
-								<label for="funcao" class="control-label">Por função:</label>
-								<div class="input-group">
-									<input
-										class="form-control"
-										pattern="[0-9.-]+"
-										type="text"
-										id="funcao"
-										name="funcao"
-									>
-									<span class="input-group-btn">
-										<button
-											type="submit"
-											value="Submit"
-											class="btn btn-default"
-											type="button"
-											aria-hidden="true"
-										>
-											<span class="glyphicon glyphicon-search"></span>
-										</button>
-									</span>
-								</div>
-							</div>
-						</form>
-
-						<form name="buscaPeriodo" action="" method="post" onsubmit="return false;">
-							<input id="pagina" name="pagina" value="buscarPeriodo" style="display:none">
-
-							<div class="form-group">
-								<label for="periodo" class="control-label">Por período:</label>
-								<div class="input-group">
-									<input
-										class="form-control"
-										pattern="[0-9.-]+"
-										type="text"
-										id="periodo"
-										name="periodo"
-									>
-									<span class="input-group-btn">
-										<button
-											type="submit"
-											value="Submit"
-											class="btn btn-default"
-											type="button"
-											aria-hidden="true"
-										>
-											<span class="glyphicon glyphicon-search"></span>
-										</button>
-									</span>
-								</div>
-							</div>
-						</form>                                                                                                                        -->
 
 						<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
 					</div>
