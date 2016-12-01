@@ -121,23 +121,24 @@
 
                             <div class="form-group col-sm-12">
                                 <label for="nome" class="control-label">Nome:</label>
-                                <input 
-                                    type="text" 
-                                    id="nome" 
-                                    name="nome" 
-                                    class="form-control" 
+                                <input
+                                    pattern="[a-zA-Z ]+"
+                                    type="text"
+                                    id="nome"
+                                    name="nome"
+                                    class="form-control"
                                     required
                                 >
-                            </div>   
+                            </div>
 
                             <div class="form-group col-sm-4">
-                                <label for="CPF" class="control-label">CPF:</label>           
-                                <input 
+                                <label for="CPF" class="control-label">CPF:</label>
+                                <input
                                     pattern="[0-9.-]+"
-                                    type="text" 
-                                    id="CPF" 
-                                    name="CPF" 
-                                    class="form-control" 
+                                    type="text"
+                                    id="CPF"
+                                    name="CPF"
+                                    class="form-control"
                                     placeholder="000.000.000-00"
                                     maxlength="14"
                                     required
@@ -146,123 +147,123 @@
 
                             <div class="form-group col-sm-4">
                                 <label for="dataNascimento">Data de nascimento:</label>
-                                <input 
-                                    type="date" 
-                                    id="dataNascimento" 
-                                    name="dataNascimento" 
-                                    class="form-control" 
+                                <input
+                                    type="date"
+                                    id="dataNascimento"
+                                    name="dataNascimento"
+                                    class="form-control"
                                     required
                                 >
                             </div>
 
                             <div class="form-group col-sm-4">
                                 <label for="telefone">Telefone:</label>
-                                <input 
-                                    type="tel" 
-                                    id="telefone" 
-                                    name="telefone" 
-                                    class="form-control" 
-                                    placeholder="(00) 00000-0000"
+                                <input
+                                    type="tel"
+                                    id="telefone"
+                                    name="telefone"
+                                    class="form-control"
+                                    placeholder="(00)00000-0000"
                                 >
-                            </div> 
+                            </div>
 
                             <h3>Endereço</h3>
 
                             <div class="form-group col-sm-4">
                                 <label for="endereco">Endereço:</label>
-                                <input 
-                                    type="text" 
-                                    id="endereco" 
-                                    name="endereco" 
-                                    class="form-control" 
+                                <input
+                                    type="text"
+                                    id="endereco"
+                                    name="endereco"
+                                    class="form-control"
                                     placeholder="Ex: Rua Castelo Branco"
                                 >
                             </div>
 
                             <div class="form-group col-sm-2">
                                 <label for="numero">Número:</label>
-                                <input 
-                                    type="text" 
-                                    id="numero" 
-                                    name="numero" 
-                                    class="form-control" 
+                                <input
+                                    type="text"
+                                    id="numero"
+                                    name="numero"
+                                    class="form-control"
                                 >
                             </div>
 
                             <div class="form-group col-sm-2">
                                 <label for="complemento">Complemento:</label>
-                                <input 
-                                    type="text" 
-                                    id="complemento" 
-                                    name="complemento" 
-                                    class="form-control" 
+                                <input
+                                    type="text"
+                                    id="complemento"
+                                    name="complemento"
+                                    class="form-control"
                                 >
                             </div>
 
                             <div class="form-group col-sm-4">
                                 <label for="bairro">Bairro:</label>
-                                <input 
-                                    type="text" 
-                                    id="bairro" 
-                                    name="bairro" 
-                                    class="form-control" 
+                                <input
+                                    type="text"
+                                    id="bairro"
+                                    name="bairro"
+                                    class="form-control"
                                 >
                             </div>
 
                             <div class="form-group col-sm-4">
                                 <label for="cidade">Cidade:</label>
-                                <input 
-                                    type="text" 
-                                    id="cidade" 
-                                    name="cidade" 
-                                    class="form-control" 
+                                <input
+                                    type="text"
+                                    id="cidade"
+                                    name="cidade"
+                                    class="form-control"
                                     required
                                 >
                             </div>
 
                             <div class="form-group col-sm-4">
                                 <label for="estado">Estado:</label>
-                                <input 
-                                    type="text" 
-                                    id="estado" 
-                                    name="estado" 
-                                    class="form-control" 
+                                <input
+                                    type="text"
+                                    id="estado"
+                                    name="estado"
+                                    class="form-control"
                                 >
                             </div>
 
                              <div class="form-group col-sm-4">
                                 <label for="CEP">CEP:</label>
-                                <input 
-                                    type="text" 
-                                    id="CEP" 
-                                    name="CEP" 
-                                    class="form-control" 
+                                <input
+                                    type="text"
+                                    id="CEP"
+                                    name="CEP"
+                                    class="form-control"
                                     pattern="[0-9-]+"
                                     placeholder="00000-000"
                                     maxlength="9"
                                 >
                             </div>
-                            
+
                             <h3>Informações de contrato</h3>
 
                             <div class="form-group col-sm-4">
                                 <label for="dataEntrada">Data de entrada:</label>
-                                <input 
-                                    type="date" 
-                                    id="dataEntrada" 
-                                    name="dataEntrada" 
-                                    class="form-control" 
+                                <input
+                                    type="date"
+                                    id="dataEntrada"
+                                    name="dataEntrada"
+                                    class="form-control"
                                     required
                                 >
                             </div>
 
                             <div class="form-group col-sm-4">
                                 <label for="qtddHorasTrabalhadas">Horas trabalhadas semanalmente:</label>
-                                <input 
-                                    type="text" 
-                                    id="qtddHorasTrabalhadas" 
-                                    name="qtddHorasTrabalhadas" 
-                                    class="form-control" 
+                                <input
+                                    type="text"
+                                    id="qtddHorasTrabalhadas"
+                                    name="qtddHorasTrabalhadas"
+                                    class="form-control"
                                     placeholder="40"
                                 >
                             </div>
@@ -270,13 +271,13 @@
                             <div class="form-group col-sm-4">
                                 <label for="salario">Salário:</label>
                                 <div class="input-group">
-                                   
+
                                     <span class="input-group-addon">R$</span>
-                                    <input 
-                                        type="text" 
+                                    <input
+                                        type="text"
                                         id="salario"
                                         name="salario"
-                                        class="form-control" 
+                                        class="form-control"
                                         aria-label="Amount (to the nearest dollar)"
                                         required
                                     >
@@ -286,28 +287,28 @@
 
                             <div class="form-group col-sm-4">
                                 <label for="setor">Setor:</label>
-                                <input 
-                                    type="text" 
-                                    id="setor" 
-                                    name="setor" 
-                                    class="form-control" 
-                                >
+                                <select class="form-control" id="setor" name="setor" class="form-control">
+                                    <option>Financeiro</option>
+                                    <option>Limpeza</option>
+                                    <option>Seguranca</option>
+                                    <option>Informacoes</option>
+                                </select>
                             </div>
 
                             <div class="form-group col-sm-2">
                                 <label for="terminal">Terminal:</label>
-                                <input 
-                                    type="text" 
-                                    id="terminal" 
-                                    name="terminal" 
-                                    class="form-control" 
+                                <input
+                                    type="text"
+                                    id="terminal"
+                                    name="terminal"
+                                    class="form-control"
                                 >
                             </div>
 
                             <div class="form-group col-sm-2">
                                 <label for="periodo">Período:</label>
                                 <select class="form-control" id="periodo" name="periodo" class="form-control">
-                                    <option>Manhã</option>
+                                    <option>Manha</option>
                                     <option>Tarde</option>
                                     <option>Noite</option>
                                     <option>Madrugada</option>
@@ -317,12 +318,12 @@
                             <div class="col-sm-4">
                                 <label>Cargo:</label>
                                 <div class="radio">
-                                    
+
                                     <label>
                                         <input type="radio" id="cargo" name="cargo" value="COMUM" checked>
-                                        Comum   
+                                        Comum
                                     </label>
-                                    
+
                                     <label>
                                         <input type="radio" id="cargo" name="cargo" value="GERENTE">
                                         Gerente

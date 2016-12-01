@@ -6,8 +6,8 @@
     //Atributos herdados da classe funcionário!!
 
     //Construtor da classe
-    public function __construct($codigo, $nome, $CPF, $dataNascimento, $telefone, $estado, $motivo, $periodo, $setor, $terminal, $cidade, $rua, $bairro, $CEP, $numero, $complemento){
-      $this->codigoDoFuncionario = $codigo;
+    public function __construct($nome, $CPF, $dataNascimento, $telefone, $estado, $motivo, $periodo, $setor, $terminal, $cidade, $logradouro, $bairro, $CEP, $numero, $complemento){
+      //$this->codigoDoFuncionario = $codigo;
       $this->nome = $nome;
       $this->CPF = $CPF;
       $this->dataNascimento = $dataNascimento;
@@ -17,7 +17,7 @@
       $this->periodo = $periodo;
       $this->setor = $setor;
       $this->terminal = new Terminal($terminal);
-      $this->endereco = new Endereco($cidade, $rua, $bairro, $CEP, $numero, $complemento);
+      $this->logradouro = new Endereco($cidade, $logradouro, $bairro, $CEP, $numero, $complemento);
     }
 
     //Salvando os dados da classe no banco
@@ -25,11 +25,13 @@
       $conn = Connection::open();
 
       if(!$conn){
-        $msg = 'Problemas na conexão';
+        $msg = '
+            <div class="alert alert-danger">
+                Erro ao estabelecer conexão ao banco de dados.
+            </div>';
       }
       else{
         if(!mysqli_query($conn, "INSERT INTO funcionario(
-          codigo_funcionario,
           nome,
           cpf,
           data_nascimento,
@@ -41,14 +43,13 @@
           terminal,
           setor,
           cidade,
-          rua,
+          logradouro,
           bairro,
           numero,
           complemento,
           cep,
           cnpj_empresa
         ) VALUES (
-          '".$this->codigoDoFuncionario."',
           '".$this->nome."',
           '".$this->CPF."',
           '".$this->dataNascimento."',
@@ -59,17 +60,20 @@
           '".$this->periodo."',
           '".$this->terminal->getNome()."',
           '".$this->setor."',
-          '".$this->endereco->getCidade()."',
-          '".$this->endereco->getRua()."',
-          '".$this->endereco->getBairro()."',
-          '".$this->endereco->getNumero()."',
-          '".$this->endereco->getComplemento()."',
-          '".$this->endereco->getCEP()."',
+          '".$this->logradouro->getCidade()."',
+          '".$this->logradouro->getLogradouro()."',
+          '".$this->logradouro->getBairro()."',
+          '".$this->logradouro->getNumero()."',
+          '".$this->logradouro->getComplemento()."',
+          '".$this->logradouro->getCEP()."',
           '".$CNPJ."'
         );"))
            die(mysqli_error($conn));
         Connection::close($conn);
-        $msg = 'Funcionário cadastrado com sucesso!';
+        $msg = '
+            <div class="alert alert-success">
+                Funcionário cadastrado com sucesso!
+            </div>';
       }
 
       return $msg;

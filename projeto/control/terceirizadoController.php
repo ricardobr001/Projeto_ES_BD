@@ -12,14 +12,13 @@
 
   switch ($pagina){
     case 'cadastrar':
-      $codigo = $_POST["codigo"];
       $nome = $_POST["nome"];
       $CPF = $_POST["CPF"];
       $dataNascimento = $_POST["dataNascimento"];
       $telefone = $_POST["telefone"];
       $periodo = $_POST["periodo"];
       $cidade = $_POST["cidade"];
-      $rua = $_POST["rua"];
+      $endereco = $_POST["endereco"];
       $bairro = $_POST["bairro"];
       $CEP = $_POST["CEP"];
       $numero = $_POST["numero"];
@@ -29,21 +28,20 @@
       $CNPJ = $_POST["CNPJ"];
 
       //Todo funcionário novo cadastrado possui estado ATIVO e não possui um motivo de desligamento
-      $funcionario = new FuncionarioTerceirizado($codigo, $nome, $CPF, $dataNascimento, $telefone, 'ATIVO', '', $periodo, $setor, $terminal, $cidade, $rua, $bairro, $CEP, $numero, $complemento);
+      $funcionario = new FuncionarioTerceirizado($nome, $CPF, $dataNascimento, $telefone, 'ATIVO', '', $periodo, $setor, $terminal, $cidade, $endereco, $bairro, $CEP, $numero, $complemento);
       $msg = $funcionario->cadastrar($CNPJ);
 
       echo $msg;
     break;
 
     case 'alterar_dados':
-      $codigo = $_POST["codigo"];
       $nome = $_POST["nome"];
       $CPF = $_POST["CPF"];
       $dataNascimento = $_POST["dataNascimento"];
       $telefone = $_POST["telefone"];
       $periodo = $_POST["periodo"];
       $cidade = $_POST["cidade"];
-      $rua = $_POST["rua"];
+      $endereco = $_POST["endereco"];
       $bairro = $_POST["bairro"];
       $CEP = $_POST["CEP"];
       $numero = $_POST["numero"];
@@ -53,7 +51,7 @@
       $CNPJ = $_POST["CNPJ"];
 
       //Todo funcionário novo cadastrado possui estado ATIVO e não possui um motivo de desligamento
-      $funcionario = new FuncionarioTerceirizado($codigo, $nome, $CPF, $dataNascimento, $telefone, 'ATIVO', '', $periodo, $setor, $terminal, $cidade, $rua, $bairro, $CEP, $numero, $complemento);
+      $funcionario = new FuncionarioTerceirizado($nome, $CPF, $dataNascimento, $telefone, 'ATIVO', '', $periodo, $setor, $terminal, $cidade, $endereco, $bairro, $CEP, $numero, $complemento);
       $msg = $funcionario->cadastrar($CNPJ);
 
       echo $msg;
