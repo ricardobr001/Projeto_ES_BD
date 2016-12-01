@@ -115,44 +115,242 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1>Campos que podem ser alterados</h1>
-                        <form>
+                        <p class="small">Os campos que possuem (*) são obrigatórios. Não insira caracteres acentuados.</p>
+                        <form name="cadastro" action="" method="post" onsubmit="return false;">
                           <input id="pagina" name="pagina" value="alterar_dados" style="display:none">
-                          <p>Todos os campos são de preenchimento obrigatório</p>
-                          <p>Não inserir caracteres acentuados</p>
-                          <p>Código do Funcionário que será alterado: <input placeholder="562262" pattern="[0-9]+" type="text" id="codigo" name="codigo" value=""></p>
-                          <p>Nome: <input pattern="[a-zA-Z ]+" type="text" id="nome" name="nome" value="" placeholder="Ricardo Mendes Leal Junior"></p>
-                          <p>CPF: <input pattern="[0-9.-]+" type="text" id="CPF" name="CPF" value="" size="14" maxlength="14" placeholder="429.649.048-63"></p>
-                          <p>Data de Nascimento: <input pattern="[0-9/]+" type="text" id="dataNascimento" name="dataNascimento" size="10" maxlength="10" placeholder="dd/mm/aaaa"></p>
-                          <p>Telefone: <input pattern="[0-9()-]+" type="text" id="telefone" name="telefone" value="" size="13" maxlength="13" placeholder="(16)3216-9874"></p>
-                          <p>Salário: <input type="number" id="salario" name="salario" value="" min="1" placeholder="2000.00"></p>
-                          <p>Período:</p>
-                          <input type="radio" id="periodo" name="periodo" value="MANHA"> MANHA<br>
-                          <input type="radio" id="periodo" name="periodo" value="TARDE"> TARDE<br>
-                          <input type="radio" id="periodo" name="periodo" value="NOITE"> NOITE<br>
-                          <input type="radio" id="periodo" name="periodo" value="MADRUGADA"> MADRUGADA<br>
-                          <br />
-                          <p>Cidade: <input type="text" id="cidade" name="cidade" value="" placeholder="Araraquara"></p>
-                          <p>Rua: <input type="text" id="rua" name="rua" value="" placeholder="Av. Professor Eugenio Francisco Malaman"></p>
-                          <p>Bairro: <input type="text" id="bairro" name="bairro" value="" placeholder="Vila Jose Bonifacio"></p>
-                          <p>CEP: <input pattern="[0-9-]+" type="text" id="CEP" name="CEP" value="" size="9" maxlength="9" placeholder="14802-080"></p>
-                          <p>Número: <input type="number" id="numero" name="numero" value="" min="0" placeholder="346"> Complemento: <input type="number" id="complemento" name="complemento" min="0" placeholder="103"></p>
-                          <p>Terminal: <input pattern="[a-zA-Z0-9]+" type="text" id="terminal" name="terminal" value="" size="1" maxlength="1" placeholder="A"></p>
-                          <p>Setor: <input pattern="[a-zA-Z]+" type="text" id="setor" name="setor" value="" placeholder="Limpeza"></p>
-                          <p>Quantidade de horas semanais: <input type="number" id="qtddHorasTrabalhadas" name="qtddHorasTrabalhadas" value="" min="1" placeholder="40"></p>
-                          <p>Cargo:</p>
-                          <input type="radio" id="cargo" name="cargo" value="COMUM"> COMUM<br>
-                          <input type="radio" id="cargo" name="cargo" value="GERENTE"> GERENTE<br>
-                          <input type="submit" name="submit" value="Enviar"/>
-                            <input type="reset" id="limpar" name="limpar" value="Novo"/>
-                          <br />
-                          <br />
-                          <h1 id="msg"></h1>
-                          <br />
-                          <br />
+
+                          <h3>Informações básicas</h3>
+
+                          <div class="form-group col-sm-12">
+                              <label for="nome" class="control-label">*Nome:</label>
+                              <input
+                                  type="text"
+                                  id="nome"
+                                  name="nome"
+                                  class="form-control"
+                                  required
+                              >
+                          </div>
+
+                          <div class="form-group col-sm-4">
+                              <label for="CPF" class="control-label">*CPF:</label>
+                              <input
+                                  pattern="[0-9.-]+"
+                                  type="text"
+                                  id="CPF"
+                                  name="CPF"
+                                  class="form-control"
+                                  placeholder="000.000.000-00"
+                                  maxlength="14"
+                                  required
+                              >
+                          </div>
+
+                          <div class="form-group col-sm-4">
+                              <label for="dataNascimento">*Data de nascimento:</label>
+                              <input
+                                  type="date"
+                                  id="dataNascimento"
+                                  name="dataNascimento"
+                                  class="form-control"
+                                  required
+                              >
+                          </div>
+
+                          <div class="form-group col-sm-4">
+                              <label for="telefone">Telefone:</label>
+                              <input
+                                  type="tel"
+                                  id="telefone"
+                                  name="telefone"
+                                  class="form-control"
+                                  placeholder="(00)00000-0000"
+                              >
+                          </div>
+
+                          <h3>Endereço</h3>
+
+                          <div class="form-group col-sm-4">
+                              <label for="endereco">*Endereço:</label>
+                              <input
+                                  type="text"
+                                  id="endereco"
+                                  name="endereco"
+                                  class="form-control"
+                                  placeholder="Ex: Rua Castelo Branco"
+                                  required
+                              >
+                          </div>
+
+                          <div class="form-group col-sm-2">
+                              <label for="numero">*Número:</label>
+                              <input
+                                  type="text"
+                                  id="numero"
+                                  name="numero"
+                                  class="form-control"
+                                  required
+                              >
+                          </div>
+
+                          <div class="form-group col-sm-2">
+                              <label for="complemento">Complemento:</label>
+                              <input
+                                  type="text"
+                                  id="complemento"
+                                  name="complemento"
+                                  class="form-control"
+                              >
+                          </div>
+
+                          <div class="form-group col-sm-4">
+                              <label for="bairro">*Bairro:</label>
+                              <input
+                                  type="text"
+                                  id="bairro"
+                                  name="bairro"
+                                  class="form-control"
+                                  required
+                              >
+                          </div>
+
+                          <div class="form-group col-sm-4">
+                              <label for="cidade">*Cidade:</label>
+                              <input
+                                  type="text"
+                                  id="cidade"
+                                  name="cidade"
+                                  class="form-control"
+                                  required
+                              >
+                          </div>
+
+                          <div class="form-group col-sm-4">
+                              <label for="estado">*Estado:</label>
+                              <input
+                                  type="text"
+                                  id="estado"
+                                  name="estado"
+                                  class="form-control"
+                                  required
+                              >
+                          </div>
+
+                           <div class="form-group col-sm-4">
+                              <label for="CEP">CEP:</label>
+                              <input
+                                  type="text"
+                                  id="CEP"
+                                  name="CEP"
+                                  class="form-control"
+                                  pattern="[0-9-]+"
+                                  placeholder="00000-000"
+                                  maxlength="9"
+                              >
+                          </div>
+
+                          <h3>Informações de contrato</h3>
+
+                          <div class="form-group col-sm-4">
+                              <label for="dataEntrada">*Data de entrada:</label>
+                              <input
+                                  type="date"
+                                  id="dataEntrada"
+                                  name="dataEntrada"
+                                  class="form-control"
+                                  required
+                              >
+                          </div>
+
+                          <div class="form-group col-sm-4">
+                              <label for="qtddHorasTrabalhadas">Horas trabalhadas semanalmente:</label>
+                              <input
+                                  type="number"
+                                  value="40"
+                                  min="0"
+                                  max="100"
+                                  step="10"
+                                  id="qtddHorasTrabalhadas"
+                                  name="qtddHorasTrabalhadas"
+                                  class="form-control"
+                              >
+                          </div>
+
+                          <div class="form-group col-sm-4">
+                              <label for="salario">Salário:</label>
+                              <div class="input-group">
+
+                                  <span class="input-group-addon">R$</span>
+                                  <input
+                                      type="text"
+                                      id="salario"
+                                      name="salario"
+                                      class="form-control"
+                                  >
+                                  <span class="input-group-addon">,00</span>
+                              </div>
+                          </div>
+
+                          <div class="form-group col-sm-4">
+                              <label for="setor">Setor:</label>
+                              <select class="form-control" id="setor" name="setor" class="form-control">
+                                  <option>Financeiro</option>
+                                  <option>Limpeza</option>
+                                  <option>Seguranca</option>
+                                  <option>Informacoes</option>
+                              </select>
+                          </div>
+
+                          <div class="form-group col-sm-2">
+                              <label for="terminal">Terminal:</label>
+                              <select class="form-control" id="terminal" name="terminal" class="form-control">
+                                  <option>A</option>
+                                  <option>B</option>
+                                  <option>C</option>
+                                  <option>D</option>
+                                  <option>E</option>
+                              </select>
+                          </div>
+
+                          <div class="form-group col-sm-2">
+                              <label for="periodo">Período:</label>
+                              <select class="form-control" id="periodo" name="periodo" class="form-control">
+                                  <option>Manha</option>
+                                  <option>Tarde</option>
+                                  <option>Noite</option>
+                                  <option>Madrugada</option>
+                              </select>
+                          </div>
+
+                          <div class="col-sm-4">
+                              <label>Cargo:</label>
+                              <div class="radio">
+
+                                  <label>
+                                      <input type="radio" id="cargo" name="cargo" value="COMUM" checked>
+                                      Comum
+                                  </label>
+
+                                  <label>
+                                      <input type="radio" id="cargo" name="cargo" value="GERENTE">
+                                      Gerente
+                                  </label>
+                              </div>
+                          </div>
+
+                          <p class="col-sm-12">
+                              <input type="submit" name="submit" value="Enviar" class="btn btn-primary btn-md"/>
+                              <input type="reset" id="limpar" name="limpar" value="Limpar" class="btn btn-danger btn-md"/>
+                          </p>
+
+                          <h1 id="msg" class="col-sm-12"></h1>
+
                         </form>
-                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
+
+
                     </div>
                 </div>
+                <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
             </div>
         </div>
         <!-- /#page-content-wrapper -->
