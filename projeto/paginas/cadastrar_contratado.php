@@ -319,12 +319,12 @@
                                 <div class="radio">
                                     
                                     <label>
-                                        <input type="radio" id="cargo" name="cargo" value="COMUM" cheked>
+                                        <input type="radio" id="cargo" name="cargo" value="COMUM" checked>
                                         Comum   
                                     </label>
                                     
                                     <label>
-                                        <input type="radio" id="cargo" name="cargo" value="GERENTE" cheked>
+                                        <input type="radio" id="cargo" name="cargo" value="GERENTE">
                                         Gerente
                                     </label>
                                 </div>
