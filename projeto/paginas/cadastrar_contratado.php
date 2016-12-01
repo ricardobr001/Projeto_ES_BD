@@ -284,7 +284,6 @@
                                         id="salario"
                                         name="salario"
                                         class="form-control" 
-                                        aria-label="Amount (to the nearest dollar)"
                                     >
                                     <span class="input-group-addon">,00</span>
                                 </div>
