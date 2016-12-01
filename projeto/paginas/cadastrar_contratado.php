@@ -112,15 +112,15 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1>Insira os dados</h1>
-                        <p class="small">Todos os campos são de preenchimento obrigatório. Não insira caracteres acentuados.</p>
+                        <h1>Cadastro de funcionários contratados</h1>
+                        <p class="small">Os campos que possuem (*) são obrigatórios. Não insira caracteres acentuados.</p>
                         <form name="cadastro" action="" method="post" onsubmit="return false;">
                             <input id="pagina" name="pagina" value="cadastrar" style="display:none">
 
                             <h3>Informações básicas</h3>
 
                             <div class="form-group col-sm-12">
-                                <label for="nome" class="control-label">Nome:</label>
+                                <label for="nome" class="control-label">*Nome:</label>
                                 <input 
                                     type="text" 
                                     id="nome" 
@@ -131,7 +131,7 @@
                             </div>   
 
                             <div class="form-group col-sm-4">
-                                <label for="CPF" class="control-label">CPF:</label>           
+                                <label for="CPF" class="control-label">*CPF:</label>           
                                 <input 
                                     pattern="[0-9.-]+"
                                     type="text" 
@@ -145,7 +145,7 @@
                             </div>
 
                             <div class="form-group col-sm-4">
-                                <label for="dataNascimento">Data de nascimento:</label>
+                                <label for="dataNascimento">*Data de nascimento:</label>
                                 <input 
                                     type="date" 
                                     id="dataNascimento" 
@@ -169,23 +169,25 @@
                             <h3>Endereço</h3>
 
                             <div class="form-group col-sm-4">
-                                <label for="endereco">Endereço:</label>
+                                <label for="endereco">*Endereço:</label>
                                 <input 
                                     type="text" 
                                     id="endereco" 
                                     name="endereco" 
                                     class="form-control" 
                                     placeholder="Ex: Rua Castelo Branco"
+                                    required
                                 >
                             </div>
 
                             <div class="form-group col-sm-2">
-                                <label for="numero">Número:</label>
+                                <label for="numero">*Número:</label>
                                 <input 
                                     type="text" 
                                     id="numero" 
                                     name="numero" 
                                     class="form-control" 
+                                    required
                                 >
                             </div>
 
@@ -200,17 +202,18 @@
                             </div>
 
                             <div class="form-group col-sm-4">
-                                <label for="bairro">Bairro:</label>
+                                <label for="bairro">*Bairro:</label>
                                 <input 
                                     type="text" 
                                     id="bairro" 
                                     name="bairro" 
                                     class="form-control" 
+                                    required
                                 >
                             </div>
 
                             <div class="form-group col-sm-4">
-                                <label for="cidade">Cidade:</label>
+                                <label for="cidade">*Cidade:</label>
                                 <input 
                                     type="text" 
                                     id="cidade" 
@@ -221,12 +224,13 @@
                             </div>
 
                             <div class="form-group col-sm-4">
-                                <label for="estado">Estado:</label>
+                                <label for="estado">*Estado:</label>
                                 <input 
                                     type="text" 
                                     id="estado" 
                                     name="estado" 
                                     class="form-control" 
+                                    required
                                 >
                             </div>
 
@@ -246,7 +250,7 @@
                             <h3>Informações de contrato</h3>
 
                             <div class="form-group col-sm-4">
-                                <label for="dataEntrada">Data de entrada:</label>
+                                <label for="dataEntrada">*Data de entrada:</label>
                                 <input 
                                     type="date" 
                                     id="dataEntrada" 
@@ -259,11 +263,14 @@
                             <div class="form-group col-sm-4">
                                 <label for="qtddHorasTrabalhadas">Horas trabalhadas semanalmente:</label>
                                 <input 
-                                    type="text" 
+                                    type="number"
+                                    value="40"
+                                    min="0" 
+                                    max="100"
+                                    step="10"
                                     id="qtddHorasTrabalhadas" 
                                     name="qtddHorasTrabalhadas" 
                                     class="form-control" 
-                                    placeholder="40"
                                 >
                             </div>
 
@@ -278,7 +285,6 @@
                                         name="salario"
                                         class="form-control" 
                                         aria-label="Amount (to the nearest dollar)"
-                                        required
                                     >
                                     <span class="input-group-addon">,00</span>
                                 </div>
