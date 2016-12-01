@@ -29,6 +29,28 @@
 
 <body>
 
+	<script>
+        $(document).ready(function() {
+            $('#limpar').click(
+                function () {
+                    $('#msg').html("");
+                }
+            );
+
+            $('form').submit(function(){
+                var dados= $(this).serialize();
+                $.ajax({
+                    type: "POST",
+                    url: '../control/funcionarioController.php',
+                    data: dados ,
+                    success: function(data, textStatus, jqXHR)  {
+                        $('#msg').html(data);
+                    }
+                });
+            });
+        });
+    </script>
+
 	<div id="wrapper">
 
 		 <!-- Sidebar -->
@@ -93,15 +115,15 @@
 					<div class="col-lg-12">
 						<h1>Busca</h1>
 						<form name="buscaCPF" action="" method="post" onsubmit="return false;">
-							<input id="pagina" name="pagina" value="buscarCPF" style="display:none">
+							<input id="pagina" name="pagina" value="buscar" style="display:none">
 							<div class="form-group">
 								<div class="input-group">
 									<div class="input-group-btn">
-										<button 
-											type="button" 
-											class="btn btn-default dropdown-toggle" 
-											data-toggle="dropdown" 
-											aria-haspopup="true" 
+										<button
+											type="button"
+											class="btn btn-default dropdown-toggle"
+											data-toggle="dropdown"
+											aria-haspopup="true"
 											aria-expanded="false"
 											id="btnSearchType"
 											value="Por CPF"
@@ -116,7 +138,7 @@
 											<li><a href="#">Por cidade </a></li>
 										</ul>
 										<script>
-										 	$(function(){											
+										 	$(function(){
 												$(".dropdown-menu").on('click', 'li a', function(){
 													$("#btnSearchType:first-child").text($(this).text());
 													$("#btnSearchType:first-child").val($(this).text());
@@ -124,18 +146,17 @@
 											});
 										</script>
 									</div>
-									<input 
+									<input
 										class="form-control"
-										pattern="[0-9.-]+" 
-										type="text" 
-										id="CPF" 
-										name="CPF" 
+										type="text"
+										id="CPF"
+										name="CPF"
 									>
 									<span class="input-group-btn">
 										<button
 											type="submit"
-											value="Submit" 
-											class="btn btn-default" 
+											value="Submit"
+											class="btn btn-default"
 											type="button"
 											aria-hidden="true"
 											id="btnSearch"
@@ -145,6 +166,8 @@
 									</span>
 								</div>
 							</div>
+
+							<h1 id="msg" class="col-sm-12"></h1>
 						</form>
 
 						<!--<form name="buscaNome" action="" method="post" onsubmit="return false;">
@@ -153,18 +176,18 @@
 							<div class="form-group">
 								<label for="nome" class="control-label">Por nome:</label>
 								<div class="input-group">
-									<input 
+									<input
 										class="form-control"
-										pattern="[0-9.-]+" 
-										type="text" 
-										id="nome" 
-										name="nome" 
+										pattern="[0-9.-]+"
+										type="text"
+										id="nome"
+										name="nome"
 									>
 									<span class="input-group-btn">
 										<button
 											type="submit"
-											value="Submit" 
-											class="btn btn-default" 
+											value="Submit"
+											class="btn btn-default"
 											type="button"
 											aria-hidden="true"
 										>
@@ -181,18 +204,18 @@
 							<div class="form-group">
 								<label for="cargo" class="control-label">Por cargo:</label>
 								<div class="input-group">
-									<input 
+									<input
 										class="form-control"
-										pattern="[0-9.-]+" 
-										type="text" 
-										id="cargo" 
-										name="cargo" 
+										pattern="[0-9.-]+"
+										type="text"
+										id="cargo"
+										name="cargo"
 									>
 									<span class="input-group-btn">
 										<button
 											type="submit"
-											value="Submit" 
-											class="btn btn-default" 
+											value="Submit"
+											class="btn btn-default"
 											type="button"
 											aria-hidden="true"
 										>
@@ -209,18 +232,18 @@
 							<div class="form-group">
 								<label for="terminal" class="control-label">Por terminal:</label>
 								<div class="input-group">
-									<input 
+									<input
 										class="form-control"
-										pattern="[0-9.-]+" 
-										type="text" 
-										id="terminal" 
-										name="terminal" 
+										pattern="[0-9.-]+"
+										type="text"
+										id="terminal"
+										name="terminal"
 									>
 									<span class="input-group-btn">
 										<button
 											type="submit"
-											value="Submit" 
-											class="btn btn-default" 
+											value="Submit"
+											class="btn btn-default"
 											type="button"
 											aria-hidden="true"
 										>
@@ -237,18 +260,18 @@
 							<div class="form-group">
 								<label for="cidade" class="control-label">Por cidade:</label>
 								<div class="input-group">
-									<input 
+									<input
 										class="form-control"
-										pattern="[0-9.-]+" 
-										type="text" 
-										id="cidade" 
-										name="cidade" 
+										pattern="[0-9.-]+"
+										type="text"
+										id="cidade"
+										name="cidade"
 									>
 									<span class="input-group-btn">
 										<button
 											type="submit"
-											value="Submit" 
-											class="btn btn-default" 
+											value="Submit"
+											class="btn btn-default"
 											type="button"
 											aria-hidden="true"
 										>
@@ -265,18 +288,18 @@
 							<div class="form-group">
 								<label for="salario" class="control-label">Por faixa salarial (Funcionários ativos):</label>
 								<div class="input-group">
-									<input 
+									<input
 										class="form-control"
-										pattern="[0-9.-]+" 
-										type="text" 
-										id="salario" 
-										name="salario" 
+										pattern="[0-9.-]+"
+										type="text"
+										id="salario"
+										name="salario"
 									>
 									<span class="input-group-btn">
 										<button
 											type="submit"
-											value="Submit" 
-											class="btn btn-default" 
+											value="Submit"
+											class="btn btn-default"
 											type="button"
 											aria-hidden="true"
 										>
@@ -293,18 +316,18 @@
 							<div class="form-group">
 								<label for="funcao" class="control-label">Por função:</label>
 								<div class="input-group">
-									<input 
+									<input
 										class="form-control"
-										pattern="[0-9.-]+" 
-										type="text" 
-										id="funcao" 
-										name="funcao" 
+										pattern="[0-9.-]+"
+										type="text"
+										id="funcao"
+										name="funcao"
 									>
 									<span class="input-group-btn">
 										<button
 											type="submit"
-											value="Submit" 
-											class="btn btn-default" 
+											value="Submit"
+											class="btn btn-default"
 											type="button"
 											aria-hidden="true"
 										>
@@ -321,18 +344,18 @@
 							<div class="form-group">
 								<label for="periodo" class="control-label">Por período:</label>
 								<div class="input-group">
-									<input 
+									<input
 										class="form-control"
-										pattern="[0-9.-]+" 
-										type="text" 
-										id="periodo" 
-										name="periodo" 
+										pattern="[0-9.-]+"
+										type="text"
+										id="periodo"
+										name="periodo"
 									>
 									<span class="input-group-btn">
 										<button
 											type="submit"
-											value="Submit" 
-											class="btn btn-default" 
+											value="Submit"
+											class="btn btn-default"
 											type="button"
 											aria-hidden="true"
 										>

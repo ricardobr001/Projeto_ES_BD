@@ -136,7 +136,7 @@
     }
 
     //Buscando uma informação no banco
-    public function buscar($codigoDoFuncionario){
+    public function buscarNome($nome){
       $conn = Connection::open();
 
       if(!$conn){
@@ -144,9 +144,26 @@
       }
       else{
         /*IMPLEMENTAR A RECUPERAÇÃO OS DADOS NO BANCO*/
+        $sql = mysqli_query($conn, "SELECT * FROM funcionario WHERE nome LIKE '%".$nome."%' ORDER BY nome") or die(mysqli_error($conn));
+
+        // Descobrimos o total de registros encontrados
+    	$numRegistros = mysqli_num_rows($sql);
+
+    	// Se houver pelo menos um registro, exibe-o
+    	if ($numRegistros != 0) {
+    		// Exibe os produtos e seus respectivos preços
+    		while ($funcionario = mysqli_fetch_object($sql)) {
+    			echo $funcionario->codigo_funcionario ;
+                echo $funcionario->nome ;
+                echo $funcionario->cpf ;
+    		}
+    	// Se não houver registros
+    	} else {
+    		echo "Nenhum funcionário com o nome ".$nome." foi encontrado.";
+    	}
 
       }
-
+      return $sql;
     }
 
     //Alterando os dados de um funcionário no banco

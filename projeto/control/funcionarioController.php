@@ -19,6 +19,14 @@
 			$msg = $funcionario->alterarStatus();
 
 			echo $msg;
-		break;
+			break;
+		case "buscar":
+			$nome = $_POST["CPF"];
+
+			$funcionario = new Funcionario("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
+
+			$msg = $funcionario->buscarNome($nome);
+
+			break;
 	}
 ?>
