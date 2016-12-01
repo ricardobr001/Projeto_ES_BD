@@ -104,15 +104,16 @@
 											aria-haspopup="true" 
 											aria-expanded="false"
 											id="btnSearchType"
+											value="Por CPF"
 											>
-											Por CPF<span class="caret"></span>
+											Por CPF </span>
 										</button>
 										<ul class="dropdown-menu">
-											<li><a href="#">Por CPF</a></li>
-											<li><a href="#">Por nome</a></li>
-											<li><a href="#">Por cargo</a></li>
-											<li><a href="#">Por terminal</a></li>
-											<li><a href="#">Por cidade</a></li>
+											<li><a href="#">Por CPF </a></li>
+											<li><a href="#">Por nome </a></li>
+											<li><a href="#">Por cargo </a></li>
+											<li><a href="#">Por terminal </a></li>
+											<li><a href="#">Por cidade </a></li>
 										</ul>
 										<script>
 										 	$(function(){											
@@ -125,7 +126,6 @@
 									</div>
 									<input 
 										class="form-control"
-										placeholder="000.000.000-00" 
 										pattern="[0-9.-]+" 
 										type="text" 
 										id="CPF" 

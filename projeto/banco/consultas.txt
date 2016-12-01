@@ -1,0 +1,14 @@
+Busca por nome:
+SELECT codigo_funcionario, nome, cpf, terminal, periodo, estado FROM funcionario WHERE nome LIKE "%xxx%" ORDER BY nome
+
+Busca por CPF:
+SELECT codigo_funcionario, nome, cpf, terminal, periodo, estado FROM funcionario WHERE cpf LIKE "xxx"
+
+Busca por cargo:
+SELECT codigo_funcionario, nome, cpf, terminal, periodo, estado FROM funcionario WHERE cargo LIKE "xxx" ORDER BY nome
+
+Busca por terminal:
+SELECT codigo_funcionario, nome, cpf, terminal, periodo, estado FROM funcionario WHERE terminal LIKE "xxx" ORDER BY nome
+
+Busca por cidade:
+SELECT codigo_funcionario, nome, cpf, terminal, periodo, estado, cidade FROM funcionario WHERE cidade LIKE "%xxx%" ORDER BY cidade
