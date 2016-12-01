@@ -301,12 +301,13 @@
 
                             <div class="form-group col-sm-2">
                                 <label for="terminal">Terminal:</label>
-                                <input
-                                    type="text"
-                                    id="terminal"
-                                    name="terminal"
-                                    class="form-control"
-                                >
+                                <select class="form-control" id="terminal" name="terminal" class="form-control">
+                                    <option>A</option>
+                                    <option>B</option>
+                                    <option>C</option>
+                                    <option>D</option>
+                                    <option>E</option>
+                                </select>
                             </div>
 
                             <div class="form-group col-sm-2">
