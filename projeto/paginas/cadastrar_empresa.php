@@ -115,18 +115,54 @@
                     <div class="col-lg-12">
                       <form name="cadastro" action="" method="post" onsubmit="return false;">
                         <h1>Cadastrar Empresa</h1>
-                        <p class="small">Todos os campos são de preenchimento obrigatório</p>
-                        <p class="small">Não inserir caracteres acentuados</p>
-                        <p>CNPJ: <input pattern="[0-9/-.]+" type="text" id="CNPJ" name="CNPJ" size="18" maxlength="18" value="" placeholder="62.075.633/0001-16"></p>
-                        <p>Nome Fantasia: <input type="text" id="nomeFantasia" name="nomeFantasia" value="" placeholder="Coca-Cola"></p>
-                        <p>Razão Social: <input type="text" id="razaoSocial" name="razaoSocial" value="" placeholder="Coca-Cola Industrias LTDA"></p>
-                        <input type="submit" name="submit" value="Enviar"/>
-                          <input type="reset" id="limpar" name="limpar" value="Novo"/>
-                        <br />
-                        <br />
-                        <h1 id="msg"></h1>
-                        <br />
-                        <br />
+                        <p class="small">Todos os campos são de preenchimento obrigatório. Não inserir caracteres acentuados.</p>
+
+                        <div class="form-group col-sm-4">
+                            <label for="CNPJ">CNPJ:</label>
+                            <input
+                                pattern="[0-9/-.]+"
+                                type="text"
+                                id="CNPJ"
+                                name="CNPJ"
+                                class="form-control"
+                                size="18"
+                                maxlength="18"
+                                placeholder="00.000.000/0000-00"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group col-sm-4">
+                            <label for="nomeFantasia">Nome Fantasia:</label>
+                            <input
+                                type="text"
+                                id="nomeFantasia"
+                                name="nomeFantasia"
+                                class="form-control"
+                                placeholder="Coca-Cola"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group col-sm-4">
+                            <label for="razaoSocial">Razão Social:</label>
+                            <input
+                                type="text"
+                                id="razaoSocial"
+                                name="razaoSocial"
+                                class="form-control"
+                                placeholder="Coca-Cola Industrias LTDA"
+                                required
+                            >
+                        </div>
+
+                        <p class="col-sm-12">
+                            <input type="submit" name="submit" value="Enviar" class="btn btn-primary btn-md"/>
+                            <input type="reset" id="limpar" name="limpar" value="Limpar" class="btn btn-danger btn-md"/>
+                        </p>
+
+                        <h1 id="msg" class="col-sm-12"></h1>
+
                       </form>
                       <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
                     </div>
