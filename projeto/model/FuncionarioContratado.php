@@ -82,7 +82,6 @@
       }
       else{
         if(!mysqli_query($conn, "INSERT INTO funcionario(
-          codigo_funcionario,
           nome,
           cpf,
           data_nascimento,
@@ -101,7 +100,6 @@
           cep,
           cnpj_empresa
         ) VALUES (
-          '".$this->codigoDoFuncionario."',
           '".$this->nome."',
           '".$this->CPF."',
           '".$this->dataNascimento."',

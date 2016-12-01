@@ -114,10 +114,11 @@ $(document).ready(function() {
                 <div class="row">
                     <div class="col-lg-12">
                         <h1>Insira os dados</h1>
-                          <form name="cadastro" action="" method="post" onsubmit="return false">
-                            <input id="pagina" name="pagina" value="cadastrar" style="display:none">
-                            <p>Todos os campos são de preenchimento obrigatório</p>
-                            <p>Não inserir caracteres acentuados</p>
+                        <p class="small">Todos os campos são de preenchimento obrigatório</p>
+                        <p class="small">Não inserir caracteres acentuados</p>
+                        <br>
+                        <form name="cadastro" action="" method="post" onsubmit="return false">
+                            <input id="pagina" name="pagina" value="cadastrar" style="display:none">    
                             <p>Código do Funcionário: <input placeholder="562262" pattern="[0-9]+" type="text" id="codigo" name="codigo" value=""></p>
                             <p>Nome: <input pattern="[a-zA-Z ]+" type="text" id="nome" name="nome" value="" placeholder="Ricardo Mendes Leal Junior"></p>
                             <p>CPF: <input pattern="[0-9.-]+" type="text" id="CPF" name="CPF" value="" size="14" maxlength="14" placeholder="429.649.048-63"></p>
@@ -140,11 +141,9 @@ $(document).ready(function() {
                             <br/>
                             <input type="submit" name="submit" value="Enviar"/>
                               <input type="reset" id="limpar" name="limpar" value="Novo"/>
-                            <br />
-                            <br />
+                            <br>
                             <h1 id="msg"></h1>
-                            <br />
-                            <br />
+                            <br>
                           </form>
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
                     </div>

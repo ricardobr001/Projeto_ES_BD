@@ -12,13 +12,13 @@
 	switch ($pagina){
 		case "alterar_status":
 			$codigo = $_POST["codigo"];
-      $motivo = $_POST["motivo"];
-      $status = $_POST["status"];
+			$motivo = $_POST["motivo"];
+			$status = $_POST["status"];
 
-      $funcionario = new Funcionario($codigo, "", "", "", "", $status, $motivo, "", "", "", "", "", "", "", "", "");
-      $msg = $funcionario->alterarStatus();
+			$funcionario = new Funcionario($codigo, "", "", "", "", $status, $motivo, "", "", "", "", "", "", "", "", "");
+			$msg = $funcionario->alterarStatus();
 
-      echo $msg;
+			echo $msg;
 		break;
 	}
 ?>
