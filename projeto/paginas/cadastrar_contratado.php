@@ -33,7 +33,7 @@
         $(document).ready(function() {
             $('#limpar').click(
                 function () {
-                    $('#msg').html("Mensagem");
+                    $('#msg').html("");
                 }
             );
 
@@ -295,11 +295,11 @@
                             </div>
 
                             <div class="form-group col-sm-2">
-                                <label for="Terminal">Terminal:</label>
+                                <label for="terminal">Terminal:</label>
                                 <input 
                                     type="text" 
-                                    id="Terminal" 
-                                    name="Terminal" 
+                                    id="terminal" 
+                                    name="terminal" 
                                     class="form-control" 
                                 >
                             </div>
@@ -319,12 +319,12 @@
                                 <div class="radio">
                                     
                                     <label>
-                                        <input type="radio" id="comum" name="comum" value="COMUM" cheked>
+                                        <input type="radio" id="cargo" name="cargo" value="COMUM" cheked>
                                         Comum   
                                     </label>
                                     
                                     <label>
-                                        <input type="radio" id="gerente" name="gerente" value="GERENTE" cheked>
+                                        <input type="radio" id="cargo" name="cargo" value="GERENTE" cheked>
                                         Gerente
                                     </label>
                                 </div>

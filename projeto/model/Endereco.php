@@ -1,16 +1,16 @@
 <?php
   class Endereco{
     private $cidade;
-    private $rua;
+    private $logradouro;
     private $bairro;
     private $CEP;
     private $numero;
     private $complemento;
 
     //Construtor da classe
-    public function __construct($cidade, $rua, $bairro, $CEP, $numero, $complemento){
+    public function __construct($cidade, $logradouro, $bairro, $CEP, $numero, $complemento){
       $this->cidade = $cidade;
-      $this->rua = $rua;
+      $this->logradouro = $logradouro;
       $this->bairro = $bairro;
       $this->CEP = $CEP;
       $this->numero = $numero;
@@ -26,12 +26,12 @@
         return $this->cidade;
     }
 
-    public function setRua($rua){
-        $this->rua = $rua;
+    public function setLogradouro($logradouro){
+        $this->logradouro = $logradouro;
     }
 
-    public function getRua(){
-        return $this->rua;
+    public function getLogradouro(){
+        return $this->logradouro;
     }
 
     public function setBairro($bairro){
