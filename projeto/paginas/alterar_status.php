@@ -117,24 +117,45 @@
                         <form name="cadastro" action="" method="post" onsubmit="return false;">
                             <h1>Alterar Status</h1>
                             <input id="pagina" name="pagina" value="alterar_status" style="display:none">
-                            <p>Todos os campos são de preenchimento obrigatório, exceto o motivo, só é necessário se o funcionário for desligado do aeroporto</p>
-                            <p>Não inserir caracteres acentuados</p>
-                            <p>Código do Funcionário que será alterado: <input placeholder="562262" pattern="[0-9]+" type="text" id="codigo" name="codigo" value=""></p>
-                            <p>motivo: <input type="text" id="motivo" name="motivo" value="" placeholder="Despedido"></p>
-                            <p>Status:</p>
-                            <input type="radio" id="status" name="status" value="ATIVO"> ATIVO<br>
-                            <input type="radio" id="status" name="status" value="INATIVO"> INATIVO<br>
-                            <input type="submit" name="submit" value="Enviar"/>
-                            <input type="reset" id="limpar" name="limpar" value="Novo"/>
-                            <br />
-                            <br />
-                            <h1 id="msg"></h1>
-                            <br />
-                            <br />
-                            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
+                            <p class="small">Não insira caracteres acentuados.</p>
+
+                            <div class="form-group col-sm-12">
+                                <label for="motivo" class="control-label">Motivo:</label>
+                                <input
+                                    type="text"
+                                    id="motivo"
+                                    name="motivo"
+                                    class="form-control"
+                                    required
+                                >
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label>Status:</label>
+                                <div class="radio">
+
+                                    <label>
+                                        <input type="radio" id="status" name="status" value="ATIVO" checked>
+                                        Ativo
+                                    </label>
+
+                                    <label>
+                                        <input type="radio" id="status" name="status" value="INATIVO">
+                                        Inativo
+                                    </label>
+                                </div>
+                            </div>
+
+                            <p class="col-sm-12">
+                                <input type="submit" name="submit" value="Enviar" class="btn btn-primary btn-md"/>
+                                <input type="reset" id="limpar" name="limpar" value="Limpar" class="btn btn-danger btn-md"/>
+                            </p>
+
+                            <h1 id="msg" class="col-sm-12"></h1>
                         </form>
                     </div>
                 </div>
+                <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
             </div>
         </div>
         <!-- /#page-content-wrapper -->
