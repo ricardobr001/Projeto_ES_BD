@@ -163,7 +163,7 @@
                     <td>' . $funcionario->periodo .'</td>
                     <td>' . $funcionario->estado .'</td>
                     <td>
-                        <button 
+                        <button
                             class="btn alteracao"
                             value="' . $funcionario->codigo_funcionario .'"
                         >alterar</button>
@@ -177,6 +177,178 @@
 
       }
       return $sql;
+    }
+
+    public function buscaCPF($CPF){
+        $conn = Connection::open();
+
+        if(!$conn){
+          $msg = 'Problemas na conexão';
+        }
+        else{
+          /*IMPLEMENTAR A RECUPERAÇÃO OS DADOS NO BANCO*/
+          $sql = mysqli_query($conn, "SELECT * FROM funcionario WHERE cpf LIKE '%".$CPF."%' ORDER BY nome") or die(mysqli_error($conn));
+
+          // Descobrimos o total de registros encontrados
+      	$numRegistros = mysqli_num_rows($sql);
+
+      	// Se houver pelo menos um registro, exibe-o
+      	if ($numRegistros != 0) {
+      		// Exibe os produtos e seus respectivos preços
+      		while ($funcionario = mysqli_fetch_object($sql)) {
+      			echo'
+                  <tr>
+                      <td>' . $funcionario->codigo_funcionario . '</td>
+                      <td>' . $funcionario->nome .'</td>
+                      <td>' . $funcionario->cpf .'</td>
+                      <td>' . $funcionario->cidade .'</td>
+                      <td>' . $funcionario->terminal .'</td>
+                      <td>' . $funcionario->periodo .'</td>
+                      <td>' . $funcionario->estado .'</td>
+                      <td>
+                          <button
+                              class="btn alteracao"
+                              value="' . $funcionario->codigo_funcionario .'"
+                          >alterar</button>
+                      </td>
+                  </tr>';
+              }
+      	// Se não houver registros
+      	} else {
+      		echo "Nenhum funcionário com o CPF ".$CPF." foi encontrado.";
+      	}
+
+        }
+        return $sql;
+    }
+
+    public function buscaCidade($cidade){
+        $conn = Connection::open();
+
+        if(!$conn){
+          $msg = 'Problemas na conexão';
+        }
+        else{
+          /*IMPLEMENTAR A RECUPERAÇÃO OS DADOS NO BANCO*/
+          $sql = mysqli_query($conn, "SELECT * FROM funcionario WHERE cidade LIKE '%".$cidade."%' ORDER BY nome") or die(mysqli_error($conn));
+
+          // Descobrimos o total de registros encontrados
+      	$numRegistros = mysqli_num_rows($sql);
+
+      	// Se houver pelo menos um registro, exibe-o
+      	if ($numRegistros != 0) {
+      		// Exibe os produtos e seus respectivos preços
+      		while ($funcionario = mysqli_fetch_object($sql)) {
+      			echo'
+                  <tr>
+                      <td>' . $funcionario->codigo_funcionario . '</td>
+                      <td>' . $funcionario->nome .'</td>
+                      <td>' . $funcionario->cpf .'</td>
+                      <td>' . $funcionario->cidade .'</td>
+                      <td>' . $funcionario->terminal .'</td>
+                      <td>' . $funcionario->periodo .'</td>
+                      <td>' . $funcionario->estado .'</td>
+                      <td>
+                          <button
+                              class="btn alteracao"
+                              value="' . $funcionario->codigo_funcionario .'"
+                          >alterar</button>
+                      </td>
+                  </tr>';
+              }
+      	// Se não houver registros
+      	} else {
+      		echo "Nenhum funcionário morando na cidade ".$cidade." foi encontrado.";
+      	}
+
+        }
+        return $sql;
+    }
+
+    public function buscaCargo($cargo){
+        $conn = Connection::open();
+
+        if(!$conn){
+          $msg = 'Problemas na conexão';
+        }
+        else{
+          /*IMPLEMENTAR A RECUPERAÇÃO OS DADOS NO BANCO*/
+          $sql = mysqli_query($conn, "SELECT * FROM funcionario WHERE cargo LIKE '%".$cargo."%' ORDER BY nome") or die(mysqli_error($conn));
+
+          // Descobrimos o total de registros encontrados
+      	$numRegistros = mysqli_num_rows($sql);
+
+      	// Se houver pelo menos um registro, exibe-o
+      	if ($numRegistros != 0) {
+      		// Exibe os produtos e seus respectivos preços
+      		while ($funcionario = mysqli_fetch_object($sql)) {
+      			echo'
+                  <tr>
+                      <td>' . $funcionario->codigo_funcionario . '</td>
+                      <td>' . $funcionario->nome .'</td>
+                      <td>' . $funcionario->cpf .'</td>
+                      <td>' . $funcionario->cidade .'</td>
+                      <td>' . $funcionario->terminal .'</td>
+                      <td>' . $funcionario->periodo .'</td>
+                      <td>' . $funcionario->estado .'</td>
+                      <td>
+                          <button
+                              class="btn alteracao"
+                              value="' . $funcionario->codigo_funcionario .'"
+                          >alterar</button>
+                      </td>
+                  </tr>';
+              }
+      	// Se não houver registros
+      	} else {
+      		echo "Nenhum funcionário com o cargo ".$cargo." foi encontrado.";
+      	}
+
+        }
+        return $sql;
+    }
+
+    public function buscaTerminal($terminal){
+        $conn = Connection::open();
+
+        if(!$conn){
+          $msg = 'Problemas na conexão';
+        }
+        else{
+          /*IMPLEMENTAR A RECUPERAÇÃO OS DADOS NO BANCO*/
+          $sql = mysqli_query($conn, "SELECT * FROM funcionario WHERE terminal LIKE '%".$terminal."%' ORDER BY nome") or die(mysqli_error($conn));
+
+          // Descobrimos o total de registros encontrados
+      	$numRegistros = mysqli_num_rows($sql);
+
+      	// Se houver pelo menos um registro, exibe-o
+      	if ($numRegistros != 0) {
+      		// Exibe os produtos e seus respectivos preços
+      		while ($funcionario = mysqli_fetch_object($sql)) {
+      			echo'
+                  <tr>
+                      <td>' . $funcionario->codigo_funcionario . '</td>
+                      <td>' . $funcionario->nome .'</td>
+                      <td>' . $funcionario->cpf .'</td>
+                      <td>' . $funcionario->cidade .'</td>
+                      <td>' . $funcionario->terminal .'</td>
+                      <td>' . $funcionario->periodo .'</td>
+                      <td>' . $funcionario->estado .'</td>
+                      <td>
+                          <button
+                              class="btn alteracao"
+                              value="' . $funcionario->codigo_funcionario .'"
+                          >alterar</button>
+                      </td>
+                  </tr>';
+              }
+      	// Se não houver registros
+      	} else {
+      		echo "Nenhum funcionário trabalhando no terminal ".$terminal." foi encontrado.";
+      	}
+
+        }
+        return $sql;
     }
 
     //Alterando os dados de um funcionário no banco
