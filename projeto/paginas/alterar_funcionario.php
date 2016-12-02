@@ -914,9 +914,9 @@ $(document).ready(function() {
                                         <label>
                                             <?php
                                                 if ($funcionario->situacao == "ATIVO") {
-                                                    echo "<input type=\"radio\" id=\"status\" name=\"status\" value=\"ATIVO\" checked>";
+                                                    echo "<input type=\"radio\" name=\"status\" value=\"ATIVO\" checked>";
                                                 } else {
-                                                    echo "<input type=\"radio\" id=\"status\" name=\"status\" value=\"ATIVO\">";
+                                                    echo "<input type=\"radio\" name=\"status\" value=\"ATIVO\">";
                                                 }
                                             ?>
                                             Ativo
@@ -925,9 +925,9 @@ $(document).ready(function() {
                                        <label>
                                             <?php
                                                 if ($funcionario->situacao == "INATIVO"){
-                                                    echo "<input type=\"radio\" id=\"status\" name=\"status\" value=\"INATIVO\" checked>";
+                                                    echo "<input type=\"radio\" name=\"status\" value=\"INATIVO\" checked>";
                                                 } else {
-                                                    echo "<input type=\"radio\" id=\"status\" name=\"status\" value=\"INATIVO\">";
+                                                    echo "<input type=\"radio\" name=\"status\" value=\"INATIVO\">";
                                                 }
                                             ?>
                                             Inativo

@@ -12,6 +12,7 @@
         $this->CPF = $CPF;
         $this->dataNascimento = $dataNascimento;
         $this->telefone = $telefone;
+		echo "aaaa".$situacao;
         $this->situacao = $situacao;
         $this->motivo = $motivo;
         $this->periodo = $periodo;
