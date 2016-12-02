@@ -138,6 +138,9 @@
                                   id="nome"
                                   name="nome"
                                   class="form-control"
+                                  value=<?php
+                                        echo "\"".$funcionario->nome."\""; 
+                                    ?>
                                   required
                               >
                           </div>
@@ -145,17 +148,17 @@
                           <div class="form-group col-sm-4">
                               <label for="CPF" class="control-label">*CPF:</label>
                               <input
-                                  pattern="[0-9.-]+"
-                                  type="text"
-                                  id="CPF"
-                                  name="CPF"
-                                  class="form-control"
-                                  placeholder="000.000.000-00"
-                                  maxlength="14"
-                                  value=<?php
-                                        echo "\"".$funcionario->cpf."\""; 
-                                    ?>
-                                  required
+                                    pattern="[0-9.-]+"
+                                    type="text"
+                                    id="CPF"
+                                    name="CPF"
+                                    class="form-control"
+                                    placeholder="000.000.000-00"
+                                    maxlength="14"
+                                    value=<?php
+                                            echo "\"".$funcionario->cpf."\""; 
+                                        ?>
+                                    required
                               >
                           </div>
 
@@ -197,6 +200,9 @@
                                   name="endereco"
                                   class="form-control"
                                   placeholder="Ex: Rua Castelo Branco"
+                                  value=<?php
+                                        echo "\"".$funcionario->logradouro."\""; 
+                                    ?>
                                   required
                               >
                           </div>
@@ -208,6 +214,9 @@
                                   id="numero"
                                   name="numero"
                                   class="form-control"
+                                  value=<?php
+                                        echo "\"".$funcionario->numero."\""; 
+                                    ?>
                                   required
                               >
                           </div>
@@ -219,6 +228,9 @@
                                   id="complemento"
                                   name="complemento"
                                   class="form-control"
+                                  value=<?php
+                                        echo "\"".$funcionario->complemento."\""; 
+                                    ?>
                               >
                           </div>
 
@@ -229,6 +241,9 @@
                                   id="bairro"
                                   name="bairro"
                                   class="form-control"
+                                  value=<?php
+                                        echo "\"".$funcionario->bairro."\""; 
+                                    ?>
                                   required
                               >
                           </div>
@@ -240,6 +255,9 @@
                                   id="cidade"
                                   name="cidade"
                                   class="form-control"
+                                  value=<?php
+                                        echo "\"".$funcionario->cidade."\""; 
+                                    ?>
                                   required
                               >
                           </div>
@@ -251,6 +269,9 @@
                                   id="estado"
                                   name="estado"
                                   class="form-control"
+                                  value=<?php
+                                        echo "\"".$funcionario->estado."\""; 
+                                    ?>
                                   required
                               >
                           </div>
@@ -264,6 +285,9 @@
                                   class="form-control"
                                   pattern="[0-9-]+"
                                   placeholder="00000-000"
+                                  value=<?php
+                                        echo "\"".$funcionario->cep."\""; 
+                                    ?>
                                   maxlength="9"
                               >
                           </div>
@@ -312,7 +336,11 @@
 
                           <div class="form-group col-sm-4">
                               <label for="setor">Setor:</label>
-                              <select class="form-control" id="setor" name="setor" class="form-control">
+                              <select class="form-control" id="setor" name="setor" class="form-control"
+                                value=<?php
+                                            echo "\"".$funcionario->setor."\""; 
+                                        ?>
+                              >
                                   <option>Financeiro</option>
                                   <option>Limpeza</option>
                                   <option>Seguranca</option>
@@ -320,9 +348,13 @@
                               </select>
                           </div>
 
-                          <div class="form-group col-sm-2">
-                              <label for="terminal">Terminal:</label>
-                              <select class="form-control" id="terminal" name="terminal" class="form-control">
+                        <div class="form-group col-sm-2">
+                            <label for="terminal">Terminal:</label>
+                            <select class="form-control" id="terminal" name="terminal" class="form-control"
+                                value=<?php
+                                    echo "\"".$funcionario->terminal."\""; 
+                                ?>
+                            >
                                   <option>A</option>
                                   <option>B</option>
                                   <option>C</option>
