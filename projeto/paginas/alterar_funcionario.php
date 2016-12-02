@@ -162,17 +162,17 @@
                           <div class="form-group col-sm-4">
                               <label for="CPF" class="control-label">*CPF:</label>
                               <input
-                                    pattern="[0-9.-]+"
-                                    type="text"
-                                    id="CPF"
-                                    name="CPF"
-                                    class="form-control"
-                                    placeholder="000.000.000-00"
-                                    maxlength="14"
-                                    value=<?php
-                                            echo "\"".$funcionario->cpf."\"";
-                                        ?>
-                                    required
+                                  pattern="[0-9.-]+"
+                                  type="text"
+                                  id="CPF"
+                                  name="CPF"
+                                  class="form-control"
+                                  placeholder="000.000.000-00"
+                                  maxlength="14"
+                                  value=<?php
+                                        echo "\"".$funcionario->cpf."\"";
+                                    ?>
+                                  required
                               >
                           </div>
 
@@ -364,20 +364,42 @@
 
                         <div class="form-group col-sm-2">
                             <label for="terminal">Terminal:</label>
-                            <select class="form-control" id="terminal" name="terminal" class="form-control"
-                                value=<?php
-                                    echo "\"".$funcionario->terminal."\"";
-                                ?>
-                            >
-                                  <option>A</option>
-                                  <option>B</option>
-                                  <option>C</option>
-                                  <option>D</option>
-                                  <option>E</option>
-                              </select>
-                          </div>
+                            <select class="form-control" id="terminal" name="terminal" class="form-control">
+                                <?php
+                                    if ($funcionario->terminal == A){
+                                        echo "<option selected=\"selected\">A</option>";
+                                    } else {
+                                        echo "<option>A</option>";
+                                    }
 
-                          <div class="form-group col-sm-2">
+                                    if ($funcionario->terminal == B){
+                                        echo "<option selected=\"selected\">B</option>";
+                                    } else {
+                                         echo "<option>B</option>";
+                                    }
+
+                                    if ($funcionario->terminal == C){
+                                        echo "<option selected=\"selected\">C</option>";
+                                    } else {
+                                         echo "<option>C</option>";
+                                    }
+
+                                    if ($funcionario->terminal == D){
+                                        echo "<option selected=\"selected\">D</option>";
+                                    } else {
+                                         echo "<option>D</option>";
+                                    }
+
+                                    if ($funcionario->terminal == E){
+                                        echo "<option selected=\"selected\">E</option>";
+                                    } else {
+                                         echo "<option>E</option>";
+                                    }
+                                ?>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-sm-2">
                               <label for="periodo">Período:</label>
                               <select class="form-control" id="periodo" name="periodo" class="form-control">
                                   <option>Manha</option>
@@ -766,11 +788,37 @@ $(document).ready(function() {
                               <div class="form-group col-sm-2">
                                   <label for="terminal">Terminal:</label>
                                   <select class="form-control" id="terminal" name="terminal" class="form-control">
-                                      <option>A</option>
-                                      <option>B</option>
-                                      <option>C</option>
-                                      <option>D</option>
-                                      <option>E</option>
+                                    <?php
+                                        if ($funcionario->terminal == A){
+                                            echo "<option selected=\"selected\">A</option>";
+                                        } else {
+                                            echo "<option>A</option>";
+                                        }
+
+                                        if ($funcionario->terminal == B){
+                                            echo "<option selected=\"selected\">B</option>";
+                                        } else {
+                                            echo "<option>B</option>";
+                                        }
+
+                                        if ($funcionario->terminal == C){
+                                            echo "<option selected=\"selected\">C</option>";
+                                        } else {
+                                            echo "<option>C</option>";
+                                        }
+
+                                        if ($funcionario->terminal == D){
+                                            echo "<option selected=\"selected\">D</option>";
+                                        } else {
+                                            echo "<option>D</option>";
+                                        }
+
+                                        if ($funcionario->terminal == E){
+                                            echo "<option selected=\"selected\">E</option>";
+                                        } else {
+                                            echo "<option>E</option>";
+                                        }
+                                    ?>
                                   </select>
                                </div>
 
