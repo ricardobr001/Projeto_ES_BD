@@ -36,27 +36,28 @@
     break;
 
     case 'alterar_dados':
-      $nome = $_POST["nome"];
-      $CPF = $_POST["CPF"];
-      $dataNascimento = $_POST["dataNascimento"];
-      $telefone = $_POST["telefone"];
-      $periodo = $_POST["periodo"];
-      $cidade = $_POST["cidade"];
-      $endereco = $_POST["endereco"];
-      $bairro = $_POST["bairro"];
-      $CEP = $_POST["CEP"];
-      $numero = $_POST["numero"];
-      $complemento = $_POST["complemento"];
-      $terminal = $_POST["terminal"];
-      $setor = $_POST["setor"];
-      $cnpj_empresa = $_POST["cnpj_empresa"];
-      $estado = $_POST["estado"];
+        $codigo = $_POST["codigo"];
+        $nome = $_POST["nome"];
+        $CPF = $_POST["CPF"];
+        $dataNascimento = $_POST["dataNascimento"];
+        $telefone = $_POST["telefone"];
+        $periodo = $_POST["periodo"];
+        $cidade = $_POST["cidade"];
+        $endereco = $_POST["endereco"];
+        $bairro = $_POST["bairro"];
+        $CEP = $_POST["CEP"];
+        $numero = $_POST["numero"];
+        $complemento = $_POST["complemento"];
+        $terminal = $_POST["terminal"];
+        $setor = $_POST["setor"];
+        $cnpj_empresa = $_POST["CNPJ"];
+        $estado = $_POST["estado"];
 
-      //Todo funcionário novo cadastrado possui situacao ATIVO e não possui um motivo de desligamento
-      $funcionario = new FuncionarioTerceirizado($nome, $CPF, $dataNascimento, $telefone, 'ATIVO', '', $periodo, $setor, $terminal, $cidade, $endereco, $bairro, $CEP, $numero, $complemento, $estado);
-      $msg = $funcionario->cadastrar($cnpj_empresa);
+        //Todo funcionário novo cadastrado possui situacao ATIVO e não possui um motivo de desligamento
+        $funcionario = new FuncionarioTerceirizado($nome, $CPF, $dataNascimento, $telefone, 'ATIVO', '', $periodo, $setor, $terminal, $cidade, $endereco, $bairro, $CEP, $numero, $complemento, $estado);
+        $msg = $funcionario->alterarDados($cnpj_empresa, $codigo);
 
-      echo $msg;
+        echo $msg;
     break;
   }
 ?>

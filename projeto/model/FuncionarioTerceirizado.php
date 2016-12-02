@@ -81,6 +81,42 @@
       return $msg;
     }
 
+    public function alterarDados($cnpj_empresa, $codigo){
+		$conn = Connection::open();
+
+		if(!$conn){
+			$msg = 'Problemas na conexão';
+		}
+		else{
+			if(!mysqli_query($conn, "UPDATE funcionario
+				SET nome = '".$this->nome."',
+				cpf = '".$this->CPF."',
+				data_nascimento = '".$this->dataNascimento."',
+				telefone = '".$this->telefone."',
+				situacao = '".$this->situacao."',
+				cargo = '".$this->cargo."',
+				periodo = '".$this->periodo."',
+				terminal = '".$this->terminal->getNome()."',
+				setor = '".$this->setor."',
+				cidade = '".$this->logradouro->getCidade()."',
+				logradouro = '".$this->logradouro->getLogradouro()."',
+				bairro = '".$this->logradouro->getBairro()."',
+				numero = '".$this->logradouro->getNumero()."',
+				complemento = '".$this->logradouro->getComplemento()."',
+				cep = '".$this->logradouro->getCEP()."',
+				estado = '".$this->logradouro->getEstado()."',
+                cnpj_empresa = '".$cnpj_empresa."'
+				WHERE codigo_funcionario = '".$codigo."';")){
+				die(mysqli_error($conn));
+				$msg = 'Funcionário não cadastrado!';
+			}
+
+			Connection::close($conn);
+			$msg = 'Dados alterados com sucesso!';
+		}
+
+		return $msg;
+	}
     //Metodos herdados da classe funcionário!!
 }
 ?>

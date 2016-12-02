@@ -129,6 +129,20 @@
                         <form name="cadastro" action="" method="post" onsubmit="return false;">
                           <input id="pagina" name="pagina" value="alterar_dados" style="display:none">
 
+						  <h3>Código do Funcionário</h3>
+
+						  <div class="form-group col-sm-12">
+						  	<input
+								id="codigo"
+								name="codigo"
+								class="form-control"
+								value=<?php
+									echo "\"".$funcionario->codigo_funcionario."\"";
+									?>
+								required
+							>
+						</div>
+
                           <h3>Informações básicas</h3>
 
                           <div class="form-group col-sm-12">
@@ -369,13 +383,13 @@
                                     } else {
                                          echo "<option>C</option>";
                                     }
-                                    
+
                                     if ($funcionario->terminal == D){
                                         echo "<option selected=\"selected\">D</option>";
                                     } else {
                                          echo "<option>D</option>";
                                     }
-                                    
+
                                     if ($funcionario->terminal == E){
                                         echo "<option selected=\"selected\">E</option>";
                                     } else {
@@ -410,6 +424,33 @@
                                   </label>
                               </div>
                           </div>
+
+						  <h3 class="form-group col-sm-12">Status do funcionário</h3>
+						  <div class="form-group col-sm-12">
+							  <label for="motivo" class="control-label">Motivo:</label>
+							  <input
+								  type="text"
+								  id="motivo"
+								  name="motivo"
+								  class="form-control"
+							  >
+						  </div>
+
+						  <div class="col-sm-4">
+							  <label>Status:</label>
+							  <div class="radio">
+
+								  <label>
+									  <input type="radio" id="status" name="status" value="ATIVO" checked>
+									  Ativo
+								  </label>
+
+								  <label>
+									  <input type="radio" id="status" name="status" value="INATIVO">
+									  Inativo
+								  </label>
+							  </div>
+						  </div>
 
                           <p class="col-sm-12">
                               <input type="submit" name="submit" value="Enviar" class="btn btn-primary btn-md"/>
@@ -564,7 +605,20 @@ $(document).ready(function() {
                         <p class="small">Os campos que possuem (*) são obrigatórios. Não insira caracteres acentuados.</p>
                         <form name="cadastro" action="" method="post" onsubmit="return false;">
                             <input id="pagina" name="pagina" value="alterar_dados" style="display:none">
-                              <input id="pagina" name="pagina" value="alterar_dados" style="display:none">
+
+							  <h3>Código do Funcionário</h3>
+
+							  <div class="form-group col-sm-12">
+							  	<input
+									id="codigo"
+									name="codigo"
+									class="form-control"
+									value=<?php
+										echo "\"".$funcionario->codigo_funcionario."\"";
+										?>
+									required
+								>
+							</div>
 
                               <h3>Informações básicas</h3>
 
@@ -752,13 +806,13 @@ $(document).ready(function() {
                                         } else {
                                             echo "<option>C</option>";
                                         }
-                                        
+
                                         if ($funcionario->terminal == D){
                                             echo "<option selected=\"selected\">D</option>";
                                         } else {
                                             echo "<option>D</option>";
                                         }
-                                        
+
                                         if ($funcionario->terminal == E){
                                             echo "<option selected=\"selected\">E</option>";
                                         } else {
@@ -818,7 +872,6 @@ $(document).ready(function() {
 									   value=<?php
    											echo "\"".$funcionario->motivo."\"";
    										?>
-                                       required
                                    >
                                </div>
 

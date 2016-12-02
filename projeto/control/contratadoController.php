@@ -40,6 +40,7 @@
     	break;
 
 		case "alterar_dados":
+			$codigo = $_POST["codigo"];
 			$nome = $_POST["nome"];
 			$CPF = $_POST["CPF"];
 			$dataNascimento = $_POST["dataNascimento"];
@@ -60,7 +61,7 @@
 			$estado = $_POST["estado"];
 
 			$funcionario = new FuncionarioContratado($nome, $CPF, $dataNascimento, $telefone, 'ATIVO', "", $periodo, $setor, $terminal, $cidade, $rua, $bairro, $CEP, $numero, $complemento, $dataEntrada, $cargo, $horas, "", $salario, $estado);
-			$msg = $funcionario->alterarDados();
+			$msg = $funcionario->alterarDados($codigo);
 
 			echo $msg;
 		break;

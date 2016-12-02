@@ -22,7 +22,7 @@
 		$this->periodo = $periodo;
 		$this->setor = $setor;
 		$this->terminal = new Terminal($terminal);
-		$this->endereco = new Endereco($cidade, $logradouro, $bairro, $CEP, $numero, $complemento, $estado);
+		$this->logradouro = new Endereco($cidade, $logradouro, $bairro, $CEP, $numero, $complemento, $estado);
 		//Atributos da classe filha
 		$this->dataEntrada = $dataEntrada;
 		$this->cargo = $cargo;
@@ -113,14 +113,14 @@
 				'".$this->periodo."',
 				'".$this->terminal->getNome()."',
 				'".$this->setor."',
-				'".$this->endereco->getCidade()."',
-				'".$this->endereco->getLogradouro()."',
-				'".$this->endereco->getBairro()."',
-				'".$this->endereco->getNumero()."',
-				'".$this->endereco->getComplemento()."',
-				'".$this->endereco->getCEP()."',
+				'".$this->logradouro->getCidade()."',
+				'".$this->logradouro->getLogradouro()."',
+				'".$this->logradouro->getBairro()."',
+				'".$this->logradouro->getNumero()."',
+				'".$this->logradouro->getComplemento()."',
+				'".$this->logradouro->getCEP()."',
 				'00.000.000/0000-00',
-				'".$this->endereco->getEstado()."'
+				'".$this->logradouro->getEstado()."'
 			);"))
 					die(mysqli_error($conn));
 			Connection::close($conn);
@@ -149,7 +149,7 @@
 	}
 
 	//Alterando os dados de um funcionário no banco
-	public function alterarDados(){
+	public function alterarDados($codigo){
 		$conn = Connection::open();
 
 		if(!$conn){
@@ -166,14 +166,14 @@
 				periodo = '".$this->periodo."',
 				terminal = '".$this->terminal->getNome()."',
 				setor = '".$this->setor."',
-				cidade = '".$this->endereco->getCidade()."',
-				rua = '".$this->endereco->getRua()."',
-				bairro = '".$this->endereco->getBairro()."',
-				numero = '".$this->endereco->getNumero()."',
-				complemento = '".$this->endereco->getComplemento()."',
-				cep = '".$this->endereco->getCEP()."'
-				estado = '".$this->endereco->getEstado()."',
-				WHERE codigo_funcionario = '".$this->codigoDoFuncionario."';")){
+				cidade = '".$this->logradouro->getCidade()."',
+				logradouro = '".$this->logradouro->getLogradouro()."',
+				bairro = '".$this->logradouro->getBairro()."',
+				numero = '".$this->logradouro->getNumero()."',
+				complemento = '".$this->logradouro->getComplemento()."',
+				cep = '".$this->logradouro->getCEP()."',
+				estado = '".$this->logradouro->getEstado()."'
+				WHERE codigo_funcionario = '".$codigo."';")){
 				die(mysqli_error($conn));
 				$msg = 'Funcionário não cadastrado!';
 			}
