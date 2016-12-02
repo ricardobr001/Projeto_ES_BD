@@ -129,6 +129,20 @@
                         <form name="cadastro" action="" method="post" onsubmit="return false;">
                           <input id="pagina" name="pagina" value="alterar_dados" style="display:none">
 
+						  <h3>Código do Funcionário</h3>
+
+						  <div class="form-group col-sm-12">
+						  	<input
+								id="codigo"
+								name="codigo"
+								class="form-control"
+								value=<?php
+									echo "\"".$funcionario->codigo_funcionario."\"";
+									?>
+								required
+							>
+						</div>
+
                           <h3>Informações básicas</h3>
 
                           <div class="form-group col-sm-12">
@@ -148,19 +162,6 @@
                           <div class="form-group col-sm-4">
                               <label for="CPF" class="control-label">*CPF:</label>
                               <input
-<<<<<<< HEAD
-                                  pattern="[0-9.-]+"
-                                  type="text"
-                                  id="CPF"
-                                  name="CPF"
-                                  class="form-control"
-                                  placeholder="000.000.000-00"
-                                  maxlength="14"
-                                  value=<?php
-                                        echo "\"".$funcionario->cpf."\"";
-                                    ?>
-                                  required
-=======
                                     pattern="[0-9.-]+"
                                     type="text"
                                     id="CPF"
@@ -172,7 +173,6 @@
                                             echo "\"".$funcionario->cpf."\"";
                                         ?>
                                     required
->>>>>>> 922c08afe75f5b34dd0bd78a187bbb424b82807b
                               >
                           </div>
 
@@ -403,6 +403,33 @@
                               </div>
                           </div>
 
+						  <h3 class="form-group col-sm-12">Status do funcionário</h3>
+						  <div class="form-group col-sm-12">
+							  <label for="motivo" class="control-label">Motivo:</label>
+							  <input
+								  type="text"
+								  id="motivo"
+								  name="motivo"
+								  class="form-control"
+							  >
+						  </div>
+
+						  <div class="col-sm-4">
+							  <label>Status:</label>
+							  <div class="radio">
+
+								  <label>
+									  <input type="radio" id="status" name="status" value="ATIVO" checked>
+									  Ativo
+								  </label>
+
+								  <label>
+									  <input type="radio" id="status" name="status" value="INATIVO">
+									  Inativo
+								  </label>
+							  </div>
+						  </div>
+
                           <p class="col-sm-12">
                               <input type="submit" name="submit" value="Enviar" class="btn btn-primary btn-md"/>
                               <input type="reset" id="limpar" name="limpar" value="Limpar" class="btn btn-danger btn-md"/>
@@ -556,7 +583,20 @@ $(document).ready(function() {
                         <p class="small">Os campos que possuem (*) são obrigatórios. Não insira caracteres acentuados.</p>
                         <form name="cadastro" action="" method="post" onsubmit="return false;">
                             <input id="pagina" name="pagina" value="alterar_dados" style="display:none">
-                              <input id="pagina" name="pagina" value="alterar_dados" style="display:none">
+
+							  <h3>Código do Funcionário</h3>
+
+							  <div class="form-group col-sm-12">
+							  	<input
+									id="codigo"
+									name="codigo"
+									class="form-control"
+									value=<?php
+										echo "\"".$funcionario->codigo_funcionario."\"";
+										?>
+									required
+								>
+							</div>
 
                               <h3>Informações básicas</h3>
 
@@ -784,7 +824,6 @@ $(document).ready(function() {
 									   value=<?php
    											echo "\"".$funcionario->motivo."\"";
    										?>
-                                       required
                                    >
                                </div>
 
