@@ -153,8 +153,27 @@
     	if ($numRegistros != 0) {
     		// Exibe os produtos e seus respectivos preços
     		while ($funcionario = mysqli_fetch_object($sql)) {
-
-    		}
+    			echo'
+                <tr>
+                    <td>' . $funcionario->codigo_funcionario . '</td>
+                    <td>' . $funcionario->nome .'</td>
+                    <td>' . $funcionario->cpf .'</td>
+                    <td>' . $funcionario->endereco->estado .'</td>
+                    <td>' . $funcionario->terminal .'</td>
+                    <td>' . $funcionario->periodo .'</td>
+                    <td>' . $funcionario->estado .'</td>
+                    									<th>Cidade</th>
+									<th>Terminal</th>
+									<th>Periodo</th>
+									<th>Situação</th>
+                    <td>
+                        <button
+                            class="btn alteracao"
+                            value="' . $funcionario->codigo_funcionario .'"
+                        >alterar</button>
+                    </td>
+                </tr>';
+            }
     	// Se não houver registros
     	} else {
     		echo "Nenhum funcionário com o nome ".$nome." foi encontrado.";

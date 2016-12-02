@@ -166,8 +166,6 @@
 									</span>
 								</div>
 							</div>
-
-							<h1 id="msg" class="col-sm-12"></h1>
 						</form>
 
 						<div class="container col-sm-12">
@@ -177,30 +175,20 @@
 									<th>Código</th>
 									<th>Nome</th>
 									<th>CPF</th>
+<<<<<<< HEAD
 									<th>Terminal</th>
 									<th>Período</th>
 									<th>Estado</th>
+=======
+									<th>Cidade</th>
+									<th>Terminal</th>
+									<th>Periodo</th>
+									<th>Situação</th>
+									<th></th>
+>>>>>>> b463cd35054fd55aa4a15c671fc5069fec9b1097
 								</tr>
 								</thead>
-								<tbody>
-								<tr>
-									<td>John</td>
-									<td>Doe</td>
-									<td>john@example.com</td>
-									<td>
-										<button class="btn">alterar</button>
-									</td>
-								</tr>
-								<tr>
-									<td>Mary</td>
-									<td>Moe</td>
-									<td>mary@example.com</td>
-								</tr>
-								<tr>
-									<td>July</td>
-									<td>Dooley</td>
-									<td>july@example.com</td>
-								</tr>
+								<tbody id="msg">
 								</tbody>
 							</table>
 							</div>
