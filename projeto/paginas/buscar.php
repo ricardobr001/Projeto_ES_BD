@@ -175,17 +175,11 @@
 									<th>Código</th>
 									<th>Nome</th>
 									<th>CPF</th>
-<<<<<<< HEAD
-									<th>Terminal</th>
-									<th>Período</th>
-									<th>Estado</th>
-=======
 									<th>Cidade</th>
 									<th>Terminal</th>
 									<th>Periodo</th>
 									<th>Situação</th>
 									<th></th>
->>>>>>> b463cd35054fd55aa4a15c671fc5069fec9b1097
 								</tr>
 								</thead>
 								<tbody id="msg">

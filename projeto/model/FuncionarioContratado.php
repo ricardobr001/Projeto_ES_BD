@@ -10,19 +10,19 @@
 		private $salario;
 
 		//Construtor da classe
-	public function __construct($nome, $CPF, $dataNascimento, $telefone, $estado, $motivo, $periodo, $setor, $terminal, $cidade, $logradouro, $bairro, $CEP, $numero, $complemento, $dataEntrada, $cargo, $qtddHorasTrabalhadas, $dataSaida, $salario){
-		//parent::Funcionario($codigo, $nome, $CPF, $dataNascimento, $telefone, $estado, $motivo, $periodo, $setor, $terminal, $cidade, $rua, $bairro, $CEP, $numero, $complemento);
+	public function __construct($nome, $CPF, $dataNascimento, $telefone, $situacao, $motivo, $periodo, $setor, $terminal, $cidade, $logradouro, $bairro, $CEP, $numero, $complemento, $dataEntrada, $cargo, $qtddHorasTrabalhadas, $dataSaida, $salario, $estado){
+		//parent::Funcionario($codigo, $nome, $CPF, $dataNascimento, $telefone, $situacao, $motivo, $periodo, $setor, $terminal, $cidade, $rua, $bairro, $CEP, $numero, $complemento);
 		//Atributos da classe mãe
 		$this->nome = $nome;
 		$this->CPF = $CPF;
 		$this->dataNascimento = $dataNascimento;
 		$this->telefone = $telefone;
-		$this->estado = $estado;
+		$this->situacao = $situacao;
 		$this->motivo = $motivo;
 		$this->periodo = $periodo;
 		$this->setor = $setor;
 		$this->terminal = new Terminal($terminal);
-		$this->endereco = new Endereco($cidade, $logradouro, $bairro, $CEP, $numero, $complemento);
+		$this->endereco = new Endereco($cidade, $logradouro, $bairro, $CEP, $numero, $complemento, $estado);
 		//Atributos da classe filha
 		$this->dataEntrada = $dataEntrada;
 		$this->cargo = $cargo;
@@ -88,7 +88,7 @@
 				cpf,
 				data_nascimento,
 				telefone,
-				estado,
+				situacao,
 				motivo,
 				cargo,
 				periodo,
@@ -100,13 +100,14 @@
 				numero,
 				complemento,
 				cep,
-				cnpj_empresa
+				cnpj_empresa,
+				estado
 			) VALUES (
 				'".$this->nome."',
 				'".$this->CPF."',
 				'".$this->dataNascimento."',
 				'".$this->telefone."',
-				'".$this->estado."',
+				'".$this->situacao."',
 				'".$this->motivo."',
 				'".$this->cargo."',
 				'".$this->periodo."',
@@ -118,7 +119,8 @@
 				'".$this->endereco->getNumero()."',
 				'".$this->endereco->getComplemento()."',
 				'".$this->endereco->getCEP()."',
-				'00.000.000/0000-00'
+				'00.000.000/0000-00',
+				'".$this->endereco->getEstado()."'
 			);"))
 					die(mysqli_error($conn));
 			Connection::close($conn);
@@ -159,7 +161,7 @@
 				cpf = '".$this->CPF."',
 				data_nascimento = '".$this->dataNascimento."',
 				telefone = '".$this->telefone."',
-				estado = '".$this->salario."',
+				situacao = '".$this->salario."',
 				cargo = '".$this->cargo."',
 				periodo = '".$this->periodo."',
 				terminal = '".$this->terminal->getNome()."',
@@ -170,6 +172,7 @@
 				numero = '".$this->endereco->getNumero()."',
 				complemento = '".$this->endereco->getComplemento()."',
 				cep = '".$this->endereco->getCEP()."'
+				estado = '".$this->endereco->getEstado()."',
 				WHERE codigo_funcionario = '".$this->codigoDoFuncionario."';")){
 				die(mysqli_error($conn));
 				$msg = 'Funcionário não cadastrado!';

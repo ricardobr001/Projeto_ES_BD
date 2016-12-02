@@ -25,11 +25,12 @@
       $complemento = $_POST["complemento"];
       $terminal = $_POST["terminal"];
       $setor = $_POST["setor"];
-      $CNPJ = $_POST["CNPJ"];
+      $cnpj_empresa = $_POST["cnpj_empresa"];
+      $estado = $_POST["estado"];
 
-      //Todo funcionário novo cadastrado possui estado ATIVO e não possui um motivo de desligamento
-      $funcionario = new FuncionarioTerceirizado($nome, $CPF, $dataNascimento, $telefone, 'ATIVO', '', $periodo, $setor, $terminal, $cidade, $endereco, $bairro, $CEP, $numero, $complemento);
-      $msg = $funcionario->cadastrar($CNPJ);
+      //Todo funcionário novo cadastrado possui situacao ATIVO e não possui um motivo de desligamento
+      $funcionario = new FuncionarioTerceirizado($nome, $CPF, $dataNascimento, $telefone, 'ATIVO', '', $periodo, $setor, $terminal, $cidade, $endereco, $bairro, $CEP, $numero, $complemento, $estado);
+      $msg = $funcionario->cadastrar($cnpj_empresa);
 
       echo $msg;
     break;
@@ -48,11 +49,12 @@
       $complemento = $_POST["complemento"];
       $terminal = $_POST["terminal"];
       $setor = $_POST["setor"];
-      $CNPJ = $_POST["CNPJ"];
+      $cnpj_empresa = $_POST["cnpj_empresa"];
+      $estado = $_POST["estado"];
 
-      //Todo funcionário novo cadastrado possui estado ATIVO e não possui um motivo de desligamento
-      $funcionario = new FuncionarioTerceirizado($nome, $CPF, $dataNascimento, $telefone, 'ATIVO', '', $periodo, $setor, $terminal, $cidade, $endereco, $bairro, $CEP, $numero, $complemento);
-      $msg = $funcionario->cadastrar($CNPJ);
+      //Todo funcionário novo cadastrado possui situacao ATIVO e não possui um motivo de desligamento
+      $funcionario = new FuncionarioTerceirizado($nome, $CPF, $dataNascimento, $telefone, 'ATIVO', '', $periodo, $setor, $terminal, $cidade, $endereco, $bairro, $CEP, $numero, $complemento, $estado);
+      $msg = $funcionario->cadastrar($cnpj_empresa);
 
       echo $msg;
     break;

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 01, 2016 at 07:26 
+-- Generation Time: Dec 01, 2016 at 07:26
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 7.0.9
 
@@ -44,7 +44,7 @@ CREATE TABLE `funcionario` (
   `cpf` varchar(14) NOT NULL,
   `data_nascimento` varchar(10) NOT NULL,
   `telefone` varchar(13) NOT NULL,
-  `estado` varchar(7) NOT NULL,
+  `situacao` varchar(7) NOT NULL,
   `motivo` text,
   `cargo` varchar(13) NOT NULL,
   `periodo` varchar(10) NOT NULL,

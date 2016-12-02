@@ -283,12 +283,12 @@ $(document).ready(function() {
                             </div>
 
                             <div class="form-group col-sm-4">
-                                <label for="CNPJ">CNPJ:</label>
+                                <label for="cnpj_empresa">CNPJ:</label>
                                 <input
                                     pattern="[0-9/-.]+"
                                     type="text"
-                                    id="CNPJ"
-                                    name="CNPJ"
+                                    id="cnpj_empresa"
+                                    name="cnpj_empresa"
                                     class="form-control"
                                     size="18"
                                     maxlength="18"
