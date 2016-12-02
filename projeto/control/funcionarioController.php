@@ -24,7 +24,7 @@
 		case "Por nome":
 			$nome = $_POST["CPF"];
 			$funcionario = new Funcionario("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
-			
+
 			$msg = $funcionario->buscarNome($nome);
 		break;
 
@@ -55,6 +55,13 @@
 
 			$funcionario = new Funcionario("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
 			$msg = $funcionario->buscaTerminal($terminal);
+		break;
+
+		case "relatorio_funcao":
+			$setor = $_POST["setor"];
+
+			$funcionario = new Funcionario("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
+			$msg = $funcionario->gerarRelatorioPorFuncao($setor);
 		break;
 	}
 ?>

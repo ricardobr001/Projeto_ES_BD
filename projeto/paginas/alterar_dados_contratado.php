@@ -106,7 +106,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1>Campos que podem ser alterados</h1>
-                        <p class="small">Os campos que possuem (*) são obrigatórios. Não insira caracteres acentuados.</p>
+                        <p class="small">Os campos que possuem (*) são obrigatórios.</p>
                         <form name="cadastro" action="" method="post" onsubmit="return false;">
                           <input id="pagina" name="pagina" value="alterar_dados" style="display:none">
 
