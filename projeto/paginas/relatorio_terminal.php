@@ -29,6 +29,29 @@
 
 <body>
 
+    <script>
+    $(document).ready(function() {
+    $('#limpar').click(function () {
+        $('#msg').html("Mensagem");
+    }
+
+                );
+
+    $('form').submit(function(){
+    var dados= $(this).serialize();
+    $.ajax({
+    type: "POST",
+    url: '../control/funcionarioController.php',
+    data: dados ,
+    success: function(data, textStatus, jqXHR)  {
+                   $('#msg').html(data);
+                }
+    });
+    });
+    });
+
+       </script>
+
     <div id="wrapper">
 
         <!-- Sidebar -->
@@ -83,13 +106,45 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1>Relatório por terminal</h1>
-                        <p>Terminal: <input pattern="[a-zA-Z0-9]+" type="text" id="terminal" name="terminal" value="" size="1" maxlength="1" placeholder="A"></p>
-                        <input type="submit" value="Submit">
-                        <br />
-                        <br />
-                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
+                        <p class="small">Escolha um campo.</p>
+                        <form name="cadastro" action="" method="post" onsubmit="return false;">
+                            <input id="pagina" name="pagina" value="relatorio_terminal" style="display:none">
+
+                            <div class="form-group col-sm-4">
+                                <label for="periodo">Período:</label>
+                                <select class="form-control" id="cargo" name="cargo" class="form-control">
+                                    <option>COMUM</option>
+                                    <option>GERENTE</option>
+                                    <option>TERCEIRIZADO</option>
+                                </select>
+                            </div>
+
+                            <p class="col-sm-12">
+                                <input type="submit" name="submit" value="Enviar" class="btn btn-primary btn-md"/>
+                                <input type="reset" id="limpar" name="limpar" value="Limpar" class="btn btn-danger btn-md"/>
+                            </p>
+
+                            <h1 id="msg" class="col-sm-12"></h1>
+                        </form>
+
+                        <div class="container col-sm-12">
+                            <table id="results" class="table table-hover table-striped">
+								<thead>
+								<tr>
+									<th>Cargo</th>
+									<th>Terminal</th>
+									<th>Quantidade</th>
+									<th></th>
+								</tr>
+								<tr>
+								</thead>
+								<tbody id="msg">
+								</tbody>
+							</table>
+						</div>
                     </div>
                 </div>
+                <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
             </div>
         </div>
         <!-- /#page-content-wrapper -->

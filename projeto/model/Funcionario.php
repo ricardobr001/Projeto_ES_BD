@@ -420,7 +420,7 @@
           }
     // Se não houver registros
     } else {
-        echo "Nenhum funcionário trabalhando no terminal ".$terminal." foi encontrado.";
+        echo "Não foi possível emitir o relatório.";
     }
 
     }
@@ -428,19 +428,42 @@
 
     }
 
-    public function gerarRelatorioPorTerminal($terminal){
+    public function gerarRelatorioPorTerminal($cargo){
       $conn = Connection::open();
 
       if(!$conn){
         $msg = 'Problemas na conexão';
       }
       else{
-      /*IMPLEMENTAR A RECUPERAÇÃO OS DADOS NO BANCO E GERAR O RELATÓRIO*/
 
+                $sql = mysqli_query($conn, "SELECT terminal, cargo,
+                    COUNT(terminal) AS quantidade
+                    FROM funcionario
+                    WHERE situacao
+                    LIKE 'ATIVO' AND cargo LIKE '".$cargo."' GROUP BY funcionario.terminal");
+
+                // Descobrimos o total de registros encontrados
+              $numRegistros = mysqli_num_rows($sql);
+
+              // Se houver pelo menos um registro, exibe-o
+              if ($numRegistros != 0) {
+                  // Exibe os produtos e seus respectivos preços
+                  while ($funcionario = mysqli_fetch_object($sql)) {
+                      echo'
+                        <tr>
+                            <td>' . $funcionario->cargo . '</td>
+                            <td>' . $funcionario->terminal .'</td>
+                            <td>' . $funcionario->quantidade .'</td>
+                        </tr>';
+                    }
+              // Se não houver registros
+              } else {
+                  echo "Não foi possível emitir o relatório.";
+              }
+
+              }
+              return $sql;
       }
-
-
-    }
 
     public function gerarRelatorioPorFaixaSalarial($min, $max){
       $conn = Connection::open();
