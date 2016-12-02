@@ -22,7 +22,7 @@
 		$this->periodo = $periodo;
 		$this->setor = $setor;
 		$this->terminal = new Terminal($terminal);
-		$this->logradouro = new Endereco($cidade, $logradouro, $bairro, $CEP, $numero, $complemento, $estado);
+		$this->endereco = new Endereco($cidade, $logradouro, $bairro, $CEP, $numero, $complemento, $estado);
 		//Atributos da classe filha
 		$this->dataEntrada = $dataEntrada;
 		$this->cargo = $cargo;
@@ -161,18 +161,18 @@
 				cpf = '".$this->CPF."',
 				data_nascimento = '".$this->dataNascimento."',
 				telefone = '".$this->telefone."',
-				situacao = '".$this->salario."',
+				situacao = '".$this->situacao."',
 				cargo = '".$this->cargo."',
 				periodo = '".$this->periodo."',
 				terminal = '".$this->terminal->getNome()."',
 				setor = '".$this->setor."',
-				cidade = '".$this->logradouro->getCidade()."',
-				logradouro = '".$this->logradouro->getLogradouro()."',
-				bairro = '".$this->logradouro->getBairro()."',
-				numero = '".$this->logradouro->getNumero()."',
-				complemento = '".$this->logradouro->getComplemento()."',
-				cep = '".$this->logradouro->getCEP()."',
-				estado = '".$this->logradouro->getEstado()."'
+				cidade = '".$this->endereco->getCidade()."',
+				logradouro = '".$this->endereco->getLogradouro()."',
+				bairro = '".$this->endereco->getBairro()."',
+				numero = '".$this->endereco->getNumero()."',
+				complemento = '".$this->endereco->getComplemento()."',
+				cep = '".$this->endereco->getCEP()."',
+				estado = '".$this->endereco->getEstado()."'
 				WHERE codigo_funcionario = '".$codigo."';")){
 				die(mysqli_error($conn));
 				$msg = 'Funcionário não cadastrado!';
