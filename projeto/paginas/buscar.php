@@ -115,11 +115,11 @@
 					<div class="col-lg-12">
 						<h1>Busca</h1>
 						<form name="buscaCPF" action="" method="post" onsubmit="return false;">
-							<input id="pagina" name="pagina" value="buscar" style="display:none">
+							<!--<input id="pagina" name="pagina" value="buscar" style="display:none">-->
 							<div class="form-group">
 								<div class="input-group">
 									<div class="input-group-btn">
-										<button
+										<!--<button
 											type="button"
 											class="btn btn-default dropdown-toggle"
 											data-toggle="dropdown"
@@ -131,11 +131,11 @@
 											Por CPF </span>
 										</button>
 										<ul class="dropdown-menu">
-											<li><a href="#">Por CPF </a></li>
-											<li><a href="#">Por nome </a></li>
-											<li><a href="#">Por cargo </a></li>
-											<li><a href="#">Por terminal </a></li>
-											<li><a href="#">Por cidade </a></li>
+											<li><a href="#">Por CPF</a></li>
+											<li><a href="#">Por nome</a></li>
+											<li><a href="#">Por cargo</a></li>
+											<li><a href="#">Por terminal</a></li>
+											<li><a href="#">Por cidade</a></li>
 										</ul>
 										<script>
 										 	$(function(){
@@ -145,7 +145,15 @@
 													$("#pagina").id($(this).text());
 												});
 											});
-										</script>
+										</script>-->
+										<select class="form-control" id="pagina" name="pagina" class="form-control">
+		                                    <option>Por nome</option>
+		                                    <option>Por CPF</option>
+		                                    <option>Por cidade</option>
+		                                    <option>Por cargo</option>
+											<option>Por terminal</option>
+		                                </select>
+
 									</div>
 									<input
 										class="form-control"
@@ -190,11 +198,11 @@
 							<script>
 								$(".btn alteracao").click(function(){
 									window.location.replace("alterar_dados_contratado.php?codigo=" + $(this).attr('value'));
-								});			
+								});
 
 								$(".#pagina").click(function(){
-									
-								});								
+
+								});
 							</script>
 
 						<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
