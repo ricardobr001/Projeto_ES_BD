@@ -12,7 +12,6 @@
         $this->CPF = $CPF;
         $this->dataNascimento = $dataNascimento;
         $this->telefone = $telefone;
-		echo "aaaa".$situacao;
         $this->situacao = $situacao;
         $this->motivo = $motivo;
         $this->periodo = $periodo;
@@ -108,7 +107,6 @@
 				estado = '".$this->endereco->getEstado()."',
                 cnpj_empresa = '".$cnpj_empresa."'
 				WHERE codigo_funcionario = '".$codigo."';")){
-				die(mysqli_error($conn));
 				$msg = 'Funcionário não cadastrado!';
 			}
 
