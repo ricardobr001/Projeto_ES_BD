@@ -10,7 +10,7 @@
     else{
         /*IMPLEMENTAR A RECUPERAÇÃO OS DADOS NO BANCO*/
         $sql = mysqli_query($conn, "SELECT * FROM funcionario WHERE codigo_funcionario = ".$cod) or die(mysqli_error($conn));
-        $funcionario = mysqli_fetch_object($sql);
+        $funcionario = mysqli_fetch_object($sql);   
 
         if ($funcionario->cnpj_empresa == "00.000.000/0000-00"){
 ?>
@@ -143,10 +143,14 @@
                           <div class="form-group col-sm-12">
                               <label for="nome" class="control-label">*Nome:</label>
                               <input
-                                  type="text"
-                                  id="nome"
-                                  name="nome"
-                                  class="form-control"
+                                    type="text"
+                                    id="nome"
+                                    name="nome"
+                                    class="form-control"
+                                    value=
+                                    <?php
+                                        echo "\"".$funcionario->nome."\""; 
+                                    ?>
                                   required
                               >
                           </div>
