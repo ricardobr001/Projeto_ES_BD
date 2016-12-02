@@ -104,7 +104,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1>Cadastro de funcionários contratados</h1>
-                        <p class="small">Os campos que possuem (*) são obrigatórios. Não insira caracteres acentuados.</p>
+                        <p class="small">Os campos que possuem (*) são obrigatórios.</p>
                         <form name="cadastro" action="" method="post" onsubmit="return false;">
                             <input id="pagina" name="pagina" value="cadastrar" style="display:none">
 

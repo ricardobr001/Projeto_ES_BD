@@ -352,7 +352,7 @@
     }
 
     //Alterando os dados de um funcionário no banco
-    public function alterarDados(){
+    public function alterarDados($codigo){
       $conn = Connection::open();
 
       if(!$conn){

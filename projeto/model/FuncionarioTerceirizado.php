@@ -7,17 +7,17 @@
 
     //Construtor da classe
     public function __construct($nome, $CPF, $dataNascimento, $telefone, $situacao, $motivo, $periodo, $setor, $terminal, $cidade, $logradouro, $bairro, $CEP, $numero, $complemento, $estado){
-      //$this->codigoDoFuncionario = $codigo;
-      $this->nome = $nome;
-      $this->CPF = $CPF;
-      $this->dataNascimento = $dataNascimento;
-      $this->telefone = $telefone;
-      $this->situacao = $situacao;
-      $this->motivo = $motivo;
-      $this->periodo = $periodo;
-      $this->setor = $setor;
-      $this->terminal = new Terminal($terminal);
-      $this->endereco = new Endereco($cidade, $logradouro, $bairro, $CEP, $numero, $complemento, $estado);
+        //$this->codigoDoFuncionario = $codigo;
+        $this->nome = $nome;
+        $this->CPF = $CPF;
+        $this->dataNascimento = $dataNascimento;
+        $this->telefone = $telefone;
+        $this->situacao = $situacao;
+        $this->motivo = $motivo;
+        $this->periodo = $periodo;
+        $this->setor = $setor;
+        $this->terminal = new Terminal($terminal);
+        $this->endereco = new Endereco($cidade, $logradouro, $bairro, $CEP, $numero, $complemento, $estado);
     }
 
     //Salvando os dados da classe no banco
@@ -98,13 +98,13 @@
 				periodo = '".$this->periodo."',
 				terminal = '".$this->terminal->getNome()."',
 				setor = '".$this->setor."',
-				cidade = '".$this->logradouro->getCidade()."',
-				logradouro = '".$this->logradouro->getLogradouro()."',
-				bairro = '".$this->logradouro->getBairro()."',
-				numero = '".$this->logradouro->getNumero()."',
-				complemento = '".$this->logradouro->getComplemento()."',
-				cep = '".$this->logradouro->getCEP()."',
-				estado = '".$this->logradouro->getEstado()."',
+				cidade = '".$this->endereco->getCidade()."',
+				logradouro = '".$this->endereco->getLogradouro()."',
+				bairro = '".$this->endereco->getBairro()."',
+				numero = '".$this->endereco->getNumero()."',
+				complemento = '".$this->endereco->getComplemento()."',
+				cep = '".$this->endereco->getCEP()."',
+				estado = '".$this->endereco->getEstado()."',
                 cnpj_empresa = '".$cnpj_empresa."'
 				WHERE codigo_funcionario = '".$codigo."';")){
 				die(mysqli_error($conn));
