@@ -64,5 +64,12 @@
 			$funcionario = new Funcionario("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
 			$msg = $funcionario->gerarRelatorioPorFuncao($periodo);
 		break;
+
+		case "relatorio_terminal":
+			$cargo = $_POST["cargo"];
+
+			$funcionario = new Funcionario("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
+			$msg = $funcionario->gerarRelatorioPorTerminal($cargo);
+		break;
 	}
 ?>
