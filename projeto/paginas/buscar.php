@@ -186,6 +186,11 @@
 								</tbody>
 							</table>
 							</div>
+							<script>
+								$(".table").click(function(){
+									window.location.replace("http://stackoverflow.com");
+								});								
+							</script>
 
 						<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
 					</div>

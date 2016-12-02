@@ -158,14 +158,10 @@
                     <td>' . $funcionario->codigo_funcionario . '</td>
                     <td>' . $funcionario->nome .'</td>
                     <td>' . $funcionario->cpf .'</td>
-                    <td>' . $funcionario->endereco->estado .'</td>
+                    <td>' . $funcionario->cidade .'</td>
                     <td>' . $funcionario->terminal .'</td>
                     <td>' . $funcionario->periodo .'</td>
                     <td>' . $funcionario->estado .'</td>
-                    									<th>Cidade</th>
-									<th>Terminal</th>
-									<th>Periodo</th>
-									<th>Situação</th>
                     <td>
                         <button 
                             class="btn alteracao"
