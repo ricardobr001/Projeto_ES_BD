@@ -2,24 +2,24 @@
   require_once '../conexao/Conexao.php';
 
   class Empresa{
-    private $CNPJ;
+    private $cnpj_empresa;
     private $nomeFantasia;
     private $razaoSocial;
 
     //Construtor da classe
-    public function __construct($CNPJ, $nomeFantasia, $razaoSocial){
-      $this->CNPJ = $CNPJ;
+    public function __construct($cnpj_empresa, $nomeFantasia, $razaoSocial){
+      $this->cnpj_empresa = $cnpj_empresa;
       $this->nomeFantasia = $nomeFantasia;
       $this->razaoSocial = $razaoSocial;
     }
 
     //Getters e Setters
-    public function setCNPJ($CNPJ){
-        $this->CNPJ = $CNPJ;
+    public function setCNPJ($cnpj_empresa){
+        $this->cnpj_empresa = $cnpj_empresa;
     }
 
     public function getCNPJ(){
-        return $this->CNPJ;
+        return $this->cnpj_empresa;
     }
 
     public function setNomeFantasia($nomeFantasia){
@@ -47,11 +47,11 @@
       }
       else{
         mysqli_query($conn, "INSERT INTO empresa(
-          cnpj,
+          cnpj_empresa,
           nome_fantasia,
           razao_social
         ) VALUES (
-          '".$this->CNPJ."',
+          '".$this->cnpj_empresa."',
           '".$this->nomeFantasia."',
           '".$this->razaoSocial."'
         )");

@@ -6,22 +6,22 @@
     //Atributos herdados da classe funcionário!!
 
     //Construtor da classe
-    public function __construct($nome, $CPF, $dataNascimento, $telefone, $estado, $motivo, $periodo, $setor, $terminal, $cidade, $logradouro, $bairro, $CEP, $numero, $complemento){
+    public function __construct($nome, $CPF, $dataNascimento, $telefone, $situacao, $motivo, $periodo, $setor, $terminal, $cidade, $logradouro, $bairro, $CEP, $numero, $complemento, $estado){
       //$this->codigoDoFuncionario = $codigo;
       $this->nome = $nome;
       $this->CPF = $CPF;
       $this->dataNascimento = $dataNascimento;
       $this->telefone = $telefone;
-      $this->estado = $estado;
+      $this->situacao = $situacao;
       $this->motivo = $motivo;
       $this->periodo = $periodo;
       $this->setor = $setor;
       $this->terminal = new Terminal($terminal);
-      $this->logradouro = new Endereco($cidade, $logradouro, $bairro, $CEP, $numero, $complemento);
+      $this->endereco = new Endereco($cidade, $logradouro, $bairro, $CEP, $numero, $complemento, $estado);
     }
 
     //Salvando os dados da classe no banco
-    public function cadastrar($CNPJ){
+    public function cadastrar($cnpj_empresa){
       $conn = Connection::open();
 
       if(!$conn){
@@ -36,7 +36,7 @@
           cpf,
           data_nascimento,
           telefone,
-          estado,
+          situacao,
           motivo,
           cargo,
           periodo,
@@ -48,25 +48,27 @@
           numero,
           complemento,
           cep,
-          cnpj_empresa
+          cnpj_empresa,
+          estado
         ) VALUES (
           '".$this->nome."',
           '".$this->CPF."',
           '".$this->dataNascimento."',
           '".$this->telefone."',
-          '".$this->estado."',
+          '".$this->situacao."',
           '".$this->motivo."',
           'TERCEIRIZADO',
           '".$this->periodo."',
           '".$this->terminal->getNome()."',
           '".$this->setor."',
-          '".$this->logradouro->getCidade()."',
-          '".$this->logradouro->getLogradouro()."',
-          '".$this->logradouro->getBairro()."',
-          '".$this->logradouro->getNumero()."',
-          '".$this->logradouro->getComplemento()."',
-          '".$this->logradouro->getCEP()."',
-          '".$CNPJ."'
+          '".$this->endereco->getCidade()."',
+          '".$this->endereco->getLogradouro()."',
+          '".$this->endereco->getBairro()."',
+          '".$this->endereco->getNumero()."',
+          '".$this->endereco->getComplemento()."',
+          '".$this->endereco->getCEP()."',
+          '".$cnpj_empresa."',
+          '".$this->endereco->getEstado()."'
         );"))
            die(mysqli_error($conn));
         Connection::close($conn);

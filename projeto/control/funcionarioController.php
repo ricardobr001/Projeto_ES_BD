@@ -15,7 +15,7 @@
 			$motivo = $_POST["motivo"];
 			$status = $_POST["status"];
 
-			$funcionario = new Funcionario($codigo, "", "", "", "", $status, $motivo, "", "", "", "", "", "", "", "", "");
+			$funcionario = new Funcionario($codigo, "", "", "", "", $status, $motivo, "", "", "", "", "", "", "", "", "", "");
 			$msg = $funcionario->alterarStatus();
 
 			echo $msg;
@@ -23,8 +23,8 @@
 
 		case "Por nome":
 			$nome = $_POST["CPF"];
-
 			$funcionario = new Funcionario("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
+			
 			$msg = $funcionario->buscarNome($nome);
 		break;
 

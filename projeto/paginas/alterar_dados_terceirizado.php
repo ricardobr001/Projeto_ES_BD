@@ -76,20 +76,6 @@ $(document).ready(function() {
                     <a href="cadastrar_empresa.php">Cadastrar Empresa</a>
                 </li>
                 <li>
-                  <a href="javascript:;" data-toggle="collapse" data-target="#alterar_dados"><i class="fa fa-fw fa-arrows-v"></i> Alterar Dados <i class="fa fa-fw fa-caret-down"></i></a>
-                     <ul id="alterar_dados" class="collapse">
-                         <li>
-                             <a href="alterar_dados_contratado.php">Funcionario Contratado</a>
-                         </li>
-                         <li>
-                             <a href="alterar_dados_terceirizado.php">Funcionario Terceirizado</a>
-                         </li>
-                     </ul>
-                </li>
-                <li>
-                  <a href="alterar_status.php">Alterar Status</a>
-                </li>
-                <li>
                     <a href="buscar.php">Buscar</a>
                 </li>
                 <li>
@@ -231,11 +217,11 @@ $(document).ready(function() {
                               </div>
 
                               <div class="form-group col-sm-4">
-                                  <label for="estado">*Estado:</label>
+                                  <label for="situacao">*Situacao:</label>
                                   <input
                                       type="text"
-                                      id="estado"
-                                      name="estado"
+                                      id="situacao"
+                                      name="situacao"
                                       class="form-control"
                                       required
                                   >
@@ -288,12 +274,12 @@ $(document).ready(function() {
                                </div>
 
                                <div class="form-group col-sm-4">
-                                   <label for="CNPJ">CNPJ:</label>
+                                   <label for="cnpj_empresa">CNPJ:</label>
                                    <input
                                        pattern="[0-9/-.]+"
                                        type="text"
-                                       id="CNPJ"
-                                       name="CNPJ"
+                                       id="cnpj_empresa"
+                                       name="cnpj_empresa"
                                        class="form-control"
                                        size="18"
                                        maxlength="18"

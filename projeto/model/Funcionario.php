@@ -7,7 +7,7 @@
     private $CPF;
     private $dataNascimento;
     private $telefone;
-    private $estado;
+    private $situacao;
     private $motivo;
     private $periodo;
     private $setor;
@@ -15,18 +15,18 @@
     private $endereco;
 
     //Construtor da classe, ja setando todos os valor para os atributos
-    public function __construct($codigo, $nome, $CPF, $dataNascimento, $telefone, $estado, $motivo, $periodo, $setor, $terminal, $cidade, $rua, $bairro, $CEP, $numero, $complemento){
+    public function __construct($codigo, $nome, $CPF, $dataNascimento, $telefone, $situacao, $motivo, $periodo, $setor, $terminal, $cidade, $rua, $bairro, $CEP, $numero, $complemento, $estado){
       $this->codigoDoFuncionario = $codigo;
       $this->nome = $nome;
       $this->CPF = $CPF;
       $this->dataNascimento = $dataNascimento;
       $this->telefone = $telefone;
-      $this->estado = $estado;
+      $this->situacao = $situacao;
       $this->motivo = $motivo;
       $this->periodo = $periodo;
       $this->setor = $setor;
       $this->terminal = new Terminal($terminal);
-      $this->endereco = new Endereco($cidade, $rua, $bairro, $CEP, $numero, $complemento);
+      $this->endereco = new Endereco($cidade, $rua, $bairro, $CEP, $numero, $complemento, $estado);
     }
 
     //Getters
@@ -50,8 +50,8 @@
         return $this->telefone;
     }
 
-    public function getEstado(){
-        return $this->estado;
+    public function getSituacao(){
+        return $this->situacao;
     }
 
     public function getMotivo(){
@@ -95,8 +95,8 @@
         $this->telefone = $telefone;
     }
 
-    public function setEstado($estado){
-        $this->estado = $estado;
+    public function setSituacao($situacao){
+        $this->situacao = $situacao;
     }
 
     public function setMotivo($motivo){
@@ -377,7 +377,7 @@
       else{
         if(!mysqli_query($conn, "UPDATE funcionario
           SET motivo = '".$this->motivo."',
-          estado = '".$this->estado."'
+          situacao = '".$this->situacao."'
           WHERE codigo_funcionario = '".$this->codigoDoFuncionario."';")){
           die(mysqli_error($conn));
           $msg = 'Funcionário não cadastrado!';
