@@ -190,7 +190,7 @@
 							</div>
 							<script>
 								$("#results").on("click", "button", function(){
-									window.location.replace("alterar_dados_contratado.php?codigo=" + $(this).attr("value"));
+									window.location.replace("alterar_funcionario.php?codigo=" + $(this).attr("value"));
 								});									
 							</script>
 
