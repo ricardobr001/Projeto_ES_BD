@@ -105,7 +105,7 @@ $(document).ready(function() {
                 <div class="row">
                     <div class="col-lg-12">
                         <h1>Insira os dados</h1>
-                        <p class="small">Todos os campos são de preenchimento obrigatório. Não inserir caracteres acentuados.</p>
+                        <p class="small">Todos os campos são de preenchimento obrigatório.</p>
                         <form name="cadastro" action="" method="post" onsubmit="return false">
                             <input id="pagina" name="pagina" value="cadastrar" style="display:none">
 
@@ -114,7 +114,6 @@ $(document).ready(function() {
                             <div class="form-group col-sm-12">
                                 <label for="nome" class="control-label">Nome:</label>
                                 <input
-                                    pattern="[a-zA-Z ]+"
                                     type="text"
                                     id="nome"
                                     name="nome"

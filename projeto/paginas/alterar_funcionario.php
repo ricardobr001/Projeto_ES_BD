@@ -781,60 +781,106 @@ $(document).ready(function() {
   											echo "\"".$funcionario->cep."\"";
   										?>
                                   >
-                              </div>
+                                </div>
 
-                              <h3>Informações da rotina de trabalho</h3>
+                                <h3>Informações da rotina de trabalho</h3>
 
-                              <div class="form-group col-sm-2">
-                                  <label for="terminal">Terminal:</label>
-                                  <select class="form-control" id="terminal" name="terminal" class="form-control">
-                                    <?php
-                                        if ($funcionario->terminal == A){
-                                            echo "<option selected=\"selected\">A</option>";
-                                        } else {
-                                            echo "<option>A</option>";
-                                        }
+                                <div class="form-group col-sm-2">
+                                    <label for="terminal">Terminal:</label>
+                                    <select class="form-control" id="terminal" name="terminal" class="form-control">
+                                        <?php
+                                            if ($funcionario->terminal == A){
+                                                echo "<option selected=\"selected\">A</option>";
+                                            } else {
+                                                echo "<option>A</option>";
+                                            }
 
-                                        if ($funcionario->terminal == B){
-                                            echo "<option selected=\"selected\">B</option>";
-                                        } else {
-                                            echo "<option>B</option>";
-                                        }
+                                            if ($funcionario->terminal == B){
+                                                echo "<option selected=\"selected\">B</option>";
+                                            } else {
+                                                echo "<option>B</option>";
+                                            }
 
-                                        if ($funcionario->terminal == C){
-                                            echo "<option selected=\"selected\">C</option>";
-                                        } else {
-                                            echo "<option>C</option>";
-                                        }
+                                            if ($funcionario->terminal == C){
+                                                echo "<option selected=\"selected\">C</option>";
+                                            } else {
+                                                echo "<option>C</option>";
+                                            }
 
-                                        if ($funcionario->terminal == D){
-                                            echo "<option selected=\"selected\">D</option>";
-                                        } else {
-                                            echo "<option>D</option>";
-                                        }
+                                            if ($funcionario->terminal == D){
+                                                echo "<option selected=\"selected\">D</option>";
+                                            } else {
+                                                echo "<option>D</option>";
+                                            }
 
-                                        if ($funcionario->terminal == E){
-                                            echo "<option selected=\"selected\">E</option>";
-                                        } else {
-                                            echo "<option>E</option>";
-                                        }
-                                    ?>
+                                            if ($funcionario->terminal == E){
+                                                echo "<option selected=\"selected\">E</option>";
+                                            } else {
+                                                echo "<option>E</option>";
+                                            }
+                                        ?>
                                   </select>
                                </div>
 
                                <div class="form-group col-sm-2">
                                    <label for="periodo">Período:</label>
                                    <select class="form-control" id="periodo" name="periodo" class="form-control">
-                                       <option>Manha</option>
-                                       <option>Tarde</option>
-                                       <option>Noite</option>
-                                       <option>Madrugada</option>
+                                       <?php
+                                            if ($funcionario->periodo == "Manha"){
+                                                echo "<option selected=\"selected\">Manha</option>";
+                                            } else {
+                                                echo "<option>Manha</option>";
+                                            }
+
+                                            if ($funcionario->periodo == "Tarde"){
+                                                echo "<option selected=\"selected\">Tarde</option>";
+                                            } else {
+                                                echo "<option>Tarde</option>";
+                                            }
+
+                                            if ($funcionario->periodo == "Noite"){
+                                                echo "<option selected=\"selected\">Noite</option>";
+                                            } else {
+                                                echo "<option>Noite</option>";
+                                            }
+
+                                            if ($funcionario->periodo == "Madrugada"){
+                                                echo "<option selected=\"selected\">Madrugada</option>";
+                                            } else {
+                                                echo "<option>Madrugada</option>";
+                                            }
+                                        ?>
                                    </select>
                                </div>
 
                                <div class="form-group col-sm-4">
                                    <label for="setor">Setor:</label>
                                    <select class="form-control" id="setor" name="setor" class="form-control">
+                                       <?php
+                                            if ($funcionario->setor == "Financeiro"){
+                                                echo "<option selected=\"selected\">Financeiro</option>";
+                                            } else {
+                                                echo "<option>Financeiro</option>";
+                                            }
+                                            
+                                            if ($funcionario->setor == "Limpeza"){
+                                                echo "<option selected=\"selected\">Limpeza</option>";
+                                            } else {
+                                                echo "<option>Limpeza</option>";
+                                            }
+
+                                            if ($funcionario->setor == "Seguranca"){
+                                                echo "<option selected=\"selected\">Seguranca</option>";
+                                            } else {
+                                                echo "<option>Seguranca</option>";
+                                            }
+
+                                            if ($funcionario->setor == "Informacoes"){
+                                                echo "<option selected=\"selected\">Informacoes</option>";
+                                            } else {
+                                                echo "<option>Informacoes</option>";
+                                            }                                                                                                                                    
+                                        ?>
                                        <option>Financeiro</option>
                                        <option>Limpeza</option>
                                        <option>Seguranca</option>
@@ -862,6 +908,33 @@ $(document).ready(function() {
 
 							   <h3>Status do funcionário</h3>
 
+                                <div class="col-sm-4">
+                                    <label>Status:</label>
+                                    <div class="radio">
+                                        <label>
+                                            <?php
+                                                if ($funcionario->situacao == "ATIVO") {
+                                                    echo "<input type=\"radio\" id=\"status\" name=\"status\" value=\"ATIVO\" checked>";
+                                                } else {
+                                                    echo "<input type=\"radio\" id=\"status\" name=\"status\" value=\"ATIVO\">";
+                                                }
+                                            ?>
+                                            Ativo
+                                        </label>
+
+                                       <label>
+                                            <?php
+                                                if ($funcionario->situacao == "INATIVO"){
+                                                    echo "<input type=\"radio\" id=\"status\" name=\"status\" value=\"INATIVO\" checked>";
+                                                } else {
+                                                    echo "<input type=\"radio\" id=\"status\" name=\"status\" value=\"INATIVO\">";
+                                                }
+                                            ?>
+                                            Inativo
+                                       </label>
+                                   </div>
+                               </div>
+
 							   <div class="form-group col-sm-12">
                                    <label for="motivo" class="control-label">Motivo:</label>
                                    <input
@@ -873,22 +946,6 @@ $(document).ready(function() {
    											echo "\"".$funcionario->motivo."\"";
    										?>
                                    >
-                               </div>
-
-                               <div class="col-sm-4">
-                                   <label>Status:</label>
-                                   <div class="radio">
-
-                                       <label>
-                                           <input type="radio" id="status" name="status" value="ATIVO">
-                                           Ativo
-                                       </label>
-
-                                       <label>
-                                           <input type="radio" id="status" name="status" value="INATIVO">
-                                           Inativo
-                                       </label>
-                                   </div>
                                </div>
 
                                <p class="col-sm-12">
