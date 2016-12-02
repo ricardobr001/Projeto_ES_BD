@@ -170,6 +170,9 @@
                                   class="form-control"
                                   placeholder="000.000.000-00"
                                   maxlength="14"
+                                  value=<?php
+                                        echo "\"".$funcionario->cpf."\""; 
+                                    ?>
                                   required
                               >
                           </div>
@@ -177,22 +180,28 @@
                           <div class="form-group col-sm-4">
                               <label for="dataNascimento">*Data de nascimento:</label>
                               <input
-                                  type="date"
-                                  id="dataNascimento"
-                                  name="dataNascimento"
-                                  class="form-control"
-                                  required
+									type="date"
+									id="dataNascimento"
+									name="dataNascimento"
+									class="form-control"
+									value=<?php
+											echo "\"".$funcionario->data_nascimento."\""; 
+										?>
+									required
                               >
                           </div>
 
                           <div class="form-group col-sm-4">
                               <label for="telefone">Telefone:</label>
                               <input
-                                  type="tel"
-                                  id="telefone"
-                                  name="telefone"
-                                  class="form-control"
-                                  placeholder="(00)00000-0000"
+                                    type="tel"
+                                    id="telefone"
+                                    name="telefone"
+                                    class="form-control"
+                                    placeholder="(00)00000-0000"
+                                    value=<?php
+                                        echo "\"".$funcionario->telefone."\""; 
+                                    ?>
                               >
                           </div>
 
