@@ -93,14 +93,19 @@
 					<a href="buscar.php">Buscar</a>
 				</li>
 				<li>
-					<a href="relatorio_funcao.php">Relatório por Função</a>
-				</li>
-				<li>
-					<a href="relatorio_terminal.php">Relatório por Terminal</a>
-				</li>
-				<li>
-					<a href="relatorio_salario.php">Relatório por Faixa Salarial</a>
-				</li>
+                    <a href="javascript:;" data-toggle="collapse" data-target="#relatorio"><i class="fa fa-fw fa-arrows-v"></i> Relatórios <i class="fa fa-fw fa-caret-down"></i></a>
+                       <ul id="relatorio" class="collapse">
+                           <li>
+                               <a href="relatorio_funcao.php">Função</a>
+                           </li>
+                           <li>
+                               <a href="relatorio_salario.php">Salario</a>
+                           </li>
+                           <li>
+                               <a href="relatorio_terminal.php">Terminal</a>
+                           </li>
+                       </ul>
+                </li>
 				<li>
 					<a href="sobre.html">Sobre</a>
 				</li>
@@ -199,7 +204,7 @@
 							<script>
 								$("#results").on("click", "button", function(){
 									window.location.replace("alterar_funcionario.php?codigo=" + $(this).attr("value"));
-								});									
+								});
 							</script>
 
 						<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
