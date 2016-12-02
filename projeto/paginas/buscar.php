@@ -178,7 +178,7 @@
 						</form>
 
 						<div class="container col-sm-12">
-							<table class="table table-hover table-striped">
+							<table id="results" class="table table-hover table-striped">
 								<thead>
 								<tr>
 									<th>Código</th>
@@ -190,18 +190,15 @@
 									<th>Situação</th>
 									<th></th>
 								</tr>
+								<tr>
 								</thead>
 								<tbody id="msg">
 								</tbody>
 							</table>
 							</div>
 							<script>
-								$(".btn alteracao").click(function(){
-									window.location.replace("alterar_dados_contratado.php?codigo=" + $(this).attr('value'));
-								});
-
-								$(".#pagina").click(function(){
-
+								$("#results").on("click", "button", function(){
+									window.location.replace("alterar_dados_contratado.php?codigo=" + $(this).attr("value"));
 								});
 							</script>
 
