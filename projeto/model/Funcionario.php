@@ -153,9 +153,7 @@
     	if ($numRegistros != 0) {
     		// Exibe os produtos e seus respectivos preços
     		while ($funcionario = mysqli_fetch_object($sql)) {
-    			echo $funcionario->codigo_funcionario ;
-                echo $funcionario->nome ;
-                echo $funcionario->cpf ;
+
     		}
     	// Se não houver registros
     	} else {

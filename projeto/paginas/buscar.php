@@ -174,9 +174,12 @@
 							<table class="table table-hover table-striped">
 								<thead>
 								<tr>
-									<th>Firstname</th>
-									<th>Lastname</th>
-									<th>Email</th>
+									<th>Código</th>
+									<th>Nome</th>
+									<th>CPF</th>
+									<th>Terminal</th>
+									<th>Período</th>
+									<th>Estado</th>
 								</tr>
 								</thead>
 								<tbody>
