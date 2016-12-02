@@ -139,7 +139,7 @@
                                   name="nome"
                                   class="form-control"
                                   value=<?php
-                                        echo "\"".$funcionario->nome."\""; 
+                                        echo "\"".$funcionario->nome."\"";
                                     ?>
                                   required
                               >
@@ -148,6 +148,19 @@
                           <div class="form-group col-sm-4">
                               <label for="CPF" class="control-label">*CPF:</label>
                               <input
+<<<<<<< HEAD
+                                  pattern="[0-9.-]+"
+                                  type="text"
+                                  id="CPF"
+                                  name="CPF"
+                                  class="form-control"
+                                  placeholder="000.000.000-00"
+                                  maxlength="14"
+                                  value=<?php
+                                        echo "\"".$funcionario->cpf."\"";
+                                    ?>
+                                  required
+=======
                                     pattern="[0-9.-]+"
                                     type="text"
                                     id="CPF"
@@ -156,9 +169,10 @@
                                     placeholder="000.000.000-00"
                                     maxlength="14"
                                     value=<?php
-                                            echo "\"".$funcionario->cpf."\""; 
+                                            echo "\"".$funcionario->cpf."\"";
                                         ?>
                                     required
+>>>>>>> 922c08afe75f5b34dd0bd78a187bbb424b82807b
                               >
                           </div>
 
@@ -170,7 +184,7 @@
 									name="dataNascimento"
 									class="form-control"
 									value=<?php
-											echo "\"".$funcionario->data_nascimento."\""; 
+											echo "\"".$funcionario->data_nascimento."\"";
 										?>
 									required
                               >
@@ -185,7 +199,7 @@
                                     class="form-control"
                                     placeholder="(00)00000-0000"
                                     value=<?php
-                                        echo "\"".$funcionario->telefone."\""; 
+                                        echo "\"".$funcionario->telefone."\"";
                                     ?>
                               >
                           </div>
@@ -201,7 +215,7 @@
                                   class="form-control"
                                   placeholder="Ex: Rua Castelo Branco"
                                   value=<?php
-                                        echo "\"".$funcionario->logradouro."\""; 
+                                        echo "\"".$funcionario->logradouro."\"";
                                     ?>
                                   required
                               >
@@ -215,7 +229,7 @@
                                   name="numero"
                                   class="form-control"
                                   value=<?php
-                                        echo "\"".$funcionario->numero."\""; 
+                                        echo "\"".$funcionario->numero."\"";
                                     ?>
                                   required
                               >
@@ -229,7 +243,7 @@
                                   name="complemento"
                                   class="form-control"
                                   value=<?php
-                                        echo "\"".$funcionario->complemento."\""; 
+                                        echo "\"".$funcionario->complemento."\"";
                                     ?>
                               >
                           </div>
@@ -242,7 +256,7 @@
                                   name="bairro"
                                   class="form-control"
                                   value=<?php
-                                        echo "\"".$funcionario->bairro."\""; 
+                                        echo "\"".$funcionario->bairro."\"";
                                     ?>
                                   required
                               >
@@ -256,7 +270,7 @@
                                   name="cidade"
                                   class="form-control"
                                   value=<?php
-                                        echo "\"".$funcionario->cidade."\""; 
+                                        echo "\"".$funcionario->cidade."\"";
                                     ?>
                                   required
                               >
@@ -270,7 +284,7 @@
                                   name="estado"
                                   class="form-control"
                                   value=<?php
-                                        echo "\"".$funcionario->estado."\""; 
+                                        echo "\"".$funcionario->estado."\"";
                                     ?>
                                   required
                               >
@@ -286,7 +300,7 @@
                                   pattern="[0-9-]+"
                                   placeholder="00000-000"
                                   value=<?php
-                                        echo "\"".$funcionario->cep."\""; 
+                                        echo "\"".$funcionario->cep."\"";
                                     ?>
                                   maxlength="9"
                               >
@@ -338,7 +352,7 @@
                               <label for="setor">Setor:</label>
                               <select class="form-control" id="setor" name="setor" class="form-control"
                                 value=<?php
-                                            echo "\"".$funcionario->setor."\""; 
+                                            echo "\"".$funcionario->setor."\"";
                                         ?>
                               >
                                   <option>Financeiro</option>
@@ -350,6 +364,7 @@
 
                         <div class="form-group col-sm-2">
                             <label for="terminal">Terminal:</label>
+<<<<<<< HEAD
                             <select class="form-control" id="terminal" name="terminal" class="form-control">
                                 <?php
                                     if ($funcionario->terminal == A){
@@ -381,6 +396,11 @@
                                     } else {
                                          echo "<option>E</option>";
                                     }
+=======
+                            <select class="form-control" id="terminal" name="terminal" class="form-control"
+                                value=<?php
+                                    echo "\"".$funcionario->terminal."\"";
+>>>>>>> 083aed24c4c745ee1d6e22c5653ac86732163d1c
                                 ?>
                             </select>
                         </div>
@@ -575,6 +595,9 @@ $(document).ready(function() {
                                       id="nome"
                                       name="nome"
                                       class="form-control"
+									  value=<?php
+  											echo "\"".$funcionario->nome."\"";
+  										?>
                                       required
                                   >
                               </div>
@@ -589,6 +612,9 @@ $(document).ready(function() {
                                       class="form-control"
                                       placeholder="000.000.000-00"
                                       maxlength="14"
+									  value=<?php
+  											echo "\"".$funcionario->cpf."\"";
+  										?>
                                       required
                                   >
                               </div>
@@ -600,6 +626,9 @@ $(document).ready(function() {
                                       id="dataNascimento"
                                       name="dataNascimento"
                                       class="form-control"
+									  value=<?php
+  											echo "\"".$funcionario->data_nascimento."\"";
+  										?>
                                       required
                                   >
                               </div>
@@ -611,6 +640,9 @@ $(document).ready(function() {
                                       id="telefone"
                                       name="telefone"
                                       class="form-control"
+									  value=<?php
+  											echo "\"".$funcionario->telefone."\"";
+  										?>
                                       placeholder="(00)00000-0000"
                                   >
                               </div>
@@ -625,6 +657,9 @@ $(document).ready(function() {
                                       name="endereco"
                                       class="form-control"
                                       placeholder="Ex: Rua Castelo Branco"
+									  value=<?php
+  											echo "\"".$funcionario->logradouro."\"";
+  										?>
                                       required
                                   >
                               </div>
@@ -636,6 +671,9 @@ $(document).ready(function() {
                                       id="numero"
                                       name="numero"
                                       class="form-control"
+									  value=<?php
+  											echo "\"".$funcionario->numero."\"";
+  										?>
                                       required
                                   >
                               </div>
@@ -647,6 +685,9 @@ $(document).ready(function() {
                                       id="complemento"
                                       name="complemento"
                                       class="form-control"
+									  value=<?php
+  											echo "\"".$funcionario->complemento."\"";
+  										?>
                                   >
                               </div>
 
@@ -657,6 +698,9 @@ $(document).ready(function() {
                                       id="bairro"
                                       name="bairro"
                                       class="form-control"
+									  value=<?php
+  											echo "\"".$funcionario->bairro."\"";
+  										?>
                                       required
                                   >
                               </div>
@@ -668,6 +712,9 @@ $(document).ready(function() {
                                       id="cidade"
                                       name="cidade"
                                       class="form-control"
+									  value=<?php
+  											echo "\"".$funcionario->cidade."\"";
+  										?>
                                       required
                                   >
                               </div>
@@ -679,6 +726,9 @@ $(document).ready(function() {
                                       id="estado"
                                       name="estado"
                                       class="form-control"
+									  value=<?php
+  											echo "\"".$funcionario->estado."\"";
+  										?>
                                       required
                                   >
                               </div>
@@ -693,6 +743,9 @@ $(document).ready(function() {
                                       pattern="[0-9-]+"
                                       placeholder="00000-000"
                                       maxlength="9"
+									  value=<?php
+  											echo "\"".$funcionario->cep."\"";
+  										?>
                                   >
                               </div>
 
@@ -740,8 +793,43 @@ $(document).ready(function() {
                                        size="18"
                                        maxlength="18"
                                        placeholder="00.000.000/0000-00"
+									   value=<?php
+   											echo "\"".$funcionario->cnpj_empresa."\"";
+   										?>
                                        required
                                    >
+                               </div>
+
+							   <h3>Status do funcionário</h3>
+
+							   <div class="form-group col-sm-12">
+                                   <label for="motivo" class="control-label">Motivo:</label>
+                                   <input
+                                       type="text"
+                                       id="motivo"
+                                       name="motivo"
+                                       class="form-control"
+									   value=<?php
+   											echo "\"".$funcionario->motivo."\"";
+   										?>
+                                       required
+                                   >
+                               </div>
+
+                               <div class="col-sm-4">
+                                   <label>Status:</label>
+                                   <div class="radio">
+
+                                       <label>
+                                           <input type="radio" id="status" name="status" value="ATIVO">
+                                           Ativo
+                                       </label>
+
+                                       <label>
+                                           <input type="radio" id="status" name="status" value="INATIVO">
+                                           Inativo
+                                       </label>
+                                   </div>
                                </div>
 
                                <p class="col-sm-12">
@@ -752,9 +840,9 @@ $(document).ready(function() {
                                <h1 id="msg" class="col-sm-12"></h1>
 
                         </form>
-                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
                     </div>
                 </div>
+				<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
             </div>
         </div>
         <!-- /#page-content-wrapper -->
