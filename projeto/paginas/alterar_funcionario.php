@@ -10,7 +10,7 @@
     else{
         /*IMPLEMENTAR A RECUPERAÇÃO OS DADOS NO BANCO*/
         $sql = mysqli_query($conn, "SELECT * FROM funcionario WHERE codigo_funcionario = ".$cod) or die(mysqli_error($conn));
-        $funcionario = mysqli_fetch_object($sql);   
+        $funcionario = mysqli_fetch_object($sql);
 
         if ($funcionario->cnpj_empresa == "00.000.000/0000-00"){
 ?>
@@ -96,20 +96,6 @@
                     <a href="cadastrar_empresa.php">Cadastrar Empresa</a>
                 </li>
                 <li>
-                  <a href="javascript:;" data-toggle="collapse" data-target="#alterar_dados"><i class="fa fa-fw fa-arrows-v"></i> Alterar Dados <i class="fa fa-fw fa-caret-down"></i></a>
-                     <ul id="alterar_dados" class="collapse">
-                         <li>
-                             <a href="alterar_dados_contratado.php">Funcionario Contratado</a>
-                         </li>
-                         <li>
-                             <a href="alterar_dados_terceirizado.php">Funcionario Terceirizado</a>
-                         </li>
-                     </ul>
-                </li>
-                <li>
-                  <a href="alterar_status.php">Alterar Status</a>
-                </li>
-                <li>
                     <a href="buscar.php">Buscar</a>
                 </li>
 				<li>
@@ -148,14 +134,10 @@
                           <div class="form-group col-sm-12">
                               <label for="nome" class="control-label">*Nome:</label>
                               <input
-                                    type="text"
-                                    id="nome"
-                                    name="nome"
-                                    class="form-control"
-                                    value=
-                                    <?php
-                                        echo "\"".$funcionario->nome."\""; 
-                                    ?>
+                                  type="text"
+                                  id="nome"
+                                  name="nome"
+                                  class="form-control"
                                   required
                               >
                           </div>
@@ -485,20 +467,6 @@ $(document).ready(function() {
                 </li>
                 <li>
                     <a href="cadastrar_empresa.php">Cadastrar Empresa</a>
-                </li>
-                <li>
-                  <a href="javascript:;" data-toggle="collapse" data-target="#alterar_dados"><i class="fa fa-fw fa-arrows-v"></i> Alterar Dados <i class="fa fa-fw fa-caret-down"></i></a>
-                     <ul id="alterar_dados" class="collapse">
-                         <li>
-                             <a href="alterar_dados_contratado.php">Funcionario Contratado</a>
-                         </li>
-                         <li>
-                             <a href="alterar_dados_terceirizado.php">Funcionario Terceirizado</a>
-                         </li>
-                     </ul>
-                </li>
-                <li>
-                  <a href="alterar_status.php">Alterar Status</a>
                 </li>
                 <li>
                     <a href="buscar.php">Buscar</a>
