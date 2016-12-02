@@ -106,11 +106,11 @@
 					<div class="col-lg-12">
 						<h1>Busca</h1>
 						<form name="buscaCPF" action="" method="post" onsubmit="return false;">
-							<!--<input id="pagina" name="pagina" value="buscar" style="display:none">-->
+							<input id="pagina" name="pagina" value="buscar" style="display:none">
 							<div class="form-group">
 								<div class="input-group">
 									<div class="input-group-btn">
-										<!--<button
+										<button
 											type="button"
 											class="btn btn-default dropdown-toggle"
 											data-toggle="dropdown"
@@ -133,17 +133,17 @@
 												$(".dropdown-menu").on('click', 'li a', function(){
 													$("#btnSearchType:first-child").text($(this).text());
 													$("#btnSearchType:first-child").val($(this).text());
-													$("#pagina").id($(this).text());
+													$("#pagina").val($(this).text());
 												});
 											});
-										</script>-->
-										<select class="form-control" id="pagina" name="pagina" class="form-control">
+										</script>
+										<!--<select class="form-control" id="pagina" name="pagina" class="form-control">
 		                                    <option>Por nome</option>
 		                                    <option>Por CPF</option>
 		                                    <option>Por cidade</option>
 		                                    <option>Por cargo</option>
 											<option>Por terminal</option>
-		                                </select>
+		                                </select>-->
 
 									</div>
 									<input
