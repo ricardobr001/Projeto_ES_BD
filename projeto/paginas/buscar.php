@@ -142,6 +142,7 @@
 												$(".dropdown-menu").on('click', 'li a', function(){
 													$("#btnSearchType:first-child").text($(this).text());
 													$("#btnSearchType:first-child").val($(this).text());
+													$("#pagina").id($(this).text());
 												});
 											});
 										</script>
@@ -187,8 +188,12 @@
 							</table>
 							</div>
 							<script>
-								$(".table").click(function(){
-									window.location.replace("http://stackoverflow.com");
+								$(".btn alteracao").click(function(){
+									window.location.replace("alterar_dados_contratado.php?codigo=" + $(this).attr('value'));
+								});			
+
+								$(".#pagina").click(function(){
+									
 								});								
 							</script>
 
