@@ -30,9 +30,10 @@
 			$dataEntrada = $_POST["dataEntrada"];
 			$horas = $_POST["qtddHorasTrabalhadas"];
 			$cargo = $_POST["cargo"];
+			$estado = $_POST["estado"];
 
-			//Todo funcionário novo cadastrado possui estado ATIVO, Não possui um motivo de desligamento e não possui uma data de saída
-			$funcionario = new FuncionarioContratado($nome, $CPF, $dataNascimento, $telefone, 'ATIVO', "", $periodo, $setor, $terminal, $cidade, $endereco, $bairro, $CEP, $numero, $complemento, $dataEntrada, $cargo, $horas, "", $salario);
+			//Todo funcionário novo cadastrado possui situacao ATIVO, Não possui um motivo de desligamento e não possui uma data de saída
+			$funcionario = new FuncionarioContratado($nome, $CPF, $dataNascimento, $telefone, 'ATIVO', "", $periodo, $setor, $terminal, $cidade, $endereco, $bairro, $CEP, $numero, $complemento, $dataEntrada, $cargo, $horas, "", $salario, $estado);
 			$msg = $funcionario->cadastrar();
 
 			echo $msg;
@@ -56,8 +57,9 @@
 			$dataEntrada = $_POST["dataEntrada"];
 			$horas = $_POST["qtddHorasTrabalhadas"];
 			$cargo = $_POST["cargo"];
+			$estado = $_POST["estado"];
 
-			$funcionario = new FuncionarioContratado($nome, $CPF, $dataNascimento, $telefone, 'ATIVO', "", $periodo, $setor, $terminal, $cidade, $rua, $bairro, $CEP, $numero, $complemento, $dataEntrada, $cargo, $horas, "", $salario);
+			$funcionario = new FuncionarioContratado($nome, $CPF, $dataNascimento, $telefone, 'ATIVO', "", $periodo, $setor, $terminal, $cidade, $rua, $bairro, $CEP, $numero, $complemento, $dataEntrada, $cargo, $horas, "", $salario, $estado);
 			$msg = $funcionario->alterarDados();
 
 			echo $msg;

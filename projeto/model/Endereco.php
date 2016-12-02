@@ -8,13 +8,14 @@
     private $complemento;
 
     //Construtor da classe
-    public function __construct($cidade, $logradouro, $bairro, $CEP, $numero, $complemento){
+    public function __construct($cidade, $logradouro, $bairro, $CEP, $numero, $complemento, $estado){
       $this->cidade = $cidade;
       $this->logradouro = $logradouro;
       $this->bairro = $bairro;
       $this->CEP = $CEP;
       $this->numero = $numero;
       $this->complemento = $complemento;
+      $this->estado = $estado;
     }
 
     //Getters e Setters
@@ -64,6 +65,14 @@
 
     public function getComplemento(){
         return $this->complemento;
+    }
+
+    public function setEstado($estado){
+        $this->$estado = $estado;
+    }
+
+    public function getEstado(){
+        return $this->estado;
     }
 
 }

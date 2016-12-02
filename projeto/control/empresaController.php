@@ -4,11 +4,11 @@
     include $class_name . '.php';
 });
 
-  $CNPJ = $_POST["CNPJ"];
+  $cnpj_empresa = $_POST["cnpj_empresa"];
   $nomeFantasia = $_POST["nomeFantasia"];
   $razaoSocial = $_POST["razaoSocial"];
 
-  $empresa = new Empresa($CNPJ, $nomeFantasia, $razaoSocial);
+  $empresa = new Empresa($cnpj_empresa, $nomeFantasia, $razaoSocial);
   $msg = $empresa->cadastrar();
 
   echo $msg;
