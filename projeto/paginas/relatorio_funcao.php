@@ -110,13 +110,13 @@
                         <form name="cadastro" action="" method="post" onsubmit="return false;">
                             <input id="pagina" name="pagina" value="relatorio_funcao" style="display:none">
 
-                            <div class="form-group col-sm-4">
-                                <label for="setor">Setor:</label>
-                                <select class="form-control" id="setor" name="setor" class="form-control">
-                                    <option>Financeiro</option>
-                                    <option>Limpeza</option>
-                                    <option>Seguranca</option>
-                                    <option>Informacoes</option>
+                            <div class="form-group col-sm-2">
+                                <label for="periodo">Período:</label>
+                                <select class="form-control" id="periodo" name="periodo" class="form-control">
+                                    <option>Manha</option>
+                                    <option>Tarde</option>
+                                    <option>Noite</option>
+                                    <option>Madrugada</option>
                                 </select>
                             </div>
 
