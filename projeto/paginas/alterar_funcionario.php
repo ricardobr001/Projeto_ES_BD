@@ -148,7 +148,6 @@
                           <div class="form-group col-sm-4">
                               <label for="CPF" class="control-label">*CPF:</label>
                               <input
-<<<<<<< HEAD
                                   pattern="[0-9.-]+"
                                   type="text"
                                   id="CPF"
@@ -160,19 +159,6 @@
                                         echo "\"".$funcionario->cpf."\"";
                                     ?>
                                   required
-=======
-                                    pattern="[0-9.-]+"
-                                    type="text"
-                                    id="CPF"
-                                    name="CPF"
-                                    class="form-control"
-                                    placeholder="000.000.000-00"
-                                    maxlength="14"
-                                    value=<?php
-                                            echo "\"".$funcionario->cpf."\"";
-                                        ?>
-                                    required
->>>>>>> 922c08afe75f5b34dd0bd78a187bbb424b82807b
                               >
                           </div>
 
@@ -364,7 +350,6 @@
 
                         <div class="form-group col-sm-2">
                             <label for="terminal">Terminal:</label>
-<<<<<<< HEAD
                             <select class="form-control" id="terminal" name="terminal" class="form-control">
                                 <?php
                                     if ($funcionario->terminal == A){
@@ -396,11 +381,6 @@
                                     } else {
                                          echo "<option>E</option>";
                                     }
-=======
-                            <select class="form-control" id="terminal" name="terminal" class="form-control"
-                                value=<?php
-                                    echo "\"".$funcionario->terminal."\"";
->>>>>>> 083aed24c4c745ee1d6e22c5653ac86732163d1c
                                 ?>
                             </select>
                         </div>
