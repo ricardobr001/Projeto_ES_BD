@@ -93,14 +93,19 @@
 					<a href="buscar.php">Buscar</a>
 				</li>
 				<li>
-					<a href="relatorio_funcao.php">Relatório por Função</a>
-				</li>
-				<li>
-					<a href="relatorio_terminal.php">Relatório por Terminal</a>
-				</li>
-				<li>
-					<a href="relatorio_salario.php">Relatório por Faixa Salarial</a>
-				</li>
+                    <a href="javascript:;" data-toggle="collapse" data-target="#relatorio"><i class="fa fa-fw fa-arrows-v"></i> Relatórios <i class="fa fa-fw fa-caret-down"></i></a>
+                       <ul id="relatorio" class="collapse">
+                           <li>
+                               <a href="relatorio_funcao.php">Função</a>
+                           </li>
+                           <li>
+                               <a href="relatorio_salario.php">Salario</a>
+                           </li>
+                           <li>
+                               <a href="relatorio_terminal.php">Terminal</a>
+                           </li>
+                       </ul>
+                </li>
 				<li>
 					<a href="sobre.html">Sobre</a>
 				</li>
@@ -115,11 +120,11 @@
 					<div class="col-lg-12">
 						<h1>Busca</h1>
 						<form name="buscaCPF" action="" method="post" onsubmit="return false;">
-							<input id="pagina" name="pagina" value="buscar" style="display:none">
+							<!--<input id="pagina" name="pagina" value="buscar" style="display:none">-->
 							<div class="form-group">
 								<div class="input-group">
 									<div class="input-group-btn">
-										<button
+										<!--<button
 											type="button"
 											class="btn btn-default dropdown-toggle"
 											data-toggle="dropdown"
@@ -131,20 +136,29 @@
 											Por CPF </span>
 										</button>
 										<ul class="dropdown-menu">
-											<li><a href="#">Por CPF </a></li>
-											<li><a href="#">Por nome </a></li>
-											<li><a href="#">Por cargo </a></li>
-											<li><a href="#">Por terminal </a></li>
-											<li><a href="#">Por cidade </a></li>
+											<li><a href="#">Por CPF</a></li>
+											<li><a href="#">Por nome</a></li>
+											<li><a href="#">Por cargo</a></li>
+											<li><a href="#">Por terminal</a></li>
+											<li><a href="#">Por cidade</a></li>
 										</ul>
 										<script>
 										 	$(function(){
 												$(".dropdown-menu").on('click', 'li a', function(){
 													$("#btnSearchType:first-child").text($(this).text());
 													$("#btnSearchType:first-child").val($(this).text());
+													$("#pagina").id($(this).text());
 												});
 											});
-										</script>
+										</script>-->
+										<select class="form-control" id="pagina" name="pagina" class="form-control">
+		                                    <option>Por nome</option>
+		                                    <option>Por CPF</option>
+		                                    <option>Por cidade</option>
+		                                    <option>Por cargo</option>
+											<option>Por terminal</option>
+		                                </select>
+
 									</div>
 									<input
 										class="form-control"
@@ -169,7 +183,7 @@
 						</form>
 
 						<div class="container col-sm-12">
-							<table class="table table-hover table-striped">
+							<table id="results" class="table table-hover table-striped">
 								<thead>
 								<tr>
 									<th>Código</th>
@@ -181,11 +195,17 @@
 									<th>Situação</th>
 									<th></th>
 								</tr>
+								<tr>
 								</thead>
 								<tbody id="msg">
 								</tbody>
 							</table>
 							</div>
+							<script>
+								$("#results").on("click", "button", function(){
+									window.location.replace("alterar_funcionario.php?codigo=" + $(this).attr("value"));
+								});
+							</script>
 
 						<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
 					</div>

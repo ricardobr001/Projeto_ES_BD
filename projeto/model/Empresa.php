@@ -1,5 +1,5 @@
 <?php
-  require_once '../conexao/conexao.php';
+  require_once '../conexao/Conexao.php';
 
   class Empresa{
     private $cnpj_empresa;
@@ -47,7 +47,7 @@
       }
       else{
         mysqli_query($conn, "INSERT INTO empresa(
-          cnpj,
+          cnpj_empresa,
           nome_fantasia,
           razao_social
         ) VALUES (
