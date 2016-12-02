@@ -21,13 +21,5 @@ SELECT codigo_funcionario, nome, cpf, terminal, periodo, estado, cidade FROM fun
 -- RELATORIO DA QUANTIDADE DE FUNCIONARIOS ATIVOS EM CADA CARGO DADO UM PERIODO
 SELECT cargo, periodo, COUNT(*) AS quantidade FROM funcionario WHERE funcionario.situacao LIKE "ATIVO" AND funcionario.periodo = "xxx" ORDER BY nome
 
-
-
-
--- NAO TA FUNFANDO
-
--- RELATORIO DA QUANTIDADE DE FUNCIONARIOS ATIVOS EM CADA TERMINAL DADA UMA FUNCAO
-SELECT f.codigo_funcionari, f.nome, COUNT(*) AS quantidade FROM funcionario f, terminal t WHERE f.situacao LIKE "ATIVO" ORDER BY f.nome
-
-
-SELECT t.nome, f.codigo_funcionario, f.nome, COUNT(*) AS quantidade FROM (SELECT t.nome FROM funcionario f, terminal t GROUP BY t.nome) WHERE f.situacao LIKE "ATIVO" AND t.nome LIKE "D" ORDER BY f.nome
+-- RELATORIO DA QUANTIDADE DE FUNCIONARIOS ATIVOS EM CADA TERMINAL DADA UM CARGO
+SELECT f.terminal, f.cargo, COUNT(f.terminal) AS quantidade FROM funcionario f WHERE f.situacao LIKE "ATIVO" AND f.cargo LIKE "xxx" GROUP BY f.terminal
