@@ -397,9 +397,34 @@
         $msg = 'Problemas na conexão';
       }
       else{
-      /*IMPLEMENTAR A RECUPERAÇÃO OS DADOS NO BANCO E GERAR O RELATÓRIO*/
 
-      }
+      $sql = mysqli_query($conn, "SELECT cargo, periodo,
+          COUNT(*) AS quantidade
+          FROM funcionario
+          WHERE situacao LIKE
+          'ATIVO' AND periodo = '".$setor."' ORDER BY nome;");
+
+      // Descobrimos o total de registros encontrados
+    $numRegistros = mysqli_num_rows($sql);
+
+    // Se houver pelo menos um registro, exibe-o
+    if ($numRegistros != 0) {
+        // Exibe os produtos e seus respectivos preços
+        while ($funcionario = mysqli_fetch_object($sql)) {
+            echo'
+              <tr>
+                  <td>' . $funcionario->cargo . '</td>
+                  <td>' . $funcionario->quantidade .'</td>
+                  <td>' . $funcionario->periodo .'</td>
+              </tr>';
+          }
+    // Se não houver registros
+    } else {
+        echo "Nenhum funcionário trabalhando no terminal ".$terminal." foi encontrado.";
+    }
+
+    }
+    return $sql;
 
     }
 
