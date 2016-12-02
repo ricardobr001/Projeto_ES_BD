@@ -52,9 +52,12 @@
         $setor = $_POST["setor"];
         $cnpj_empresa = $_POST["CNPJ"];
         $estado = $_POST["estado"];
+		$situacao = $_post["status"];
+		echo $_post["status"];
+		echo ">>>>>>>>>>>>>>>>>>>>>>>".$situacao;
 
         //Todo funcionário novo cadastrado possui situacao ATIVO e não possui um motivo de desligamento
-        $funcionario = new FuncionarioTerceirizado($nome, $CPF, $dataNascimento, $telefone, 'ATIVO', '', $periodo, $setor, $terminal, $cidade, $endereco, $bairro, $CEP, $numero, $complemento, $estado);
+        $funcionario = new FuncionarioTerceirizado($nome, $CPF, $dataNascimento, $telefone, $situacao, '', $periodo, $setor, $terminal, $cidade, $endereco, $bairro, $CEP, $numero, $complemento, $estado);
         $msg = $funcionario->alterarDados($cnpj_empresa, $codigo);
 
         echo $msg;
